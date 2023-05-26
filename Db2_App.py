@@ -16,7 +16,17 @@ def index():
 def supplier():
     return render_template("supplier.html")
 
+@app.route("/vehicles")
+def vehicles():
+    return render_template("vehicles.html")
 
+@app.route("/sales")
+def sales():
+    return render_template("sales.html")
+
+@app.route("/maintenance")
+def maintenance():
+    return render_template("maintenance.html")
 
 @app.route("/search i think")
 def oldindex():
