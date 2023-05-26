@@ -23,17 +23,27 @@ def supplier():
 
 @app.route("/vehicles")
 def vehicles():
-    return render_template("vehicles.html")
+    conn=db_conn()
+    cur=conn.cursor()
+    sql_select_query="SELECT * FROM vehicles;"
+    cur.execute(sql_select_query)
+    vehicles_details=cur.fetchall()
+    return render_template("vehicles.html",list_of_vehicles=vehicles_details)
 
 @app.route("/sales")
 def sales():
-    return render_template("sales.html")
+    conn=db_conn()
+    cur=conn.cursor(
+    sql_select_query="SELECT * FROM sales;"
+    cur.execute(sql_select_query)
+    sales_details=cur.fetchall()
+    return render_template("sales.html", list_of_sales=sales_details)
 
 @app.route("/maintenance")
 def maintenance():
     return render_template("maintenance.html")
 
-@app.route("/search i think")
+@app.route("/search")
 def oldindex():
     conn=db_conn()
     cur=conn.cursor()
