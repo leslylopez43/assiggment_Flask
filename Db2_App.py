@@ -12,6 +12,12 @@ def db_conn():
 def index():
     return render_template("index.html")
 
+@app.route("/supplier")
+def supplier():
+    return render_template("supplier.html")
+
+
+
 @app.route("/search i think")
 def oldindex():
     conn=db_conn()
