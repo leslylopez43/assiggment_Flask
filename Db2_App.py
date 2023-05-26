@@ -10,7 +10,7 @@ def db_conn():
 
 @app.route("/")
 def index():
-    return "this is the index page"
+    return render_template("index.html")
 
 @app.route("/search i think")
 def oldindex():
