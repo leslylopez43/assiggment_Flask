@@ -4,7 +4,7 @@ from flask import Flask, render_template, redirect, request, url_for
 import psycopg2
 app=Flask(__name__)
 def db_conn():
-    conn=psycopg2.connect(database="flask_db1",host="localhost",user="postgres",password="London1031",port="5432")
+    conn=psycopg2.connect(database="motoring",host="localhost",user="postgres",password="London1031",port="5432")
     return conn
 
 
@@ -14,7 +14,12 @@ def index():
 
 @app.route("/supplier")
 def supplier():
-    return render_template("supplier.html")
+    conn=db_conn()
+    cur=conn.cursor()
+    sql_select_query="SELECT * FROM supplier;"
+    cur.execute(sql_select_query)
+    supplier_details=cur.fetchall()
+    return render_template("supplier.html",list_of_suppliers=supplier_details)
 
 @app.route("/vehicles")
 def vehicles():
