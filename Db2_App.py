@@ -64,8 +64,9 @@ def create():
     conn=db_conn()
     cur=conn.cursor()
     Companyname=request.form['Company Name']
-    address=request.form['Address']
+    Address=request.form['Address']
     print(Address)
+
     #fees=request.form['fees']
     #duration=request.form['duration']
     #cur.execute('''INSERT INTO courses (name, fees,duration) VALUES (%S,%S,%S)'''),(name,fees,duration)
