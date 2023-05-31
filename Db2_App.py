@@ -65,14 +65,21 @@ def create():
     cur=conn.cursor()
     Companyname=request.form['Company Name']
     Address=request.form['Address']
-    print(Address)
+    MobilePhone=request.form['Mobile Phone']
+    EmailAddress=request.form['Email Address']
+    contactName=request.form['contact Name']
+    vat=request.form['VAT']
+    print(vat)
 
-    #fees=request.form['fees']
-    #duration=request.form['duration']
+    
     #cur.execute('''INSERT INTO courses (name, fees,duration) VALUES (%S,%S,%S)'''),(name,fees,duration)
-    #conn.commit()
-    #cur.close()
-    #conn.close()
+    insert_sql="INSERT INTO supplier (supplier_name, address, mobile_phone, email, contact_name, vat) VALUES ('" + Companyname  + "','" + Address  + "','" + MobilePhone + "','" + EmailAddress+ "','" + contactName+ "'," + vat + ")"
+    print(insert_sql)
+    #cur.execute('''INSERT INTO supplier (supplier_name, address, mobile_phone, email_address, contact_name, vat) VALUES (%s,%s,%s,%s,%s,%s)'''),(Companyname, Address, MobilePhone,EmailAddress,contactName,vat)
+    cur.execute(insert_sql)
+    conn.commit()
+    cur.close()
+    conn.close()
     return redirect(url_for('index'))
      
    
