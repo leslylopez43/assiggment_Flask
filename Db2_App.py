@@ -33,7 +33,7 @@ def vehicles():
 @app.route("/sales")
 def sales():
     conn=db_conn()
-    cur=conn.cursor(
+    cur=conn.cursor()
     sql_select_query="SELECT * FROM sales;"
     cur.execute(sql_select_query)
     sales_details=cur.fetchall()

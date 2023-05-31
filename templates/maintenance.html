@@ -8,7 +8,7 @@
 </head>
 <body>
     <table>
-        {% for column in list_of_maintenance %}
+        
           <tr>
             <th>Vehicle ID</th>
             <th>Reg Number</th>
@@ -20,7 +20,8 @@
             <th>Labor</th>
             <th>Total</th>
           </tr>
-          
+          {% for column in list_of_maintenance %}
+          <tr>
           <td>{{column[0]}}</td>
           <td>{{column[1]}}</td>
           <td>{{column[2]}}</td>
@@ -30,10 +31,11 @@
           <td>{{column[6]}}</td>
           <td>{{column[7]}}</td>
           <td>{{column[8]}}</td>
-  
+        </tr>
           {% endfor %}
            </table>
            {{ list_of_vehicles }}
   
+           <a href="{{url_for('index')}}">go to menu</a>
 </body>
 </html>

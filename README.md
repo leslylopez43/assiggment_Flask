@@ -6,10 +6,10 @@ This is a Flask web application for managing motoring data. It provides function
 
 ## Installation
 
-1. Clone the repository:
+1. The repository:
 
    ```shell
-   git clone https://github.com/your-username/flask-motoring-app.git
+ https://github.com/your-username/flask-motoring-app.git
 
 
 cd flask-motoring-app
