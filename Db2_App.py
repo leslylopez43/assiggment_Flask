@@ -64,7 +64,7 @@ def create():
     conn=db_conn()
     cur=conn.cursor()
     Companyname=request.form['Company Name']
-    Address=request.form['Address']
+    address=request.form['Address']
     print(Address)
     #fees=request.form['fees']
     #duration=request.form['duration']
