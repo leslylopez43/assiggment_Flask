@@ -55,17 +55,23 @@ def oldindex():
     conn.close()
     return render_template("index.html", data=data) 
       
-@app.route('/create',methods=['POST'])
+@app.route("/get_new_supplier_details")
+def get_new_supplier_details():
+    return render_template("insert_supplier.html")
+
+@app.route('/insert_new_supplier',methods=['POST'])
 def create():
     conn=db_conn()
     cur=conn.cursor()
-    name=request.form['name']
-    fees=request.form['fees']
-    duration=request.form['duration']
-    cur.execute('''INSERT INTO courses (name, fees,duration) VALUES (%S,%S,%S)'''),(name,fees,duration)
-    conn.commit()
-    cur.close()
-    conn.close()
+    Companyname=request.form['Company Name']
+    Address=request.form['Address']
+    print(Address)
+    #fees=request.form['fees']
+    #duration=request.form['duration']
+    #cur.execute('''INSERT INTO courses (name, fees,duration) VALUES (%S,%S,%S)'''),(name,fees,duration)
+    #conn.commit()
+    #cur.close()
+    #conn.close()
     return redirect(url_for('index'))
      
    
