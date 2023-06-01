@@ -111,7 +111,7 @@ def create_new_vehicles():
 
 
 
-     @app.route("/get_new_maintenance_details")
+@app.route("/get_new_maintenance_details")
 def get_new_maintenance_details():
     return render_template("insert_maintenance.html")
 
@@ -133,8 +133,8 @@ def create_new_maintenance():
     
      insert_sql="INSERT INTO maintenance (vehicle_id, registration_number, date_performed, task_to_be_performed_Services, performed_by, validate_by, material, labor, total) VALUES ('" + vehicle_id  + "','" + registration_number  + "','" + date_performed + "','" + task_to_be_performed_Services+ "'," + performed_by+ ",'" + validate_by + "','" + material + "','" + labor + "','" + total + "')"
      print(insert_sql)
-     cur.execute(insert_sql)
-     conn.commit()
+     #cur.execute(insert_sql)
+     #conn.commit()
      cur.close()
      conn.close()
      return redirect(url_for('index'))
