@@ -72,9 +72,7 @@ def create():
     print(vat)
 
     
-    #cur.execute('''INSERT INTO courses (name, fees,duration) VALUES (%S,%S,%S)'''),(name,fees,duration)
     insert_sql="INSERT INTO supplier (supplier_name, address, mobile_phone, email, contact_name, vat) VALUES ('" + Companyname  + "','" + Address  + "','" + MobilePhone + "','" + EmailAddress+ "','" + contactName+ "'," + vat + ")"
-    #cur.execute('''INSERT INTO supplier (supplier_name, address, mobile_phone, email_address, contact_name, vat) VALUES (%s,%s,%s,%s,%s,%s)'''),(Companyname, Address, MobilePhone,EmailAddress,contactName,vat)
     cur.execute(insert_sql)
     conn.commit()
     cur.close()
@@ -87,32 +85,34 @@ def create():
 def get_new_vehicles_details():
     return render_template("insert_vehicles.html")
 
-# @app.route('/insert_new_vehicles',methods=['POST'])
-# def create():
-#     conn=db_conn()
-#     cur=conn.cursor()
-#     Companyname=request.form['Company Name']
-#     Address=request.form['Address']
-#     MobilePhone=request.form['Mobile Phone']
-#     EmailAddress=request.form['Email Address']
-#     contactName=request.form['contact Name']
-#     vat=request.form['VAT']
-#     print(vat)
+@app.route('/insert_new_vehicles',methods=['POST'])
+def create_new_vehicles():
+     conn=db_conn()
+     cur=conn.cursor()
+     registration_number=request.form['registration_number']
+     brand=request.form['brand']
+     model=request.form['model']
+     color=request.form['color']
+     Price_money=request.form['Price_money']
+     car_year=request.form['car_year']
+     On_stock_from=request.form['On_stock_from'] 
+     available=request.form['available'] 
+     print(available)
 
     
-    # insert_sql="INSERT INTO vehicles (registration_number, brand, model, color, Price_money, car_year, On_stock_from, available) VALUES ('" + registration_number  + "','" + brand  + "','" + model + "','" + color+ "','" + Price_money+ "'," + car_year + ")"
-    # #cur.execute('''INSERT INTO supplier (supplier_name, address, mobile_phone, email_address, contact_name, vat) VALUES (%s,%s,%s,%s,%s,%s)'''),(Companyname, Address, MobilePhone,EmailAddress,contactName,vat)
-    # cur.execute(insert_sql)
-    conn.commit()
-    cur.close()
-    conn.close()
-    return redirect(url_for('index'))
+     insert_sql="INSERT INTO vehicles (registration_number, brand, model, color, Price, car_year, On_stock_from, available) VALUES ('" + registration_number  + "','" + brand  + "','" + model + "','" + color+ "'," + Price_money+ ",'" + car_year + "','" + On_stock_from + "','" + available + "')"
+     print(insert_sql)
+     cur.execute(insert_sql)
+     conn.commit()
+     cur.close()
+     conn.close()
+     return redirect(url_for('index'))
+
 
 
 
 
     
      
-   
 if __name__ == '__main__':
     app.run(debug=True)
