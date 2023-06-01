@@ -41,7 +41,12 @@ def sales():
 
 @app.route("/maintenance")
 def maintenance():
-    return render_template("maintenance.html")
+    conn=db_conn()
+    cur=conn.cursor()
+    sql_select_query="SELECT * FROM maintenance;"
+    cur.execute(sql_select_query)
+    maintenance_details=cur.fetchall()
+    return render_template("maintenance.html",list_of_maintenance=maintenance_details)
 
 @app.route("/search")
 def oldindex():
@@ -131,10 +136,10 @@ def create_new_maintenance():
      print(total)
 
     
-     insert_sql="INSERT INTO maintenance (vehicle_id, registration_number, date_performed, task_to_be_performed_Services, performed_by, validate_by, material, labor, total) VALUES ('" + vehicle_id  + "','" + registration_number  + "','" + date_performed + "','" + task_to_be_performed_Services+ "'," + performed_by+ ",'" + validate_by + "','" + material + "','" + labor + "','" + total + "')"
+     insert_sql="INSERT INTO maintenance (vehicle_id, registration_number, date_performed, task_to_be_performed_Services, performed_by, validate_by, material, labor, total) VALUES ('" + vehicle_id  + "','" + registration_number  + "','" + date_performed + "','" + task_to_be_performed_Services+ "','" + performed_by+ "','" + validate_by + "','" + material + "','" + labor + "','" + total + "')"
      print(insert_sql)
-     #cur.execute(insert_sql)
-     #conn.commit()
+     cur.execute(insert_sql)
+     conn.commit()
      cur.close()
      conn.close()
      return redirect(url_for('index'))
