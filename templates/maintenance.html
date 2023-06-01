@@ -10,6 +10,7 @@
     <table>
         
           <tr>
+            
             <th>Vehicle ID</th>
             <th>Reg Number</th>
             <th>Date Permormed</th>
@@ -22,7 +23,7 @@
           </tr>
           {% for column in list_of_maintenance %}
           <tr>
-          <td>{{column[0]}}</td>
+         
           <td>{{column[1]}}</td>
           <td>{{column[2]}}</td>
           <td>{{column[3]}}</td>
@@ -31,6 +32,7 @@
           <td>{{column[6]}}</td>
           <td>{{column[7]}}</td>
           <td>{{column[8]}}</td>
+          <td>{{column[9]}}</td>
         </tr>
           {% endfor %}
            </table>

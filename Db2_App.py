@@ -46,6 +46,7 @@ def maintenance():
     sql_select_query="SELECT * FROM maintenance;"
     cur.execute(sql_select_query)
     maintenance_details=cur.fetchall()
+    print (maintenance)
     return render_template("maintenance.html",list_of_maintenance=maintenance_details)
 
 @app.route("/search")
