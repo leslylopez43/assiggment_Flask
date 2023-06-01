@@ -111,6 +111,38 @@ def create_new_vehicles():
 
 
 
+     @app.route("/get_new_maintenance_details")
+def get_new_maintenance_details():
+    return render_template("insert_maintenance.html")
+
+@app.route('/insert_new_maintenance',methods=['POST'])
+def create_new_maintenance():
+     conn=db_conn()
+     cur=conn.cursor()
+     vehicle_id=request.form['vehicle_id']
+     registration_number=request.form['registration_number']
+     date_performed=request.form['date_performed']
+     task_to_be_performed_Services=request.form['task_to_be_performed_Services']
+     performed_by=request.form['performed_by']
+     validate_by=request.form['validate_by']
+     material=request.form['material'] 
+     labor=request.form['labor'] 
+     total=request.form['total']
+     print(total)
+
+    
+     insert_sql="INSERT INTO maintenance (vehicle_id, registration_number, date_performed, task_to_be_performed_Services, performed_by, validate_by, material, labor, total) VALUES ('" + vehicle_id  + "','" + registration_number  + "','" + date_performed + "','" + task_to_be_performed_Services+ "'," + performed_by+ ",'" + validate_by + "','" + material + "','" + labor + "','" + total + "')"
+     print(insert_sql)
+     cur.execute(insert_sql)
+     conn.commit()
+     cur.close()
+     conn.close()
+     return redirect(url_for('index'))
+
+
+
+
+
 
     
      
