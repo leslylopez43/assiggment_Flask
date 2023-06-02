@@ -7,19 +7,72 @@
     <title>Document</title>
 </head>
 <body>
-
     <form action="/insert_new_supplier" method="post">
-       <!-- <input type="text" name="SUPPLIER ID" placeholder="name"> -->
-        <input type="text" name="Company Name" placeholder="Company Name">
-        <input type="text" name="Address" placeholder="Addess">
-        <input type="text" name="Mobile Phone" placeholder="number">
-        <input type="text" name="Email Address" placeholder="email">
-        <input type="text" name="contact Name" placeholder="name">
-        <input type="text" name="VAT" placeholder="Vat">
-        <input type="submit" value="create">
+           <!-- <input type="text" name="SUPPLIER ID" placeholder="name"> -->
+    
+        <!-- 2 column grid layout with text inputs for the first and last names -->
+        <div class="row mb-4">
+          <div class="col">
+            <div class="form-outline">
+                <input type="text" id="form6Example1" class="form-control" name="Company Name" placeholder="Company Name">
+              <label class="form-label" for="form6Example1">company Name</label>
+            </div>
+          </div>
+          <!-- <div class="col">
+            <div class="form-outline">
+              <input type="text" id="form6Example2" class="form-control" />
+              <label class="form-label" for="form6Example2">Last name</label>
+            </div>
+          </div> -->
+        </div>
+      
+        <!-- Text input -->
+        <!-- <div class="form-outline mb-4">
+          <input type="text" name="Address" placeholder="Addess" id="form6Example3" class="form-control" />
+          <label class="form-label" for="form6Example3">Address</label>
+        </div>
+       -->
+        <!-- Text input -->
+        <div class="form-outline mb-4">
+          <input type="text" id="form6Example4" class="form-control" />
+          <label class="form-label" for="form6Example4">Address</label>
+        </div>
+      
+        <!-- phone number input -->
+        <div class="form-outline mb-4">
+          <input type="number" name="Mobile Phone" placeholder="number" id="form6Example5" class="form-control" />
+          <label class="form-label" for="form6Example5">Mobile Phone</label>
+        </div>
+      
+        <!-- Number input -->
+        <div class="form-outline mb-4">
+          <input type="email" name="Email Address" placeholder="email" id="form6Example6" class="form-control" />
+          <label class="form-label" for="form6Example6">Email Address</label>
+        </div>
+        
+       
+        <div class="form-outline mb-4">
+            <input class="form-control" name="contact Name" placeholder="name" id="form6Example7" rows="4">
+            <label class="form-label"  for="form6Example7">Contact Name</label>
+          </div>
 
-    </form>
+          <div class="form-outline mb-4">
+            <input type="number" name="Mobile Phone" placeholder="number" id="form6Example5" class="form-control" />
+            <label class="form-label" name="VAT" placeholder="Vat" for="form6Example5">VAT</label>
+          </div>
+        
+        
+        <!-- Checkbox -->
+        <div class="form-check d-flex justify-content-center mb-4">
+          <input class="form-check-input me-2" type="checkbox" value="" id="form6Example8" checked />
+          <label class="form-check-label" for="form6Example8"> Create an account? </label>
+        </div>
+      
+        <!-- Submit button -->
+        <button type="submit" class="btn btn-primary btn-block mb-4">Submit</button>
+      </form>
 
+   
     <br>
         <a href="{{url_for('index')}}">go to menu</a>
 </body>

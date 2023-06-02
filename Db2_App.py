@@ -145,6 +145,14 @@ def create_new_maintenance():
      conn.close()
      return redirect(url_for('index'))
 
+@app.route("/single_supplier")
+def single_supplier():
+    conn=db_conn()
+    cur=conn.cursor()
+    sql_select_query="SELECT * FROM supplier;"
+    cur.execute(sql_select_query)
+    single_supplier=cur.fetchall()
+    return render_template("single_supplier.html",list_of_supplier=single_supplier)
 
 
 
