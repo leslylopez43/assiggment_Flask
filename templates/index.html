@@ -1,15 +1,34 @@
+{% extends "base.html" %}
+{%block content %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
     
     <title>Document</title>
 </head>
 <body>
-        <h1><a href={{url_for('supplier')}}>Display Supplier</a></h1>
-        
+    <div class="container"></div>
+        <div><h1><a href={{url_for('supplier')}}>Display Supplier</a></h1>
+            <div> 
+                <form action="/action_page.php">
+                  <label for="cars">Choose a car:</label>
+                  <select name="cars" id="cars">
+                    <option value="href={{url_for('vehicles')}}">Vehicles</option>
+                    <option value="saab">Saab</option>
+                    <option value="opel">Opel</option>
+                    <option value="audi">Audi</option>
+                  </select>
+                  <br><br>
+                  <input type="submit" value="Submit">
+                </form>
+            
+            </div>
+        </div>
+
         <h1><a href={{url_for('vehicles')}}>Display Vehicles</a></h1>
         
         <h1><a href={{url_for('sales')}}>Manager sales</a></h1>
@@ -19,7 +38,8 @@
         <h1><a href={{url_for('get_new_vehicles_details')}}>Enter new vehicles details</a></h1>
         <h1><a href={{url_for('get_new_maintenance_details')}}>Enter new Maintenance details</a></h1>
  
+    </div>
 
- 
 </body>
 </html>
+{% endblock %}
