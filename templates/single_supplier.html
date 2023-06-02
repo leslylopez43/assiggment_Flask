@@ -7,8 +7,34 @@
     <title>Document</title>
 </head>
 <body>
-    <div></div>
+    <div>
+        <table>
+            <tr>
+              <th>Company ID</th>
+              <th>Company Name</th>
+              <th>ADDRESS</th>
+              <th>Mobile Number</th>
+              <th>EMAIL ADDRESS</th>
+              <th>CONTACT NAME</th>
+              <th>VAT</th>
+            </tr>
+            {% for column in list_of_supplier %}
+            <tr>           
+            <td>{{column[0]}}</td>
+            <td>{{column[1]}}</td>
+            <td>{{column[2]}}</td>
+            <td>{{column[3]}}</td>
+            <td>{{column[4]}}</td>
+            <td>{{column[5]}}</td>
+            <td>{{column[6]}}</td>
+            </tr>
+            {% endfor %}
+           
 
+        </table>
+     </div> 
+        
+  
 
     <a href="{{url_for('index')}}">go to menu</a>
 </body>

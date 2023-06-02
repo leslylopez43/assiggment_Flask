@@ -150,13 +150,14 @@ def single_supplier():
     conn=db_conn()
     cur=conn.cursor()
     supplier_id=request.form['supplier']
-    print ("supplier " +  supplier_id)
-    sql_select_query="SELECT * FROM supplier where supplier_name='" + supplier_id + "';"
+    #print ("supplier " + str(supplier_id))
+    sql_select_query="SELECT * FROM supplier where supplier_name='"  + supplier_id + "';"
     cur.execute(sql_select_query)
     single_supplier=cur.fetchall()
-    print(" found " + single_supplier)
+    cur.close()
+    conn.close()
+    #print(" found " + str(single_supplier))
     return render_template("single_supplier.html",list_of_supplier=single_supplier)
-
 
 
 
