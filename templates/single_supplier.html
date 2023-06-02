@@ -17,6 +17,8 @@
               <th>EMAIL ADDRESS</th>
               <th>CONTACT NAME</th>
               <th>VAT</th>
+
+              
             </tr>
             {% for column in list_of_supplier %}
             <tr>           
@@ -34,8 +36,26 @@
         </table>
      </div> 
         
-  
+  <div>
+  <div class="form-check d-flex justify-content-center mb-4">
+    <input class="form-check-input me-2" type="checkbox" value="" id="form6Example8" checked />
+    <label class="form-check-label" for="form6Example8"> update/add </label>
+    </div>
 
-    <a href="{{url_for('index')}}">go to menu</a>
+    <!-- Submit button -->
+     <button type="submit" class="btn btn-primary btn-block mb-4">Submit</button>
+    
+     <div class="form-check d-flex justify-content-center mb-4">
+        <input class="form-check-input me-2" type="checkbox" value="" id="form6Example8" checked />
+        <label class="form-check-label" for="form6Example8"> Delete </label>
+        </div>
+    
+        <!-- Submit button -->
+         <button type="submit" class="btn btn-primary btn-block mb-4">Submit</button>
+    
+
+   <button  class="btn btn-primary btn-block mb-4" href="{{url_for('index')}}">go to menu</button>
+
+</div>
 </body>
 </html>
