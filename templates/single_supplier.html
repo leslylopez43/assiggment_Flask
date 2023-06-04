@@ -39,11 +39,16 @@
   <div>
   <div class="form-check d-flex justify-content-center mb-4">
     <input class="form-check-input me-2" type="checkbox" value="" id="form6Example8" checked />
-    <label class="form-check-label" for="form6Example8"> update/add </label>
-    </div>
+    <!-- <label class="form-check-label" for="form6Example8"> update/add </label> -->
+    <!-- index.html -->
+    <a class="form-check-label" for="form6Example8" href="{{url_for('single_supplier')}}">Update Supplier</a>
 
+    </div>
+    <form action="/get_update_supplier"  method="post">
+                
     <!-- Submit button -->
-     <button type="submit" class="btn btn-primary btn-block mb-4">Submit</button>
+     <button type="submit" class="btn btn-primary btn-block mb-4" value="Submit">Submit</button>
+    </form>
     
      <div class="form-check d-flex justify-content-center mb-4">
         <input class="form-check-input me-2" type="checkbox" value="" id="form6Example8" checked />
@@ -54,7 +59,7 @@
          <button type="submit" class="btn btn-primary btn-block mb-4">Submit</button>
     
 
-   <button  class="btn btn-primary btn-block mb-4" href="{{url_for('index')}}">go to menu</button>
+    <a   class="btn btn-primary btn-block mb-4" href="{{url_for('index')}}"> go to menu</a>
 
 </div>
 </body>

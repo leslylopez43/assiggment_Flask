@@ -77,8 +77,8 @@ def create():
     vat=request.form['VAT']
     print(vat)
 
-    
-    insert_sql="INSERT INTO supplier (supplier_name, address, mobile_phone, email, contact_name, vat) VALUES ('" + Companyname  + "','" + Address  + "','" + MobilePhone + "','" + EmailAddress+ "','" + contactName+ "'," + vat + ")"
+
+    insert_sql="INSERT INTO supplier (supplier_name, address, mobile_phone, email, contact_name, vat) VALUES ('" + Companyname  + "','" + Address  + "','" + MobilePhone + "','" + EmailAddress+ "','" + contactName+ "','" + vat + "')"
     cur.execute(insert_sql)
     conn.commit()
     cur.close()
@@ -160,6 +160,62 @@ def single_supplier():
     return render_template("single_supplier.html",list_of_supplier=single_supplier)
 
 
+# @app.route("/get_update_supplier" ,methods=['POST'])
+# def update_supplier():
+#     conn= db_conn()
+#     cur=conn.cursor()
+#     supplier_id=request.form['supplier']
+#     #print ("supplier " + str(supplier_id))
+#     sql_select_query="SELECT * FROM supplier where supplier_name='"  + supplier_id + "';"
+#     cur.execute(sql_select_query)
+#     single_supplier=cur.fetchall()
+#     cur.close()
+#     conn.close()
+#     #print(" found " + str(single_supplier))
+#     return render_template("single_supplier.html",list_of_supplier=single_supplier)
+
+
+@app.route("/update_supplier", methods=['POST'])
+def update_supplier():
+    conn = db_conn()
+    cur = conn.cursor()
+    
+    supplier_id = request.form['supplier']
+    sql_select_query = "SELECT * FROM supplier WHERE single_supplier = %s"
+    cur.execute(sql_select_query, (supplier_id,))
+    single_supplier = cur.fetchall()
+    
+    cur.close()
+    conn.close()
+    
+    return render_template("update_supplier.html", list_of_supplier=single_supplier)
+# perform_supplier_update route
+ 
+@app.route("/perform_supplier_update", methods=['POST'])
+def perform_supplier_update():
+    conn = db_conn()
+    cur = conn.cursor()
+# Existing code for database connection and update operation
+    supplier_id = request.form['supplier_id']
+    Companyname = request.form['Companyname']
+    Address = request.form['Address']
+    MobilePhone = request.form['MobilePhone']
+    EmailAddress = request.form['EmailAddress']
+    contactName = request.form['contactName']
+    vat = request.form['vat']
+    
+    update_sql = "UPDATE supplier SET supplier_name = %s, address = %s, mobile_phone = %s, email = %s, contact_name = %s, vat = %s WHERE supplier_id = %s"
+    values = (Companyname, Address, MobilePhone, EmailAddress, contactName, vat, supplier_id)
+    
+    try:
+        cur.execute(update_sql, values)
+        conn.commit()
+        return redirect(url_for('index'))
+    except Exception as e:
+        return 'Error occurred while updating supplier: ' + str(e)
+    finally:
+        cur.close()
+        conn.close()
 
 
     
