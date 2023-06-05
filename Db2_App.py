@@ -105,8 +105,7 @@ def create_new_vehicles():
      available=request.form['available'] 
      print(available)
 
-    
-     insert_sql="INSERT INTO vehicles (registration_number, brand, model, color, Price, car_year, On_stock_from, available) VALUES ('" + registration_number  + "','" + brand  + "','" + model + "','" + color+ "'," + Price_money+ ",'" + car_year + "','" + On_stock_from + "','" + available + "')"
+     insert_sql="INSERT INTO vehicles (registration_number, brand, model, color, Price, car_year, On_stock_from, available) VALUES ('" + registration_number  + "','" + brand  + "','" + model + "','" + color+ "','" + Price_money+ "','" + car_year + "','" + On_stock_from + "','" + available + "')"
      print(insert_sql)
      cur.execute(insert_sql)
      conn.commit()
@@ -136,7 +135,8 @@ def create_new_maintenance():
      total=request.form['total']
      print(total)
 
-    
+     
+
      insert_sql="INSERT INTO maintenance (vehicle_id, registration_number, date_performed, task_to_be_performed_Services, performed_by, validate_by, material, labor, total) VALUES ('" + vehicle_id  + "','" + registration_number  + "','" + date_performed + "','" + task_to_be_performed_Services+ "','" + performed_by+ "','" + validate_by + "','" + material + "','" + labor + "','" + total + "')"
      print(insert_sql)
      cur.execute(insert_sql)
@@ -230,7 +230,7 @@ def update_supplier():
 
 
 
-@app.route('/delete_supplier/<int:supplier_id>', methods=['GET'])
+@app.route('/delete_supplier/<int:supplier_id>', methods=['GET', 'POST'])
 def delete_supplier(supplier_id):
     conn = db_conn()
     cur = conn.cursor()
@@ -247,9 +247,46 @@ def delete_supplier(supplier_id):
         cur.close()
         conn.close()
 
+@app.route('/get_supplier/<supplier_id>')
+def get_supplier(supplier_id):
+    conn = db_conn()
+    cur = conn.cursor()
+
+    # Retrieve data of the specified supplier
+    select_sql = "SELECT * FROM suppliers WHERE supplier_id = %s"
+    cur.execute(select_sql, (supplier_id,))
+    supplier_data = cur.fetchone()
+
+    # Check if the supplier exists
+    if supplier_data:
+        # Extract individual data from the supplier_data tuple
+        supplier_id = supplier_data[0]
+        supplier_name = supplier_data[1]
+        supplier_address = supplier_data[2]
+        supplier_contact = supplier_data[3]
+
+        # Print the supplier data
+        print("Supplier ID:", supplier_id)
+        print("Supplier Name:", supplier_name)
+        print("Supplier Address:", supplier_address)
+        print("Supplier Contact:", supplier_contact)
+
+        # Close the database connection and cursor
+        cur.close()
+        conn.close()
+
+        return "Supplier data printed successfully."
+    else:
+        # Close the database connection and cursor
+        cur.close()
+        conn.close()
+
+        return "Supplier not found."
+
 
 
     
      
 if __name__ == '__main__':
     app.run(debug=True)
+

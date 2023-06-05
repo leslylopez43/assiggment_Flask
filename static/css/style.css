@@ -1,12 +1,14 @@
 body{
+    font-size: 4em;
 
     background-color: rgb(0, 255, 106);
 }
     /* Style for the table */
-    table {
+    base.table {
         width: 100%;
         border-collapse: collapse;
         margin-bottom: 20px;
+        
     }
 
     th, td {
