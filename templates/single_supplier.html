@@ -19,6 +19,7 @@
                 <th>EMAIL ADDRESS</th>
                 <th>CONTACT NAME</th>
                 <th>VAT</th>
+                <th>Action</th>
             </tr>
             {% for column in list_of_supplier %}
             <tr>           
@@ -29,6 +30,12 @@
                 <td>{{ column[4] }}</td>
                 <td>{{ column[5] }}</td>
                 <td>{{ column[6] }}</td>
+                <td>
+                    <form action="{{ url_for('update_supplier', supplier_id=column[0]) }}" method="get">
+                        <button type="submit" class="btn btn-primary btn-block">Update</button>
+                    </form>
+                    
+                </td>
             </tr>
             {% endfor %}
         </table>
@@ -37,7 +44,7 @@
     <div>
         <div class="form-check d-flex justify-content-center mb-4">
             <input class="form-check-input me-2" type="checkbox" value="" id="form6Example8" checked />
-            <a class="form-check-label" for="form6Example8" href="{{ url_for('single_supplier') }}">Update Supplier</a>
+            <a class="form-check-label" for="form6Example8" href="{{ url_for('single_supplier') }}">Add Supplier</a>
         </div>
     
         <form action="/get_update_supplier" method="post">              

@@ -181,19 +181,29 @@ def update_supplier():
     return render_template("update_supplier.html", list_of_supplier=single_supplier)
 # perform_supplier_update route
  
-@app.route("/perform_supplier_update", methods=['POST'])
-def perform_supplier_update():
+
+
+
+ 
+@app.route("/update_supplier_update", methods=['post'])
+def update_supplier_update():
     conn = db_conn()
     cur = conn.cursor()
 # Existing code for database connection and update operation
-    supplier_id = request.form['supplier_id']
-    Companyname = request.form['Companyname']
-    Address = request.form['Address']
-    MobilePhone = request.form['MobilePhone']
-    EmailAddress = request.form['EmailAddress']
-    contactName = request.form['contactName']
-    vat = request.form['vat']
+    supplier_id = request.args.get('supplier_id')
+    Companyname = request.args.get('Companyname')
+    Address = request.args.get('Address')
+    MobilePhone = request.args.get('MobilePhone')
+    EmailAddress = request.args.get('EmailAddress')
+    contactName = request.args.get('contactName')
+    vat = request.args.get('vat')
+
+
     
+    sql_select_query = "SELECT * FROM supplier WHERE supplier_id = %s"
+    cur.execute(sql_select_query, (supplier_id,))
+    single_supplier = cur.fetchall()
+
     update_sql = "UPDATE supplier SET supplier_name = %s, address = %s, mobile_phone = %s, email = %s, contact_name = %s, vat = %s WHERE supplier_id = %s"
     values = (Companyname, Address, MobilePhone, EmailAddress, contactName, vat, supplier_id)
     
@@ -202,14 +212,17 @@ def perform_supplier_update():
         conn.commit()
         return redirect(url_for('index'))
     except Exception as e:
-        return 'Error occurred while updating supplier: ' + str(e)
+        return render_template("update_supplier.html", supplier_id=supplier_id, list_of_supplier=single_supplier)
+
     finally:
         cur.close()
         conn.close()
 
 
+    # Existing code for database connection and deletion
 
-@app.route('/delete_supplier/<int:supplier_id>', methods=['POST'])
+
+@app.route('/delete_supplier/<int:supplier_id>', methods=['GET'])
 def delete_supplier(supplier_id):
     conn = db_conn()
     cur = conn.cursor()
