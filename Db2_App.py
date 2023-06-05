@@ -160,66 +160,72 @@ def single_supplier():
     return render_template("single_supplier.html",list_of_supplier=single_supplier)
 
 
+@app.route('/update_supplier/__debugger__/<path:resource>')
+def debugger_resource(resource):
+    return app.send_static_file(resource)
 
 
+@app.route('/update_supplier', methods=['GET', 'POST'])
+def update():
+    if request.method == 'POST':
+        # Handle the POST request for updating the supplier
+        # ...
+        return 'Update supplier: POST request handled successfully'
+    else:
+        # Handle the GET request for retrieving the form or displaying information
+        # ...
+        return 'Update supplier: GET request handled successfully'
 
+
+@app.route("/update_supplier_update", methods=['POST'])
+def update_supplier_update():
+    conn = db_conn()
+    cur = conn.cursor()
+
+    supplier_id = request.form['supplier']
+    sql_select_query = "SELECT * FROM supplier WHERE single_supplier = %s"
+    cur.execute(sql_select_query, (supplier_id,))
+    single_supplier = cur.fetchall()
+
+    cur.close()
+    conn.close()
+
+    return render_template("update_supplier.html", list_of_supplier=single_supplier)
 
 
 @app.route("/update_supplier", methods=['POST'])
 def update_supplier():
     conn = db_conn()
     cur = conn.cursor()
-    
+
     supplier_id = request.form['supplier']
-    sql_select_query = "SELECT * FROM supplier WHERE single_supplier = %s"
-    cur.execute(sql_select_query, (supplier_id,))
-    single_supplier = cur.fetchall()
-    
-    cur.close()
-    conn.close()
-    
-    return render_template("update_supplier.html", list_of_supplier=single_supplier)
-# perform_supplier_update route
- 
+    Companyname = request.form['Companyname']
+    Address = request.form['Address']
+    MobilePhone = request.form['MobilePhone']
+    EmailAddress = request.form['EmailAddress']
+    contactName = request.form['contactName']
+    vat = request.form['vat']
 
-
-
- 
-@app.route("/update_supplier_update", methods=['post'])
-def update_supplier_update():
-    conn = db_conn()
-    cur = conn.cursor()
-# Existing code for database connection and update operation
-    supplier_id = request.args.get('supplier_id')
-    Companyname = request.args.get('Companyname')
-    Address = request.args.get('Address')
-    MobilePhone = request.args.get('MobilePhone')
-    EmailAddress = request.args.get('EmailAddress')
-    contactName = request.args.get('contactName')
-    vat = request.args.get('vat')
-
-
-    
     sql_select_query = "SELECT * FROM supplier WHERE supplier_id = %s"
     cur.execute(sql_select_query, (supplier_id,))
     single_supplier = cur.fetchall()
 
     update_sql = "UPDATE supplier SET supplier_name = %s, address = %s, mobile_phone = %s, email = %s, contact_name = %s, vat = %s WHERE supplier_id = %s"
     values = (Companyname, Address, MobilePhone, EmailAddress, contactName, vat, supplier_id)
-    
+
     try:
         cur.execute(update_sql, values)
         conn.commit()
         return redirect(url_for('index'))
     except Exception as e:
         return render_template("update_supplier.html", supplier_id=supplier_id, list_of_supplier=single_supplier)
-
     finally:
         cur.close()
         conn.close()
 
 
-    # Existing code for database connection and deletion
+# Existing code for database connection and deletion
+
 
 
 @app.route('/delete_supplier/<int:supplier_id>', methods=['GET'])
