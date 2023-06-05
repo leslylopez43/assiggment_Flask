@@ -2,3 +2,44 @@ body{
 
     background-color: rgb(0, 255, 106);
 }
+    /* Style for the table */
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+    }
+
+    th, td {
+        padding: 8px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
+
+    th {
+        background-color: #f2f2f2;
+    }
+
+    /* Style for the delete button */
+    .delete-btn {
+        background-color: #dc3545;
+        color: #fff;
+        border: none;
+        padding: 6px 12px;
+        cursor: pointer;
+        border-radius: 4px;
+    }
+
+    .delete-btn:hover {
+        background-color: #c82333;
+    }
+
+    /* Style for the "Go to Menu" link */
+    .menu-link {
+        color: #007bff;
+        text-decoration: none;
+    }
+
+    .menu-link:hover {
+        text-decoration: underline;
+    }
+

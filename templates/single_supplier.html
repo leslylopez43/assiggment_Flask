@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -7,60 +8,55 @@
     <title>Document</title>
 </head>
 <body>
+    
     <div>
         <table>
             <tr>
-              <th>Company ID</th>
-              <th>Company Name</th>
-              <th>ADDRESS</th>
-              <th>Mobile Number</th>
-              <th>EMAIL ADDRESS</th>
-              <th>CONTACT NAME</th>
-              <th>VAT</th>
-
-              
+                <th>Company ID</th>
+                <th>Company Name</th>
+                <th>ADDRESS</th>
+                <th>Mobile Number</th>
+                <th>EMAIL ADDRESS</th>
+                <th>CONTACT NAME</th>
+                <th>VAT</th>
             </tr>
             {% for column in list_of_supplier %}
             <tr>           
-            <td>{{column[0]}}</td>
-            <td>{{column[1]}}</td>
-            <td>{{column[2]}}</td>
-            <td>{{column[3]}}</td>
-            <td>{{column[4]}}</td>
-            <td>{{column[5]}}</td>
-            <td>{{column[6]}}</td>
+                <td>{{ column[0] }}</td>
+                <td>{{ column[1] }}</td>
+                <td>{{ column[2] }}</td>
+                <td>{{ column[3] }}</td>
+                <td>{{ column[4] }}</td>
+                <td>{{ column[5] }}</td>
+                <td>{{ column[6] }}</td>
             </tr>
             {% endfor %}
-           
-
         </table>
-     </div> 
+    </div> 
         
-  <div>
-  <div class="form-check d-flex justify-content-center mb-4">
-    <input class="form-check-input me-2" type="checkbox" value="" id="form6Example8" checked />
-    <!-- <label class="form-check-label" for="form6Example8"> update/add </label> -->
-    <!-- index.html -->
-    <a class="form-check-label" for="form6Example8" href="{{url_for('single_supplier')}}">Update Supplier</a>
-
-    </div>
-    <form action="/get_update_supplier"  method="post">
-                
-    <!-- Submit button -->
-     <button type="submit" class="btn btn-primary btn-block mb-4" value="Submit">Submit</button>
-    </form>
-    
-     <div class="form-check d-flex justify-content-center mb-4">
-        <input class="form-check-input me-2" type="checkbox" value="" id="form6Example8" checked />
-        <label class="form-check-label" for="form6Example8"> Delete </label>
+    <div>
+        <div class="form-check d-flex justify-content-center mb-4">
+            <input class="form-check-input me-2" type="checkbox" value="" id="form6Example8" checked />
+            <a class="form-check-label" for="form6Example8" href="{{ url_for('single_supplier') }}">Update Supplier</a>
         </div>
     
-        <!-- Submit button -->
-         <button type="submit" class="btn btn-primary btn-block mb-4">Submit</button>
+        <form action="/get_update_supplier" method="post">              
+            <!-- Submit button -->
+            <button type="submit" class="btn btn-primary btn-block mb-4" value="Submit">Submit</button>
+        </form>
     
+        <div class="form-check d-flex justify-content-center mb-4">
+            <input class="form-check-input me-2" type="checkbox" value="" id="form6Example8" checked />
+            <label class="form-check-label" for="form6Example8">Delete</label>
+            {% for column in list_of_supplier %}
+                <form action="{{ url_for('delete_supplier', supplier_id=column[0]) }}" method="post">
+                    <button type="submit" class="btn btn-primary btn-block mb-4">Delete</button>
+                </form>
+            {% endfor %}
+        </div>    
+    </div>
+    
+    <a class="btn btn-primary btn-block mb-4" href="{{ url_for('index') }}">Go to Menu</a>
 
-    <a   class="btn btn-primary btn-block mb-4" href="{{url_for('index')}}"> go to menu</a>
-
-</div>
 </body>
 </html>

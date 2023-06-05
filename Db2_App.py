@@ -160,19 +160,9 @@ def single_supplier():
     return render_template("single_supplier.html",list_of_supplier=single_supplier)
 
 
-# @app.route("/get_update_supplier" ,methods=['POST'])
-# def update_supplier():
-#     conn= db_conn()
-#     cur=conn.cursor()
-#     supplier_id=request.form['supplier']
-#     #print ("supplier " + str(supplier_id))
-#     sql_select_query="SELECT * FROM supplier where supplier_name='"  + supplier_id + "';"
-#     cur.execute(sql_select_query)
-#     single_supplier=cur.fetchall()
-#     cur.close()
-#     conn.close()
-#     #print(" found " + str(single_supplier))
-#     return render_template("single_supplier.html",list_of_supplier=single_supplier)
+
+
+
 
 
 @app.route("/update_supplier", methods=['POST'])
@@ -216,6 +206,26 @@ def perform_supplier_update():
     finally:
         cur.close()
         conn.close()
+
+
+
+@app.route('/delete_supplier/<int:supplier_id>', methods=['POST'])
+def delete_supplier(supplier_id):
+    conn = db_conn()
+    cur = conn.cursor()
+    
+    delete_sql = "DELETE FROM supplier WHERE supplier_id = %s"
+    
+    try:
+        cur.execute(delete_sql, (supplier_id,))
+        conn.commit()
+        return redirect(url_for('index'))
+    except Exception as e:
+        return 'Error occurred while deleting supplier: ' + str(e)
+    finally:
+        cur.close()
+        conn.close()
+
 
 
     

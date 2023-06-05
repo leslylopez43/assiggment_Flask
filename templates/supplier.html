@@ -8,29 +8,33 @@
 </head>
 <body>
     
-        <table>
-          <tr>
-            <th>Company ID</th>
-            <th>Company Name</th>
-            <th>ADDRESS</th>
-            <th>Mobile Number</th>
-            <th>EMAIL ADDRESS</th>
-            <th>CONTACT NAME</th>
-            <th>VAT</th>
-          </tr>
+  <table>
+    <tr>
+        <th>Company ID</th>
+        <th>Company Name</th>
+        <th>ADDRESS</th>
+        <th>Mobile Number</th>
+        <th>EMAIL ADDRESS</th>
+        <th>CONTACT NAME</th>
+        <th>VAT</th>
+    </tr>
 
-          {% for column in list_of_suppliers %}
-            <tr>           
-            <td>{{column[0]}}</td>
-            <td>{{column[1]}}</td>
-            <td>{{column[2]}}</td>
-            <td>{{column[3]}}</td>
-            <td>{{column[4]}}</td>
-            <td>{{column[5]}}</td>
-            <td>{{column[6]}}</td>
-            </tr>
-            {% endfor %}
-             </table>
-             <br>
-             <a href="{{url_for('index')}}">go to menu</a>
+    {% for column in list_of_suppliers %}
+    <tr>
+        <td>{{ column[0] }}</td>
+        <td>{{ column[1] }}</td>
+        <td>{{ column[2] }}</td>
+        <td>{{ column[3] }}</td>
+        <td>{{ column[4] }}</td>
+        <td>{{ column[5] }}</td>
+        <td>{{ column[6] }}</td>
+    </tr>
+    {% endfor %}
+</table>
+<br>
+<a href="{{ url_for('index') }}">Go to menu</a>
+
+<form action="{{ url_for('delete_supplier', supplier_id=list_of_suppliers[0][0]) }}" method="post">
+    <input type="submit" value="Delete">
+</form>
 </body>
