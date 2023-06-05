@@ -17,34 +17,30 @@
 </head>
 <body>
     <div class="container"></div>
-        <div><h1><a href={{url_for('supplier')}}>Display Supplier</a></h1>
-            <div> 
-                <form action="/get_single_supplier"  method="post">
-                  <label for="cars">Search for supplier:</label>
-                  <select name="supplier" id="supplier">
-                    <option value="href={{url_for('supplier')}}">Supplier</option>
-                    <option value="MCM">MCM</option>
-                    <option value="kjd">kjd</option>
-                    <option value="Imperial">imperial</option>
-                    <option value="ford">ford</option>
-                  </select>
-                  <br><br>
-                  <div class="select-editable">
-  <select onchange="this.nextElementSibling.value=this.value">
-    <option value=""></option>
-    <option value="115x175 mm">115x175 mm</option>
-    <option value="120x160 mm">120x160 mm</option>
-    <option value="120x287 mm">120x287 mm</option>
-  </select>
-  <input type="text" name="format" value=""/>
-</div>
-                  <input type="submit" value="Submit">
-                </form>
-            
-            </div>
-           
- 
+    <div>
+        <h1><a href="{{ url_for('supplier') }}">Display Supplier</a></h1>
+        <div>
+          <form action="/get_single_supplier" method="post">
+            <label for="supplier">Search for supplier:</label>
+            <select name="supplier" id="supplier">
+              <option value="ford" selected>ford</option>
+              <option value="MCM" selected >MCM</option>
+              <option value="trm" selected>trm</option>
+              <option value="jkd" selected >jkd</option>
+              <option value="{{ supplier }}">{{ supplier }}</option>
+              {% for supplier in suppliers %} 
+              <option value="{{ supplier }}">{{ supplier }}</option>
+              {% endfor %}
+            </select>
+            <br><br>
+            <input type="submit" value="Submit">
+          </form>
         </div>
+      </div>
+
+
+
+
 
         <h1><a href={{url_for('vehicles')}}>Display Vehicles</a></h1>
         

@@ -145,6 +145,8 @@ def create_new_maintenance():
      conn.close()
      return redirect(url_for('index'))
 
+
+
 @app.route("/get_single_supplier" ,methods=['POST'])
 def single_supplier():
     conn=db_conn()
