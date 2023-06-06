@@ -7,58 +7,49 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="insert_new_sales" method="POST">
-        <div class="form-group">
-            <p>Customer Information:</p>
-          <label for="customer_name">Dealer Car Id</label>
-          <input type="text" name="customer_name" id="customer_name" required>
-        </div>      
-        <div class="form-group">
-          <label for="customer">Sale Employee Number</label>
-          <input type="text" name="customer" id="customer" required>
-        </div>
-        <div class="form-group">
-            <label for="brand">New Car Brand</label>
-            <input type="text" name="brand" id="brand" required>
-          </div>
-          <div class="form-group">
-            <label for="customer_name">New Car Model</label>
-            <input type="text" name="customer_name" id="customer_name" required>
-          </div>
-          <p>Product name or description</p>
-            <div class="form-group">
-            <label for="registration_number">Number of New Cars Sold</label>
-            <input type="text" name="registration_number" id="registration_number" required>
-          </div>
-        
-      
-        <div class="form-group">
-          <label for="car_brand">Number Of Used Cars Sold</label>
-          <input type="text" name="car_brand" id="car_brand" required>
-        </div>
-      
-        <div class="form-group">
-          <label for="car_color">Profit From New Cars</label>
-          <input type="text" name="car_color" id="car_color" required>
-        </div>
-        <div class="form-group">
-            <label for="registration_number">Profit From Used Cars</label>
-            <input type="text" name="registration_number" id="registration_number" required>
-          </div>
-          <div class="form-group">
-            <label for="registration_number">Profit</label>
-            <input type="text" name="registration_number" id="registration_number" required>
-          </div>
-          <div class="form-group">
-            <label for="registration_number">ehicle Category</label>
-            <input type="text" name="registration_number" id="registration_number" required>
-          </div>
-      
-        <button type="submit" class="btn btn-primary">Submit</button>
+    <tr>
+        <th>Sale  Id</th>
+        <th>Sale Employee Number</th>
+        <th>New Car Brand</th>
+        <th>used Car brand</th>
+        <th>Number of New Cars Sold</th>
+        <th>Number Of Used Cars Sold</th>
+        <th>Profit From New Cars</th>
+        <th>Profit From Used Cars</th>
+        <th>Profit</th>
+        <th>Vehicle Category</th>
+    </tr>
+    <form action="/insert_new_sales" method="POST">
+        <table>
+          <tr>
+            <th>Sale Id</th>
+            <th>Sale Employee Number</th>
+            <th>New Car Brand</th>
+            <th>Used Car Brand</th>
+            <th>Number of New Cars Sold</th>
+            <th>Number of Used Cars Sold</th>
+            <th>Profit From New Cars</th>
+            <th>Profit From Used Cars</th>
+            <th>Profit</th>
+            <th>Vehicle Category</th>
+          </tr>
+          <tr>
+            <td><input type="text" name="sale_id"></td>
+            <td><input type="text" name="sale_employee_number"></td>
+            <td><input type="text" name="new_car_brand"></td>
+            <td><input type="text" name="used_car_brand"></td>
+            <td><input type="text" name="number_of_new_cars_sold"></td>
+            <td><input type="text" name="number_of_used_cars_sold"></td>
+            <td><input type="text" name="profit_from_new_cars"></td>
+            <td><input type="text" name="profit_from_used_cars"></td>
+            <td><input type="text" name="profit"></td>
+            <td><input type="text" name="vehicle_category"></td>
+          </tr>
+        </table>
+        <button type="submit">Submit</button>
       </form>
-      <br>
-
-      
-        <a href="{{ url_for('index') }}" class="btn btn-secondary">Go to Menu</a>
+             
+    <br>
+    <a href="{{ url_for('index') }}" class="btn btn-secondary">Go to Menu</a>
 </body>
-</html>
+</html

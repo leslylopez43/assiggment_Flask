@@ -146,17 +146,21 @@ def get_new_sales_details():
 def create_new_sales():
      conn=db_conn()
      cur=conn.cursor()
-     registration_number=request.form['registration_number']
-     brand=request.form['brand']
-     model=request.form['model']
-     color=request.form['color']
-     Price_money=request.form['Price_money']
-     car_year=request.form['car_year']
-     On_stock_from=request.form['On_stock_from'] 
-     available=request.form['available'] 
-     print(available)
 
-     insert_sql="INSERT INTO sales (registration_number, brand, model, color, Price, car_year, On_stock_from, available) VALUES ('" + registration_number  + "','" + brand  + "','" + model + "','" + color+ "','" + Price_money+ "','" + car_year + "','" + On_stock_from + "','" + available + "')"
+     
+      
+     sale_id=request.form['sale_id']
+     sale_employee_number=request.form['sale_employee_number']
+     new_car_brand=request.form['new_car_brand']
+     used_car_brand=request.form['used_car_brand']
+     number_of_new_cars_sold=request.form['number_of_new_cars_sold']
+     number_of_used_cars_sold=request.form['number_of_used_cars_sold']
+     profit_from_new_cars=request.form['profit_from_new_cars'] 
+     profit_from_used_cars=request.form['profit_from_used_cars'] 
+     Profit=request.form['Profit']
+     vehicle_category=request.form[vehicle_category]
+     print(sale_Id)
+     insert_sql="INSERT INTO sales (sale_id, sale_employee_number, new_car_brand, used_car_brand, Price, car_year, On_stock_from, available) VALUES ('" + registration_number  + "','" + brand  + "','" + model + "','" + color+ "','" + Price_money+ "','" + car_year + "','" + On_stock_from + "','" + available + "')"
      print(insert_sql)
      cur.execute(insert_sql)
      conn.commit()
