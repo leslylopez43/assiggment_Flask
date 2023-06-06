@@ -138,6 +138,32 @@ def create_new_vehicles():
 
 
 
+@app.route("/get_new_sales_details")
+def get_new_sales_details():
+    return render_template("insert_sales.html")
+
+@app.route('/insert_new_sales',methods=['POST'])
+def create_new_sales():
+     conn=db_conn()
+     cur=conn.cursor()
+     registration_number=request.form['registration_number']
+     brand=request.form['brand']
+     model=request.form['model']
+     color=request.form['color']
+     Price_money=request.form['Price_money']
+     car_year=request.form['car_year']
+     On_stock_from=request.form['On_stock_from'] 
+     available=request.form['available'] 
+     print(available)
+
+     insert_sql="INSERT INTO sales (registration_number, brand, model, color, Price, car_year, On_stock_from, available) VALUES ('" + registration_number  + "','" + brand  + "','" + model + "','" + color+ "','" + Price_money+ "','" + car_year + "','" + On_stock_from + "','" + available + "')"
+     print(insert_sql)
+     cur.execute(insert_sql)
+     conn.commit()
+     cur.close()
+     conn.close()
+     return redirect(url_for('index'))
+
 
 @app.route("/get_new_maintenance_details")
 def get_new_maintenance_details():

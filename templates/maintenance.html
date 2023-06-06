@@ -71,8 +71,9 @@
             </tr>
             {% endfor %}
         </table>
-
+        <a href="{{ url_for('get_new_maintenance_details') }}">Add MAINTENANCE RECORD</a>
         {{ list_of_vehicles }}
+
 
         <a href="{{ url_for('index') }}" class="btn btn-primary">Go to Menu</a>
     </div>
