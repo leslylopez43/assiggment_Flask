@@ -34,6 +34,14 @@
 <body>
     <div class="container">
         <table>
+          <h1 class="text-center mb-4 row justify-content-center">Vehicle DATA</h1>
+          <form action="{{ url_for('vehicles') }}" method="POST">
+            <div class="form-group">
+                <label for="search">Search for Vehicle</label>
+                <input type="text" name="search" id="search" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-primary">Search</button>
+        
             <tr>
                 <th>Vehicle ID</th>
                 <th>Registration Number</th>
