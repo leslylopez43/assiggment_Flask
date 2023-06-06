@@ -7,6 +7,57 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <form action="/submit_sales" method="POST">
+        <div class="form-group">
+            <p>Customer Information:</p>
+          <label for="customer_name">Customer Name:</label>
+          <input type="text" name="customer_name" id="customer_name" required>
+        </div>
+
+        
+
+      
+        <div class="form-group">
+          <label for="customer_email">Customer Email:</label>
+          <input type="email" name="customer_email" id="customer_email" required>
+        </div>
+        <div class="form-group">
+            <label for="customer_name">phone Number:</label>
+            <input type="text" name="customer_name" id="customer_name" required>
+          </div>
+          <div class="form-group">
+            <label for="customer_name">Customer address</label>
+            <input type="text" name="customer_name" id="customer_name" required>
+          </div>
+          <p>Product name or description</p>
+            <div class="form-group">
+            <label for="registration_number">Registration Number:</label>
+            <input type="text" name="registration_number" id="registration_number" required>
+          </div>
+        
+      
+        <div class="form-group">
+          <label for="car_brand">Car Brand:</label>
+          <input type="text" name="car_brand" id="car_brand" required>
+        </div>
+      
+        <div class="form-group">
+          <label for="car_color">Car Color:</label>
+          <input type="text" name="car_color" id="car_color" required>
+        </div>
+        <div class="form-group">
+            <label for="registration_number">Product code</label>
+            <input type="text" name="registration_number" id="registration_number" required>
+          </div>
+          <div class="form-group">
+            <label for="registration_number">Additional Notes or Comments:</label>
+            <input type="text" name="registration_number" id="registration_number" required>
+          </div>
+      
+        <!-- Add more form fields for other sales details -->
+      
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+      
 </body>
 </html>
