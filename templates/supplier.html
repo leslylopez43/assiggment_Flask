@@ -49,6 +49,7 @@
                 <th>Contact Name</th>
                 <th>VAT</th>
                 
+                
 
             </tr>
 
@@ -63,13 +64,20 @@
                 <td>{{ column[5] }}</td>
                 <td>{{ column[6] }}</td>
                 
+                  
+                <td><a href="{{ url_for('update_supplier', supplier_id=column[0]) }}">Update</a></td>
+                  <td></td><a href="{{ url_for('delete_supplier', supplier_id=column[0]) }}">Delete</a></td>
+                  <td> <a href="{{ url_for('print_supplier', supplier_id=column[0]) }}">Print</a></td>
+                
+                
             </tr>
 
       
       {% endfor %}
     
     </table>  
-    
+    <a href="{{ url_for('get_new_supplier_details') }}">Add New Supplier</a>
+
       <br>
 
         <a href="{{ url_for('index') }}" class="btn btn-primary">Go to Menu</a>
