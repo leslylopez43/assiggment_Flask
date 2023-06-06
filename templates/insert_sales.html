@@ -7,57 +7,58 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="/submit_sales" method="POST">
+    <form action="insert_new_sales" method="POST">
         <div class="form-group">
             <p>Customer Information:</p>
-          <label for="customer_name">Customer Name:</label>
+          <label for="customer_name">Dealer Car Id</label>
           <input type="text" name="customer_name" id="customer_name" required>
-        </div>
-
-        
-
-      
+        </div>      
         <div class="form-group">
-          <label for="customer_email">Customer Email:</label>
-          <input type="email" name="customer_email" id="customer_email" required>
+          <label for="customer">Sale Employee Number</label>
+          <input type="text" name="customer" id="customer" required>
         </div>
         <div class="form-group">
-            <label for="customer_name">phone Number:</label>
-            <input type="text" name="customer_name" id="customer_name" required>
+            <label for="brand">New Car Brand</label>
+            <input type="text" name="brand" id="brand" required>
           </div>
           <div class="form-group">
-            <label for="customer_name">Customer address</label>
+            <label for="customer_name">New Car Model</label>
             <input type="text" name="customer_name" id="customer_name" required>
           </div>
           <p>Product name or description</p>
             <div class="form-group">
-            <label for="registration_number">Registration Number:</label>
+            <label for="registration_number">Number of New Cars Sold</label>
             <input type="text" name="registration_number" id="registration_number" required>
           </div>
         
       
         <div class="form-group">
-          <label for="car_brand">Car Brand:</label>
+          <label for="car_brand">Number Of Used Cars Sold</label>
           <input type="text" name="car_brand" id="car_brand" required>
         </div>
       
         <div class="form-group">
-          <label for="car_color">Car Color:</label>
+          <label for="car_color">Profit From New Cars</label>
           <input type="text" name="car_color" id="car_color" required>
         </div>
         <div class="form-group">
-            <label for="registration_number">Product code</label>
+            <label for="registration_number">Profit From Used Cars</label>
             <input type="text" name="registration_number" id="registration_number" required>
           </div>
           <div class="form-group">
-            <label for="registration_number">Additional Notes or Comments:</label>
+            <label for="registration_number">Profit</label>
+            <input type="text" name="registration_number" id="registration_number" required>
+          </div>
+          <div class="form-group">
+            <label for="registration_number">ehicle Category</label>
             <input type="text" name="registration_number" id="registration_number" required>
           </div>
       
-        <!-- Add more form fields for other sales details -->
-      
         <button type="submit" class="btn btn-primary">Submit</button>
       </form>
+      <br>
+
       
+        <a href="{{ url_for('index') }}" class="btn btn-secondary">Go to Menu</a>
 </body>
 </html>
