@@ -64,6 +64,10 @@
                 <td>{{ column[6] }}</td>
                 <td>{{ column[7] }}</td>
                 <td>{{ column[8] }}</td>
+
+                <td><a href="{{ url_for('update_supplier', supplier_id=column[0]) }}">Update</a></td>
+                  <td><a href="{{ url_for('delete_supplier', supplier_id=column[0]) }}">Delete</a></td>
+                  <td> <a href="{{ url_for('print_supplier', supplier_id=column[0]) }}">Print</a></td>
             </tr>
             {% endfor %}
         </table>

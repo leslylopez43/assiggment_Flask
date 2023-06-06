@@ -32,7 +32,7 @@
     <div class="container">
         <table class="table">
             <thead>
-              <h1 class="text-center mb-4 row justify-content-center">SALES Data</h1>
+              <h1 class="text-center mb-4 row justify-content-center">SALES DATA</h1>
               <form action="{{ url_for('sales') }}" method="POST">
                 <div class="form-group">
                     <label for="search">Search for Sales</label>
@@ -66,6 +66,10 @@
                     <td>{{column[7]}}</td>
                     <td>{{column[8]}}</td>
                     <td>{{column[9]}}</td>
+
+                    <td><a href="{{ url_for('update_supplier', supplier_id=column[0]) }}">Update</a></td>
+                  <td><a href="{{ url_for('delete_supplier', supplier_id=column[0]) }}">Delete</a></td>
+                  <td> <a href="{{ url_for('print_supplier', supplier_id=column[0]) }}">Print</a></td>
                 </tr>
                 {% endfor %}
             </tbody>
