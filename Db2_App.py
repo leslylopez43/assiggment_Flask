@@ -12,14 +12,41 @@ def db_conn():
 def index():
     return render_template("index.html")
 
-@app.route("/supplier")
+# @app.route("/supplier")
+# def supplier():
+#     conn=db_conn()
+#     cur=conn.cursor()
+#     sql_select_query="SELECT * FROM supplier;" 
+#     cur.execute(sql_select_query)
+#     supplier_details=cur.fetchall()
+#     return render_template("supplier.html",list_of_suppliers=supplier_details)
+
+@app.route("/supplier", methods=["GET", "POST"])
 def supplier():
-    conn=db_conn()
-    cur=conn.cursor()
-    sql_select_query="SELECT * FROM supplier;"
-    cur.execute(sql_select_query)
-    supplier_details=cur.fetchall()
-    return render_template("supplier.html",list_of_suppliers=supplier_details)
+    conn = db_conn()
+    cur = conn.cursor()
+
+    if request.method == "POST":
+        search_term = request.form.get("search")
+        if search_term:
+            sql_select_query = f"SELECT * FROM supplier WHERE supplier_name = '{search_term}' OR mobile_phone = '{search_term}' OR email = '{search_term}'"
+            cur.execute(sql_select_query)
+            supplier_details = cur.fetchall()
+        else:
+            sql_select_query = "SELECT * FROM supplier;"
+            cur.execute(sql_select_query)
+            supplier_details = cur.fetchall()
+    else:
+        sql_select_query = "SELECT * FROM supplier;"
+        cur.execute(sql_select_query)
+        supplier_details = cur.fetchall()
+
+    cur.close()
+    conn.close()
+
+    return render_template("supplier.html", list_of_suppliers=supplier_details)
+
+
 
 @app.route("/vehicles")
 def vehicles():
@@ -153,46 +180,13 @@ def single_supplier():
     cur=conn.cursor()
     supplier_id=request.form['supplier']
     #print ("supplier " + str(supplier_id))
-    sql_select_query="SELECT * FROM supplier where supplier_name='"  + supplier_id + "';"
+    sql_select_query="SELECT * FROM supplier where supplier_list='"  + supplier_id + "';"
     cur.execute(sql_select_query)
     single_supplier=cur.fetchall()
     cur.close()
     conn.close()
     #print(" found " + str(single_supplier))
     return render_template("single_supplier.html",list_of_supplier=single_supplier)
-
-
-@app.route('/update_supplier/__debugger__/<path:resource>')
-def debugger_resource(resource):
-    return app.send_static_file(resource)
-
-
-@app.route('/update_supplier', methods=['GET', 'POST'])
-def update():
-    if request.method == 'POST':
-        # Handle the POST request for updating the supplier
-        # ...
-        return 'Update supplier: POST request handled successfully'
-    else:
-        # Handle the GET request for retrieving the form or displaying information
-        # ...
-        return 'Update supplier: GET request handled successfully'
-
-
-@app.route("/update_supplier_update", methods=['POST'])
-def update_supplier_update():
-    conn = db_conn()
-    cur = conn.cursor()
-
-    supplier_id = request.form['supplier']
-    sql_select_query = "SELECT * FROM supplier WHERE single_supplier = %s"
-    cur.execute(sql_select_query, (supplier_id,))
-    single_supplier = cur.fetchall()
-
-    cur.close()
-    conn.close()
-
-    return render_template("update_supplier.html", list_of_supplier=single_supplier)
 
 
 @app.route("/update_supplier", methods=['POST'])
@@ -210,7 +204,7 @@ def update_supplier():
 
     sql_select_query = "SELECT * FROM supplier WHERE supplier_id = %s"
     cur.execute(sql_select_query, (supplier_id,))
-    single_supplier = cur.fetchall()
+    single_supplier = cur.fetchone()  # Fetch a single row instead of fetching all rows
 
     update_sql = "UPDATE supplier SET supplier_name = %s, address = %s, mobile_phone = %s, email = %s, contact_name = %s, vat = %s WHERE supplier_id = %s"
     values = (Companyname, Address, MobilePhone, EmailAddress, contactName, vat, supplier_id)
@@ -218,17 +212,17 @@ def update_supplier():
     try:
         cur.execute(update_sql, values)
         conn.commit()
-        return redirect(url_for('index'))
+
+        # Fetch the updated supplier details
+        cur.execute(sql_select_query, (supplier_id,))
+        single_supplier = cur.fetchone()
+
+        return render_template("update_supplier.html", list_of_supplier=[single_supplier])
     except Exception as e:
-        return render_template("update_supplier.html", supplier_id=supplier_id, list_of_supplier=single_supplier)
+        return render_template("update_supplier.html", supplier_id=supplier_id, list_of_supplier=[single_supplier])
     finally:
         cur.close()
         conn.close()
-
-
-# Existing code for database connection and deletion
-
-
 
 @app.route('/delete_supplier/<int:supplier_id>', methods=['GET', 'POST'])
 def delete_supplier(supplier_id):
@@ -247,46 +241,28 @@ def delete_supplier(supplier_id):
         cur.close()
         conn.close()
 
-@app.route('/get_supplier/<supplier_id>')
-def get_supplier(supplier_id):
+@app.route('/print_supplier/<int:supplier_id>', methods=['GET'])
+def print_supplier(supplier_id):
     conn = db_conn()
     cur = conn.cursor()
-
-    # Retrieve data of the specified supplier
-    select_sql = "SELECT * FROM suppliers WHERE supplier_id = %s"
-    cur.execute(select_sql, (supplier_id,))
-    supplier_data = cur.fetchone()
-
-    # Check if the supplier exists
-    if supplier_data:
-        # Extract individual data from the supplier_data tuple
-        supplier_id = supplier_data[0]
-        supplier_name = supplier_data[1]
-        supplier_address = supplier_data[2]
-        supplier_contact = supplier_data[3]
-
-        # Print the supplier data
-        print("Supplier ID:", supplier_id)
-        print("Supplier Name:", supplier_name)
-        print("Supplier Address:", supplier_address)
-        print("Supplier Contact:", supplier_contact)
-
-        # Close the database connection and cursor
-        cur.close()
-        conn.close()
-
-        return "Supplier data printed successfully."
-    else:
-        # Close the database connection and cursor
-        cur.close()
-        conn.close()
-
-        return "Supplier not found."
-
-
-
     
-     
+    select_sql = "SELECT * FROM supplier WHERE supplier_id = %s"
+    
+    try:
+        cur.execute(select_sql, (supplier_id,))
+        supplier_data = cur.fetchone()
+        return render_template("print_supplier.html", supplier_data=supplier_data)
+    except Exception as e:
+        return 'Error occurred while retrieving supplier data: ' + str(e)
+    finally:
+        cur.close()
+        conn.close()
+
+
+
+
+
+         
 if __name__ == '__main__':
     app.run(debug=True)
 

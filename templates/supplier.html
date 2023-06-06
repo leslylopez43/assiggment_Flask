@@ -39,7 +39,7 @@
 <body>
     <div class="container">
         <table>
-          <h1 class="text-center mb-4 row justify-content-center">Supplier data</h1>
+          <h1 class="text-center mb-4 row justify-content-center">Supplier  data</h1>
             <tr>
                 <th>Company ID</th>
                 <th>Company Name</th>
@@ -48,9 +48,12 @@
                 <th>Email Address</th>
                 <th>Contact Name</th>
                 <th>VAT</th>
+                
+
             </tr>
 
             {% for column in list_of_suppliers %}
+            
             <tr>
                 <td>{{ column[0] }}</td>
                 <td>{{ column[1] }}</td>
@@ -59,15 +62,19 @@
                 <td>{{ column[4] }}</td>
                 <td>{{ column[5] }}</td>
                 <td>{{ column[6] }}</td>
+                
             </tr>
-            {% endfor %}
-        </table>
 
-        <br>
+      
+      {% endfor %}
+    
+    </table>  
+    
+      <br>
 
         <a href="{{ url_for('index') }}" class="btn btn-primary">Go to Menu</a>
 
-      
+
     </div>
 
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.

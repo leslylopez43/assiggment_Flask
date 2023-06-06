@@ -37,6 +37,7 @@
         <table>
             <thead>
                 <tr>
+                    
                     <th>Company ID</th>
                     <th>Company Name</th>
                     <th>Address</th>
@@ -46,6 +47,7 @@
                     <th>Contact Name</th>
                     <th>VAT</th>
                     <th>Action</th>
+                    
                 </tr>
             </thead>
             <tbody>
@@ -59,8 +61,10 @@
                     <td>{{ column[5] }}</td>
                     <td>{{ column[6] }}</td>
                     <td>{{ column[7] }}</td>
+                    <td>{{ column[8] }}</td>
+                    <td>{{ column[9] }}</td>
                     <td>
-                        <form action="{{ url_for('update_supplier', supplier_id=column[0]) }}" method="get">
+                        <button action="{{ url_for('update_supplier', supplier_id=column[0]) }}" method="get">
                             <button type="submit" class="btn btn-primary btn-block">Update</button>
                         </form>
                         <form action="{{ url_for('single_supplier', supplier_id=column[0]) }}" method="get" target="_blank">
@@ -76,7 +80,7 @@
         </table>
 
         <a class="btn btn-primary btn-block" href="{{ url_for('index') }}">Go to Menu</a>
-    </div>
+    
 
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>

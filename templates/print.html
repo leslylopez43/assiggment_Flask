@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Supplier Details</title>
+</head>
+<body>
+  <h1>Supplier Details</h1>
+  <table>
+    <tr>
+      <th>Supplier ID</th>
+      <th>Supplier Name</th>
+      <th>Address</th>
+      <th>Mobile Phone</th>
+      <th>Email</th>
+      <th>Contact Name</th>
+      <th>VAT</th>
+    </tr>
+    <tr>
+      <td>{{ supplier_data[0] }}</td>
+      <td>{{ supplier_data[1] }}</td>
+      <td>{{ supplier_data[2] }}</td>
+      <td>{{ supplier_data[3] }}</td>
+      <td>{{ supplier_data[4] }}</td>
+      <td>{{ supplier_data[5] }}</td>
+      <td>{{ supplier_data[6] }}</td>
+    </tr>
+  </table>
+  <button onclick="window.print()">Print</button>
+</body>
+</html>

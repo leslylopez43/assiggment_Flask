@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,47 +6,84 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .container {
+            margin-top: 50px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        a.btn {
+            margin-top: 20px;
+        }
+
+        form {
+            display: inline-block;
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
-    <table>
-        <thead>
+    
+    <div class="container">
+        <h1 class="text-center mb-4 row justify-content-center">Search Data</h1>
         
-        <tbody> 
+        <form action="/supplier" method="GET">
+            <div class="form-group">
+                <label for="search">Search:</label>
+                <input type="text" class="form-control" id="search" name="search" placeholder="Enter search term">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
         
-        {% for row in data %}
-        
-        
-        
-        <th> Search registration_number</th>
-        
-        <th>search maintenance/services</th>
-        
-        <th>Search model</th>
-        
-        <th>Search Year</th>
+        <table>
+            <tr>
+                <th>supplier</th>
+                <th>Vehicles</th>
+                <th>Sales</th>
+                <th>Services</th>
+            </tr>
 
-        <th>Search Date</th>
+            {% for column in list_of_suppliers %}
+            <tr>
+                <td>{{ column[0] }}</td>
+                <td>{{ column[1] }}</td>
+                <td>{{ column[2] }}</td>
+                <td>{{ column[3] }}</td>
+                <td>{{ column[4] }}</td>
+                <td>{{ column[5] }}</td>
+                <td>{{ column[6] }}</td>
+            </tr>
+            {% endfor %}
+        </table>
 
-        <th>Update</th>
-        <th>Delete</th>
-        <th>Print</th>
+        <br>
 
-        <!-- <td>{{ row[0] }}   </td>
-        
-        <td>{{  row[1] }}</td>
-        
-        <td>{{  row[2] }}</td>
-        
-        <td>{{  row[3] }}</td>
-        <td>{{  row[4] }}</td>
-        <td>{{  row[5] }}</td>
-        <td>{{  row[6] }}</td>
-        
-         -->
-        
+        <a href="{{ url_for('index') }}" class="btn btn-primary">Go to Menu</a>
+
+    </div>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+
         {% endfor %}
         
     </table>
 
 </body>
-</html>
+</html> 
