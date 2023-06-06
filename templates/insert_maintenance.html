@@ -1,24 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- Add Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+  <style>
+    /* Add custom styles here */
+
+    body {
+      padding: 20px;
+      background-color: #f7f7f7;
+      font-family: Arial, sans-serif;
+    }
+
+    .form-container {
+      max-width: 400px;
+      margin: 0 auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-container h1 {
+      font-size: 24px;
+      font-weight: 600;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .form-control {
+      border-radius: 4px;
+      padding: 10px;
+      border: 1px solid #ddd;
+      width: 100%;
+      margin-bottom: 10px;
+      font-size: 14px;
+    }
+
+    .btn-primary {
+      background-color: #007bff;
+      border-color: #007bff;
+      padding: 10px 20px;
+      font-size: 14px;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn-primary:hover {
+      background-color: #0069d9;
+      border-color: #0062cc;
+    }
+
+    .btn-link {
+      color: #007bff;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .btn-link:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
+
 <body>
-    <form action="/insert_new_maintenance" method="post">
-        <input type="text" name="vehicle_id" placeholder="ID">
-        <input type="text" name="registration_number" placeholder="REGISTRATION">
-        <input type="text" name="date_performed" placeholder="Date_Permormed">
-        <input type="text" name="task_to_be_performed_Services" placeholder="to do be">
-        <input type="text" name="performed_by" placeholder="performed BY">
-        <input type="text" name="validate_by" placeholder="validate_By">
-        <input type="text" name="material" placeholder="Material">
-        <input type="text" name="labor" placeholder="Labor">
-        <input type="text" name="total" placeholder="Total">
-        <input type="submit" value="Services/create">
+  <div class="container">
+    <div class="form-container">
+      <h1 class="mb-4">Insert Maintenance Data</h1>
+
+      <form action="/insert_new_maintenance" method="post">
+        <div class="mb-3">
+          <label for="vehicleId" class="form-label">Vehicle ID</label>
+          <input type="text" class="form-control" id="vehicleId" name="vehicle_id" placeholder="ID">
+        </div>
+        <div class="mb-3">
+          <label for="registrationNumber" class="form-label">Registration Number</label>
+          <input type="text" class="form-control" id="registrationNumber" name="registration_number" placeholder="Registration">
+        </div>
+        <div class="mb-3">
+          <label for="datePerformed" class="form-label">Date Performed</label>
+          <input type="text" class="form-control" id="datePerformed" name="date_performed" placeholder="Date Performed">
+        </div>
+        <div class="mb-3">
+          <label for="taskPerformed" class="form-label">Task to be Performed</label>
+          <input type="text" class="form-control" id="taskPerformed" name="task_to_be_performed_services" placeholder="Task to be Performed">
+        </div>
+        <div class="mb-3">
+          <label for="performedBy" class="form-label">Performed By</label>
+          <input type="text" class="form-control" id="performedBy" name="performed_by" placeholder="Performed By">
+        </div>
+        <div class="mb-3">
+          <label for="validateBy" class="form-label">Validated By</label>
+          <input type="text" class="form-control" id="validateBy" name="validate_by" placeholder="Validated By">
+        </div>
+        <div class="mb-3">
+          <label for="material" class="form-label">Material</label>
+          <input type="text" class="form-control" id="material" name="material" placeholder="Material">
+        </div>
+        <div class="mb-3">
+          <label for="labor" class="form-label">Labor</label>
+          <input type="text" class="form-control" id="labor" name="labor" placeholder="Labor">
+        </div>
+        <div class="mb-3">
+          <label for="total" class="form-label">Total</label>
+          <input type="text" class="form-control" id="total" name="total" placeholder="Total">
+        </div>
+        <button type="submit" class="btn btn-primary">Services/Create</button>
         <br>
-        <a href="{{url_for('index')}}">go to menu</a>
+        <a href="{{url_for('index')}}" class="btn btn-link class="btn btn-primary"">Go to Menu</a>
+      </form>
+    </div>
+  </div>
+
+  <!-- Add Bootstrap JS (optional if you need JavaScript features) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>

@@ -14,6 +14,10 @@
         .form-container {
             max-width: 400px;
             margin: 0 auto;
+            background-color: #f8f9fa;
+            padding: 30px;
+            border-radius: 5px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
         }
 
         .form-container h1 {
@@ -26,7 +30,7 @@
     <div class="container">
         <div class="form-container">
             <form action="/insert_new_supplier" method="post">
-                <h1>NEW SUPPLIER DETAILS</h1>
+                <h1 class="text-center mb-6 row justify-content-center">Insert Supplier Data</h1>
                 <div class="form-group">
                     <label for="companyName">Company Name</label>
                     <input type="text" id="companyName" class="form-control" name="companyName" placeholder="Company Name" required>
@@ -64,8 +68,4 @@
 
             <a href="{{url_for('index')}}" class="btn btn-secondary btn-block mt-3">Go to Menu</a>
         </div>
-    </div>
-
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</body>
-</html>
+    </div

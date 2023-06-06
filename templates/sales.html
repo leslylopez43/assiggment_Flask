@@ -5,39 +5,68 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .container {
+            margin-top: 50px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
 </head>
 <body>
-    <table>
-          <tr>
-            <th>Dealer Car Id</th>
-            <th>Sale Employee Number</th>
-            <th>New Car Brand</th>
-            <th>New Car Brand</th>
-            <th>Number of New Cars Sold </th>
-            <th>Number Of Used Cars Sold</th>
-            <th>Profit From New Cars</th>
-            <th>Profit From Used Cars</th>
-            <th>Profit</th>
-            <th>Vehicle Category</th>
-          </tr>
-          {% for column in list_of_sales %}
-          <tr>
-          <td>{{column[0]}}</td>
-          <td>{{column[1]}}</td>
-          <td>{{column[2]}}</td>
-          <td>{{column[3]}}</td>
-          <td>{{column[4]}}</td>
-          <td>{{column[5]}}</td>
-          <td>{{column[6]}}</td>
-          <td>{{column[7]}}</td>
-          <td>{{column[8]}}</td>
-          <td>{{column[9]}}</td>
-        </tr>
-          {% endfor %}
-           </table>
-           {{ list_of_vehicles }}
-  
-     
-        <a href="{{url_for('index')}}">go to menu</a>
+    <div class="container">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Dealer Car Id</th>
+                    <th>Sale Employee Number</th>
+                    <th>New Car Brand</th>
+                    <th>New Car Model</th>
+                    <th>Number of New Cars Sold</th>
+                    <th>Number Of Used Cars Sold</th>
+                    <th>Profit From New Cars</th>
+                    <th>Profit From Used Cars</th>
+                    <th>Profit</th>
+                    <th>Vehicle Category</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for column in list_of_sales %}
+                <tr>
+                    <td>{{column[0]}}</td>
+                    <td>{{column[1]}}</td>
+                    <td>{{column[2]}}</td>
+                    <td>{{column[3]}}</td>
+                    <td>{{column[4]}}</td>
+                    <td>{{column[5]}}</td>
+                    <td>{{column[6]}}</td>
+                    <td>{{column[7]}}</td>
+                    <td>{{column[8]}}</td>
+                    <td>{{column[9]}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        
+        {{ list_of_vehicles }}
+
+        <a href="{{url_for('index')}}" class="btn btn-primary mt-3">Go to Menu</a>
+    </div>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
