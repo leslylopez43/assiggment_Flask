@@ -1,62 +1,83 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .container {
+            margin-top: 50px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        .btn-block {
+            margin-bottom: 10px;
+        }
+    </style>
 </head>
 <body>
-    
-    <div>
+    <div class="container">
         <table>
-            <tr>
-                <th>Company ID</th>
-                <th>Company Name</th>
-                <th>ADDRESS</th>
-                <th>Post code</th>
-                <th>Mobile Number</th>
-                <th>EMAIL ADDRESS</th>
-                <th>CONTACT NAME</th>
-                <th>VAT</th>
-                <th>Action</th>
-            </tr>
-            {% for column in list_of_supplier %}
-            <tr>           
-                <td>{{ column[0] }}</td>
-                <td>{{ column[1] }}</td>
-                <td>{{ column[2] }}</td>
-                <td>{{ column[3] }}</td>
-                <td>{{ column[4] }}</td>
-                <td>{{ column[5] }}</td>
-                <td>{{ column[6] }}</td>
-                <td>{{ column[7] }}</td>
-                <td>{{ column[8] }}</td>
-                <td>{{ column[9] }}</td>
-                <td>
-                    <form action="{{ url_for('update_supplier', supplier_id=column[0]) }}" method="get">
-                        <button type="submit" class="btn btn-primary btn-block">Update</button>
-                    </form>
-                    
-                </td>
-            </tr>
-            {% endfor %}
+            <thead>
+                <tr>
+                    <th>Company ID</th>
+                    <th>Company Name</th>
+                    <th>Address</th>
+                    <th>Post Code</th>
+                    <th>Mobile Number</th>
+                    <th>Email Address</th>
+                    <th>Contact Name</th>
+                    <th>VAT</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for column in list_of_supplier %}
+                <tr>
+                    <td>{{ column[0] }}</td>
+                    <td>{{ column[1] }}</td>
+                    <td>{{ column[2] }}</td>
+                    <td>{{ column[3] }}</td>
+                    <td>{{ column[4] }}</td>
+                    <td>{{ column[5] }}</td>
+                    <td>{{ column[6] }}</td>
+                    <td>{{ column[7] }}</td>
+                    <td>
+                        <form action="{{ url_for('update_supplier', supplier_id=column[0]) }}" method="get">
+                            <button type="submit" class="btn btn-primary btn-block">Update</button>
+                        </form>
+                        <form action="{{ url_for('single_supplier', supplier_id=column[0]) }}" method="get" target="_blank">
+                            <button type="submit" class="btn btn-primary btn-block">Print</button>
+                        </form>
+                        <form action="{{ url_for('delete_supplier', supplier_id=column[0]) }}" method="post">
+                            <button type="submit" class="btn btn-primary btn-block">Delete</button>
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
         </table>
-    </div> 
-        
-    
-    
-        <div class="form-check d-flex justify-content-center mb-4">
-             {% for column in list_of_supplier %}
-                <form action="{{ url_for('delete_supplier', supplier_id=column[0]) }}" method="post">
-                    <button type="submit" class="btn btn-primary btn-block mb-4">Delete</button>
-                </form>
-            {% endfor %}
-        </div>    
-    </div>
-    
-    <a class="btn btn-primary btn-block mb-4" href="{{ url_for('index') }}">Go to Menu</a>
 
+        <a class="btn btn-primary btn-block" href="{{ url_for('index') }}">Go to Menu</a>
+    </div>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>

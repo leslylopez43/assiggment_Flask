@@ -5,36 +5,68 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .container {
+            margin-top: 50px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        a.btn {
+            margin-top: 20px;
+        }
+
+        form {
+            display: inline-block;
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
-    
-  <table>
-    <tr>
-        <th>Company ID</th>
-        <th>Company Name</th>
-        <th>ADDRESS</th>
-        <th>Mobile Number</th>
-        <th>EMAIL ADDRESS</th>
-        <th>CONTACT NAME</th>
-        <th>VAT</th>
-    </tr>
+    <div class="container">
+        <table>
+            <tr>
+                <th>Company ID</th>
+                <th>Company Name</th>
+                <th>Address</th>
+                <th>Mobile Number</th>
+                <th>Email Address</th>
+                <th>Contact Name</th>
+                <th>VAT</th>
+            </tr>
 
-    {% for column in list_of_suppliers %}
-    <tr>
-        <td>{{ column[0] }}</td>
-        <td>{{ column[1] }}</td>
-        <td>{{ column[2] }}</td>
-        <td>{{ column[3] }}</td>
-        <td>{{ column[4] }}</td>
-        <td>{{ column[5] }}</td>
-        <td>{{ column[6] }}</td>
-    </tr>
-    {% endfor %}
-</table>
-<br>
-<a href="{{ url_for('index') }}">Go to menu</a>
+            {% for column in list_of_suppliers %}
+            <tr>
+                <td>{{ column[0] }}</td>
+                <td>{{ column[1] }}</td>
+                <td>{{ column[2] }}</td>
+                <td>{{ column[3] }}</td>
+                <td>{{ column[4] }}</td>
+                <td>{{ column[5] }}</td>
+                <td>{{ column[6] }}</td>
+            </tr>
+            {% endfor %}
+        </table>
 
-<form action="{{ url_for('delete_supplier', supplier_id=list_of_suppliers[0][0]) }}" method="post">
-    <input type="submit" value="Delete">
-</form>
-</body>
+        <br>
+
+        <a href="{{ url_for('index') }}" class="btn btn-primary">Go to Menu</a>
+
+      
+    </div>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.

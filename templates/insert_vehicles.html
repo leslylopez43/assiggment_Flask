@@ -5,21 +5,45 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* Add your custom CSS styles here */
+    </style>
 </head>
 <body>
-    
+    <br>
+    <div class="container">
+        <h1 class="text-center mb-4">NEW VEHICLES DETAILS</h1>
         <form action="/insert_new_vehicles" method="post">
-             <input type="text" name="registration_number" placeholder="REGISTRATION">
-             <input type="text" name="brand" placeholder="brand">
-             <input type="text" name="model" placeholder="model">
-             <input type="text" name="color" placeholder="color">
-             <input type="text" name="Price_money" placeholder="Price_money">
-             <input type="text" name="car_year" placeholder="car_year">
-             <input type="text" name="On_stock_from" placeholder="On_stock_from">
-             <input type="text" name="available" placeholder="available">
-             <input type="submit" value="VEHICLEcreate">
-     
-             <br>
-             <a href="{{url_for('index')}}">go to menu</a>
+            <div class="form-group">
+                <input type="text" name="registration_number" class="form-control" placeholder="Registration">
+            </div>
+            <div class="form-group">
+                <input type="text" name="brand" class="form-control" placeholder="Brand">
+            </div>
+            <div class="form-group">
+                <input type="text" name="model" class="form-control" placeholder="Model">
+            </div>
+            <div class="form-group">
+                <input type="text" name="color" class="form-control" placeholder="Color">
+            </div>
+            <div class="form-group">
+                <input type="text" name="Price_money" class="form-control" placeholder="Price">
+            </div>
+            <div class="form-group">
+                <input type="text" name="car_year" class="form-control" placeholder="Car Year">
+            </div>
+            <div class="form-group">
+                <input type="text" name="On_stock_from" class="form-control" placeholder="On Stock From">
+            </div>
+            <div class="form-group">
+                <input type="text" name="available" class="form-control" placeholder="Available">
+            </div>
+            <button type="submit" class="btn btn-primary">Create Vehicle</button>
+        </form>
+        <br>
+        <a href="{{ url_for('index') }}" class="btn btn-secondary">Go to Menu</a>
+    </div>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>

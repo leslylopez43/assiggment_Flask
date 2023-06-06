@@ -1,47 +1,54 @@
-body{
-    font-size: 4em;
+.index.body {
+    background-color: #388bdd;
+  }
 
-    background-color: rgb(0, 255, 106);
-}
-    /* Style for the table */
-    base.table {
-        width: 100%;
-        border-collapse: collapse;
-        margin-bottom: 20px;
-        
-    }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
 
-    th, td {
-        padding: 8px;
-        text-align: left;
-        border-bottom: 1px solid #ddd;
-    }
+  .form-container {
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
 
-    th {
-        background-color: #f2f2f2;
-    }
+  .form-container h1 {
+    margin-top: 0;
+  }
 
-    /* Style for the delete button */
-    .delete-btn {
-        background-color: #dc3545;
-        color: #fff;
-        border: none;
-        padding: 6px 12px;
-        cursor: pointer;
-        border-radius: 4px;
-    }
+  .form-container form {
+    margin-bottom: 20px;
+  }
 
-    .delete-btn:hover {
-        background-color: #c82333;
-    }
+  .form-container button {
+    margin-top: 10px;
+  }
 
-    /* Style for the "Go to Menu" link */
-    .menu-link {
-        color: #007bff;
-        text-decoration: none;
-    }
+  .menu-container {
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 20px;
+  }
 
-    .menu-link:hover {
-        text-decoration: underline;
-    }
+  .menu-container h1 {
+    margin-top: 0;
+    margin-bottom: 20px;
+  }
 
+  .menu-container ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .menu-container ul li {
+    margin-bottom: 10px;
+  }
+
+  .menu-container ul li a {
+    color: #000;
+    text-decoration: none;
+  }

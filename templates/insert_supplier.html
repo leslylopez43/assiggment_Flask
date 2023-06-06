@@ -3,80 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .container {
+            margin-top: 50px;
+        }
+
+        .form-container {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .form-container h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    </style>
 </head>
 <body>
-    <form action="/insert_new_supplier" method="post">
-           <!-- <input type="text" name="SUPPLIER ID" placeholder="name"> -->
-    
-        <!-- 2 column grid layout with text inputs for the first and last names -->
-        <div class="row mb-4">
-          <div class="col">
-            <div class="form-outline">
-                <input type="text" id="form6Example1" class="form-control" name="Company Name" placeholder="Company Name">
-              <label class="form-label" for="form6Example1">company Name</label>
-            </div>
-          </div>
-          
-        </div>
-      
-        <!-- Text input -->
-        <!-- <div class="form-outline mb-4">
-          <input type="text" name="Address" placeholder="Addess" id="form6Example3" class="form-control" />
-          <label class="form-label" for="form6Example3">Address</label>
-        </div>
-       -->
-        <!-- Text input -->
-        <div class="form-outline mb-4">
-          <input type="text" name="Address" placeholder="Enter Address" required id="form6Example4" class="form-control" />
-          <label class="form-label" for="form6Example4">Address</label>
-          <div class="col">
-            <div class="form-outline">
-              <input type="text" id="form6Example2" class="form-control" />
-              <label class="form-label" for="form6Example2">Post Code</label>
-            </div>
-          </div>
-        </div>
-      
-        <!-- phone number input -->
-        <div class="form-outline mb-4">
-          <input type="number" name="Mobile Phone" placeholder="number" id="form6Example5" class="form-control" />
-          <label class="form-label" for="form6Example5">Mobile Phone</label>
-        </div>
-      
-        <!-- Number input -->
-        <div class="form-outline mb-4">
-          <input type="email" name="Email Address" placeholder="email" id="form6Example6" class="form-control" />
-          <label class="form-label" for="form6Example6">Email Address</label>
-        </div>
-        
-       
-        <div class="form-outline mb-4">
-            <input class="form-control" name="contact Name" placeholder="name" id="form6Example7" rows="4">
-            <label class="form-label"  for="form6Example7">Contact Name</label>
-          </div>
+    <div class="container">
+        <div class="form-container">
+            <form action="/insert_new_supplier" method="post">
+                <h1>NEW SUPPLIER DETAILS</h1>
+                <div class="form-group">
+                    <label for="companyName">Company Name</label>
+                    <input type="text" id="companyName" class="form-control" name="companyName" placeholder="Company Name" required>
+                </div>
+                <div class="form-group">
+                    <label for="address">Address</label>
+                    <input type="text" id="address" class="form-control" name="address" placeholder="Address" required>
+                </div>
+                <div class="form-group">
+                    <label for="postCode">Post Code</label>
+                    <input type="text" id="postCode" class="form-control" name="postCode" placeholder="Post Code" required>
+                </div>
+                <div class="form-group">
+                    <label for="mobilePhone">Mobile Phone</label>
+                    <input type="text" id="mobilePhone" class="form-control" name="mobilePhone" placeholder="Mobile Phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="emailAddress">Email Address</label>
+                    <input type="email" id="emailAddress" class="form-control" name="emailAddress" placeholder="Email Address" required>
+                </div>
+                <div class="form-group">
+                    <label for="contactName">Contact Name</label>
+                    <input type="text" id="contactName" class="form-control" name="contactName" placeholder="Contact Name" required>
+                </div>
+                <div class="form-group">
+                    <label for="vat">VAT</label>
+                    <input type="text" id="vat" class="form-control" name="vat" placeholder="VAT" required>
+                </div>
+                <div class="form-check mb-4">
+                    <input class="form-check-input" type="checkbox" value="" id="createAccountCheckbox" checked>
+                    <label class="form-check-label" for="createAccountCheckbox">Create an account?</label>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Submit</button>
+            </form>
 
-          <div class="form-outline mb-4">
-            <input type="number" name="VAT" placeholder="Enter VAT" id="form6Example5" class="form-control" />
-            <label class="form-label" name="VAT" placeholder="Vat" for="form6Example5">VAT</label>
-            
-
-          </div>
-        
-        
-        <!-- Checkbox -->
-        <div class="form-check d-flex justify-content-center mb-4">
-          <input class="form-check-input me-2" type="checkbox" value="" id="form6Example8" checked />
-          <label class="form-check-label" for="form6Example8"> Create an account? </label>
+            <a href="{{url_for('index')}}" class="btn btn-secondary btn-block mt-3">Go to Menu</a>
         </div>
-      
-        <!-- Submit button -->
-        <button type="submit" class="btn btn-primary btn-block mb-4">Submit</button>
-      </form>
+    </div>
 
-   
-    <br>
-        <a href="{{url_for('index')}}">go to menu</a>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>

@@ -5,46 +5,48 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
-    <form action="{{ url_for('perform_supplier_update') }}" method="POST">
-    <table>
-        <tr>
-          <th>Company ID</th>
-          <th>Company Name</th>
-          <th>ADDRESS</th>
-          <th>Mobile Number</th>
-          <th>EMAIL ADDRESS</th>
-          <th>CONTACT NAME</th>
-          <th>VAT</th>
-           <!-- Checkbox -->
-        <div class="form-check d-flex justify-content-center mb-4">
-            <input class="form-check-input me-2" type="checkbox" value="" id="form6Example8" checked />
-            <label class="form-check-label" for="form6Example8"> Create an account? </label>
-          </div>
-        
-          <!-- Submit button -->
-          <button type="submit" class="btn btn-primary btn-block mb-4">Submit</button>
+    <div class="container">
+        <form action="{{ url_for('perform_supplier_update') }}" method="POST">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Company ID</th>
+                        <th>Company Name</th>
+                        <th>ADDRESS</th>
+                        <th>Mobile Number</th>
+                        <th>EMAIL ADDRESS</th>
+                        <th>CONTACT NAME</th>
+                        <th>VAT</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for column in list_of_suppliers %}
+                        <tr>
+                            <td>{{ column[0] }}</td>
+                            <td>{{ column[1] }}</td>
+                            <td>{{ column[2] }}</td>
+                            <td>{{ column[3] }}</td>
+                            <td>{{ column[4] }}</td>
+                            <td>{{ column[5] }}</td>
+                            <td>{{ column[6] }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+          
+            <div class="form-check d-flex justify-content-center mb-4">
+                <input class="form-check-input" type="checkbox" value="" id="form6Example8" checked>
+                <label class="form-check-label" for="form6Example8">Create an account?</label>
+            </div>
+          
+            <button type="submit" class="btn btn-primary btn-block mb-4">Submit</button>
         </form>
-  
-        </tr>
 
-        {% for column in list_of_suppliers %}
-          <tr>           
-          <td>{{column[0]}}</td>
-          <td>{{column[1]}}</td>
-          <td>{{column[2]}}</td>
-          <td>{{column[3]}}</td>
-          <td>{{column[4]}}</td>
-          <td>{{column[5]}}</td>
-          <td>{{column[6]}}</td>
-          <td>{{column[7]}}</td>
-          <td>{{column[8]}}</td>
-        
-        </tr>
-          {% endfor %}
-           </table>
-           <br>
-           <a href="{{url_for('index')}}">go to menu</a>
+        <a href="{{ url_for('index') }}" class="btn btn-secondary">Go to Menu</a>
+    </div>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>

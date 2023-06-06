@@ -3,19 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <!-- Add Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <style>
+        /* Add custom styles here */
+    </style>
 </head>
 <body>
-    <form action="/create" method="post">
-        <input type="text" name="SUPPLIER ID" placeholder="name">
-        <input type="text" name="ADDRESS" placeholder="ADDRESS">
-        <input type="text" name="MOBILE PHONE" placeholder="number">
-        <input type="text" name="EMAIL ADDRESS" placeholder="email">
-        <input type="text" name="contact Name" placeholder="name">
-        <input type="submit" value="create">
+    <div class="container">
+        <form action="/create" method="post">
+            <div class="mb-3">
+                <label for="supplierId" class="form-label">Supplier ID</label>
+                <input type="text" class="form-control" id="supplierId" name="supplierId" placeholder="Supplier ID">
+            </div>
+            <div class="mb-3">
+                <label for="address" class="form-label">Address</label>
+                <input type="text" class="form-control" id="address" name="address" placeholder="Address">
+            </div>
+            <div class="mb-3">
+                <label for="mobilePhone" class="form-label">Mobile Phone</label>
+                <input type="text" class="form-control" id="mobilePhone" name="mobilePhone" placeholder="Mobile Phone">
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Email Address</label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="Email Address">
+            </div>
+            <div class="mb-3">
+                <label for="contactName" class="form-label">Contact Name</label>
+                <input type="text" class="form-control" id="contactName" name="contactName" placeholder="Contact Name">
+            </div>
+            <button type="submit" class="btn btn-primary">Create</button>
+        </form>
+    </div>
 
-
-    </form>
+    <!-- Add Bootstrap JS (optional if you need JavaScript features) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
