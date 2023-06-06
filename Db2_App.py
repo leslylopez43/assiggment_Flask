@@ -48,7 +48,7 @@ def supplier():
 
 
 
-@app.route("/vehicles")
+@app.route("/vehicles", methods=["GET", "POST"])
 def vehicles():
     conn=db_conn()
     cur=conn.cursor()
@@ -76,17 +76,13 @@ def maintenance():
     print (maintenance)
     return render_template("maintenance.html",list_of_maintenance=maintenance_details)
 
-@app.route("/search")
-def oldindex():
-    conn=db_conn()
-    cur=conn.cursor()
-   # cur.execute('''SELECT * FROM courses''')
-    length_of_duration=30
-    cur.execute('''select * from courses where duration='''+str(length_of_duration))
-    data=cur.fetchall()
-    cur.close()
-    conn.close()
-    return render_template("index.html", data=data) 
+@app.route('/search', methods=['POST'])
+def search():
+    # Handle the search functionality here
+    search_term = request.form.get('search')
+    # Perform search logic
+
+    return render_template("search.html", results=search_term)
       
 @app.route("/get_new_supplier_details")
 def get_new_supplier_details():
@@ -259,6 +255,27 @@ def print_supplier(supplier_id):
         conn.close()
 
 
+
+
+
+@app.route('/submit_form', methods=['POST'])
+def submit_form():
+    option = request.form.get('cars')
+    if option == 'supplier':
+        # Handle supplier option
+        return render_template('supplier.html')
+    elif option == 'vehicles':
+        # Handle vehicles option
+        return render_template('vehicles.html')
+    elif option == 'sales':
+        # Handle sales option
+        return render_template('sales.html')
+    elif option == 'maintenance':
+        # Handle maintenance option
+        return render_template('maintenance.html')
+    else:
+        # Handle invalid option
+        return 'Invalid option'
 
 
 

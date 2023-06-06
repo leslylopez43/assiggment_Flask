@@ -64,16 +64,7 @@
                     <td>{{ column[8] }}</td>
                     <td>{{ column[9] }}</td>
                     <td>
-                        <button action="{{ url_for('update_supplier', supplier_id=column[0]) }}" method="get">
-                            <button type="submit" class="btn btn-primary btn-block">Update</button>
-                        </form>
-                        <form action="{{ url_for('single_supplier', supplier_id=column[0]) }}" method="get" target="_blank">
-                            <button type="submit" class="btn btn-primary btn-block">Print</button>
-                        </form>
-                        <form action="{{ url_for('delete_supplier', supplier_id=column[0]) }}" method="post">
-                            <button type="submit" class="btn btn-primary btn-block">Delete</button>
-                        </form>
-                    </td>
+                       
                 </tr>
                 {% endfor %}
             </tbody>

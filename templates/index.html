@@ -54,14 +54,7 @@
     </style>
 </head>
 <body>
-    <form action="{{ url_for('supplier') }}" method="POST">
-        <div class="form-group">
-            <label for="search">Search for supplier:</label>
-            <input type="text" name="search" id="search" class="form-control">
-        </div>
-        <button type="submit" class="btn btn-primary">Search</button>
-    </form>
-    
+        
         
         <table>
             <tr>
@@ -70,7 +63,18 @@
                 <th><a href="{{ url_for('sales') }}" class="text-decoration-none">Manage Sales</a></th>
                 <th><a href="{{ url_for('maintenance') }}" class="text-decoration-none">Manage Maintenance/Services</a></th>
             </tr>
-
+            <form action="{{ url_for('submit_form') }}" method="POST">
+                <label for="cars">Choose an Option</label>
+                <select name="cars" id="cars">
+                    <option value="supplier">Supplier</option>
+                    <option value="vehicles">Display Vehicles</option>
+                    <option value="sales">Manage Sales</option>
+                    <option value="maintenance">Manage Maintenance/Services</option>
+                </select>
+                <br><br>
+                <input type="submit" value="Submit">
+            </form>
+            
             {% for column in list_of_suppliers %}
             <tr>
                 <td>{{ column[0] }}</td>
@@ -85,7 +89,6 @@
         </table>
 
         <br>
-
         <a href="{{ url_for('index') }}" class="btn btn-primary">Go to Menu</a>
 
     </div>
