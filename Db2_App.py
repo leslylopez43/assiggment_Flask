@@ -59,12 +59,15 @@ def vehicles():
 
 @app.route("/sales")
 def sales():
-    conn=db_conn()
-    cur=conn.cursor()
-    sql_select_query="SELECT * FROM sales;"
+    conn = db_conn()
+    cur = conn.cursor()
+    sql_select_query = "SELECT * FROM sales;"
     cur.execute(sql_select_query)
-    sales_details=cur.fetchall()
+    sales_details = cur.fetchall()
+    cur.close()
+    conn.close()
     return render_template("sales.html", list_of_sales=sales_details)
+
 
 @app.route("/maintenance")
 def maintenance():
@@ -137,37 +140,35 @@ def create_new_vehicles():
      return redirect(url_for('index'))
 
 
-
 @app.route("/get_new_sales_details")
 def get_new_sales_details():
     return render_template("insert_sales.html")
 
-@app.route('/insert_new_sales',methods=['POST'])
+
+@app.route('/insert_new_sales', methods=['POST'])
 def create_new_sales():
-     conn=db_conn()
-     cur=conn.cursor()
+    conn = db_conn()
+    cur = conn.cursor()
 
-     
-      
-     sale_id=request.form['sale_id']
-     sale_employee_number=request.form['sale_employee_number']
-     new_car_brand=request.form['new_car_brand']
-     used_car_brand=request.form['used_car_brand']
-     number_of_new_cars_sold=request.form['number_of_new_cars_sold']
-     number_of_used_cars_sold=request.form['number_of_used_cars_sold']
-     profit_from_new_cars=request.form['profit_from_new_cars'] 
-     profit_from_used_cars=request.form['profit_from_used_cars'] 
-     Profit=request.form['Profit']
-     vehicle_category=request.form[vehicle_category]
-     print(sale_Id)
-     insert_sql="INSERT INTO sales (sale_id, sale_employee_number, new_car_brand, used_car_brand, Price, car_year, On_stock_from, available) VALUES ('" + registration_number  + "','" + brand  + "','" + model + "','" + color+ "','" + Price_money+ "','" + car_year + "','" + On_stock_from + "','" + available + "')"
-     print(insert_sql)
-     cur.execute(insert_sql)
-     conn.commit()
-     cur.close()
-     conn.close()
-     return redirect(url_for('index'))
+    sale_employee_number = request.form['sale_employee_number']
+    new_car_brand = request.form['new_car_brand']
+    used_car_brand = request.form['used_car_brand']
+    number_of_new_cars_sold = request.form['number_of_new_cars_sold']
+    number_of_used_cars_sold = request.form['number_of_used_cars_sold']
+    profit_from_new_cars = request.form['profit_from_new_cars']
+    profit_from_used_cars = request.form['profit_from_used_cars']
+    Profit = request.form['Profit']
+    vehicle_category = request.form['vehicle_category']
 
+    insert_sql = "INSERT INTO sales (sale_employee_number, new_car_brand, used_car_brand, number_of_new_cars_sold, number_of_used_cars_sold, profit_from_new_cars, profit_from_used_cars, profit, vehicle_category) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)"
+
+    cur.execute(
+        insert_sql, (sale_employee_number, new_car_brand, used_car_brand, number_of_new_cars_sold, number_of_used_cars_sold, profit_from_new_cars, profit_from_used_cars, Profit, vehicle_category)
+    )
+    conn.commit()
+    cur.close()
+    conn.close()
+    return redirect(url_for('index'))
 
 @app.route("/get_new_maintenance_details")
 def get_new_maintenance_details():

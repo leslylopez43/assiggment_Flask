@@ -41,10 +41,9 @@
                 <button type="submit" class="btn btn-primary">Search</button>
             
                 <tr>
-                    <th>Sale  Id</th>
                     <th>Sale Employee Number</th>
                     <th>New Car Brand</th>
-                    <th>used Car brand</th>
+                    <th>used Car Brand</th>
                     <th>Number of New Cars Sold</th>
                     <th>Number Of Used Cars Sold</th>
                     <th>Profit From New Cars</th>
@@ -56,7 +55,6 @@
             <tbody>
                 {% for column in list_of_sales %}
                 <tr>
-                    <td>{{column[0]}}</td>
                     <td>{{column[1]}}</td>
                     <td>{{column[2]}}</td>
                     <td>{{column[3]}}</td>

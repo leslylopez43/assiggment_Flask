@@ -7,22 +7,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <style>
-        /* Add your custom CSS styles here */
-    </style>
-   
-</head>
-<body>
-    <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-beta2/css/bootstrap.min.css">
     <style>
         .container {
             margin-top: 50px;
@@ -54,67 +40,78 @@
     </style>
 </head>
 <body>
-        
-        
-        <table>
-            <tr>
-                <th>    <a href="{{ url_for('supplier') }}" class="text-decoration-none">Display Supplier</a></th>
-                <th><a href="{{ url_for('vehicles') }}" class="text-decoration-none">Display Vehicles</a></th>
-                <th><a href="{{ url_for('sales') }}" class="text-decoration-none">Manage Sales</a></th>
-                <th><a href="{{ url_for('maintenance') }}" class="text-decoration-none">Manage Maintenance/Services</a></th>
-            </tr>
-            <form action="{{ url_for('submit_form') }}" method="POST">
-                <label for="cars">Choose an Option</label>
-                <select name="cars" id="cars">
-                    <option value="supplier">Supplier</option>
-                    <option value="vehicles">Display Vehicles</option>
-                    <option value="sales">Manage Sales</option>
-                    <option value="maintenance">Manage Maintenance/Services</option>
-                </select>
-                <br><br>
-                <input type="submit" value="Submit">
-            </form>
-            
-            {% for column in list_of_suppliers %}
-            <tr>
-                <td>{{ column[0] }}</td>
-                <td>{{ column[1] }}</td>
-                <td>{{ column[2] }}</td>
-                <td>{{ column[3] }}</td>
-                <td>{{ column[4] }}</td>
-                <td>{{ column[5] }}</td>
-                <td>{{ column[6] }}</td>
-            </tr>
-            {% endfor %}
-        </table>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <table class="table table-bordered table-hover">
+                    <thead class="table-light">
+                        <tr>
+                            <th><a href="{{ url_for('supplier') }}" class="btn btn-outline-primary btn-lg h5">Display Supplier</a></th>
+                            <th><a href="{{ url_for('vehicles') }}" class="btn btn-outline-primary btn-lg">Display Vehicles</a></th>
+                            <th><a href="{{ url_for('sales') }}" class="btn btn-outline-primary btn-lg">Manage Sales</a></th>
+                            <th><a href="{{ url_for('maintenance') }}" class="btn btn-outline-primary btn-lg">Manage Maintenance/Services</a></th>
+                        </tr>
+                    </thead>
+                </table>
+                
+                <form action="{{ url_for('submit_form') }}" method="POST">
+                    <div class="mb-3">
+                        <label for="cars" class="form-label h3">Choose an Option</label>
+                        <select name="cars" id="cars" class="form-select form-control-lg">
+                            <option value="supplier">Supplier</option>
+                            <option value="vehicles">Display Vehicles</option>
+                            <option value="sales">Manage Sales</option>
+                            <option value="maintenance">Manage Maintenance/Services</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+                </form>
 
-        <br>
-        <a href="{{ url_for('index') }}" class="btn btn-primary">Go to Menu</a>
+                <table class="table table-striped table-hover">
+                    <thead class="table-light">
+                        
+                    </thead>
+                    <tbody>
+                        {% for column in list_of_suppliers %}
+                        <tr>
+                            <td>{{ column[0] }}</td>
+                            <td>{{ column[1] }}</td>
+                            <td>{{ column[2] }}</td>
+                            <td>{{ column[3] }}</td>
+                            <td>{{ column[4] }}</td>
+                            <td>{{ column[5] }}</td>
+                            <td>{{ column[6] }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
 
-    </div>
-    
-        
+                <a href="{{ url_for('index') }}" class="btn btn-primary btn-lg">Go to Menu</a>
+            </div>
+        </div>
+
         <div class="row justify-content-center mt-4">
             <div class="col-md-6">
-                <h2 class="text-center">Other Actions:</h2>
+                <h2 class="text-center mb-4">Other Actions:</h2>
                 <ul class="list-group">
-                                        <li class="list-group-item">
-                        <a href="{{ url_for('get_new_supplier_details') }}" class="text-decoration-none">Enter New Supplier Details</a>
+                    <li class="list-group-item">
+                        <a href="{{ url_for('get_new_supplier_details') }}" class="btn btn-outline-primary btn-lg">Enter New Supplier Details</a>
                     </li>
                     <li class="list-group-item">
-                        <a href="{{ url_for('get_new_supplier_details') }}" class="text-decoration-none">Enter New Vehicle Details</a>
+                        <a href="{{ url_for('get_new_supplier_details') }}" class="btn btn-outline-primary btn-lg">Enter New Vehicle Details</a>
                     </li>
                     <li class="list-group-item">
-                        <a href="{{ url_for('get_new_sales_details') }}" class="text-decoration-none">Enter new sales Details</a>
+                        <a href="{{ url_for('get_new_sales_details') }}" class="btn btn-outline-primary btn-lg">Enter New Sales Details</a>
                     </li>
                     <li class="list-group-item">
-                        <a href="{{ url_for('get_new_maintenance_details') }}" class="text-decoration-none">Enter New Maintenance Details</a>
+                        <a href="{{ url_for('get_new_maintenance_details') }}" class="btn btn-outline-primary btn-lg">Enter New Maintenance Details</a>
                     </li>
                 </ul>
             </div>
         </div>
     </div>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-beta2/js/bootstrap.min.js"></script>
 </body>
 </html>
 {% endblock %}
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
