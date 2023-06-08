@@ -153,17 +153,16 @@ def create_new_sales():
     sale_employee_number = request.form['sale_employee_number']
     new_car_brand = request.form['new_car_brand']
     used_car_brand = request.form['used_car_brand']
-    number_of_new_cars_sold = request.form['number_of_new_cars_sold']
     number_of_used_cars_sold = request.form['number_of_used_cars_sold']
     profit_from_new_cars = request.form['profit_from_new_cars']
     profit_from_used_cars = request.form['profit_from_used_cars']
     Profit = request.form['Profit']
     vehicle_category = request.form['vehicle_category']
-
-    insert_sql = "INSERT INTO sales (sale_employee_number, new_car_brand, used_car_brand, number_of_new_cars_sold, number_of_used_cars_sold, profit_from_new_cars, profit_from_used_cars, profit, vehicle_category) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)"
+    number_of_new_cars_sold = int(request.form['number_of_new_cars_sold'])
+    insert_sql = "INSERT INTO sales (sale_employee_number, new_car_brand, used_car_brand, number_of_used_cars_sold, profit_from_new_cars, profit_from_used_cars, profit, vehicle_category, number_of_new_cars_sold) VALUES ( %s, %s, %s, %s, %s, %s, %s, %s, %s)"
 
     cur.execute(
-        insert_sql, (sale_employee_number, new_car_brand, used_car_brand, number_of_new_cars_sold, number_of_used_cars_sold, profit_from_new_cars, profit_from_used_cars, Profit, vehicle_category)
+        insert_sql, (sale_employee_number, new_car_brand, used_car_brand, number_of_used_cars_sold, profit_from_new_cars, profit_from_used_cars, Profit, vehicle_category, number_of_new_cars_sold)
     )
     conn.commit()
     cur.close()

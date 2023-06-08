@@ -43,40 +43,7 @@
 </head>
 
 <body>
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <table class="table table-bordered table-hover">
-                    <thead class="table-light">
-                        <tr>
-                            <th>
-                                <a href="{{ url_for('supplier') }}" class="btn btn-outline-primary btn-lg">Display Supplier</a>
-                            </th>
-                            <th>
-                                <a href="{{ url_for('vehicles') }}" class="btn btn-outline-primary btn-lg">Display Vehicles</a>
-                            </th>
-                            <th>
-                                <a href="{{ url_for('sales') }}" class="btn btn-outline-primary btn-lg">Manage Sales</a>
-                            </th>
-                            <th>
-                                <a href="{{ url_for('maintenance') }}" class="btn btn-outline-primary btn-lg">Manage Maintenance/Services</a>
-                            </th>
-                        </tr>
-                    </thead>
-                </table>
-
-                <form action="{{ url_for('submit_form') }}" method="POST">
-                    <div class="mb-3">
-                        <label for="cars" class="form-label h6">Choose an Option</label>
-                        <select name="cars" id="cars" class="form-select form-control-lg">
-                            <option value="supplier">Supplier</option>
-                            <option value="vehicles">Display Vehicles</option>
-                            <option value="sales">Manage Sales</option>
-                            <option value="maintenance">Manage Maintenance/Services</option>
-                               </select>
-                     
-                    </div>
-                    <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+   
                     
                 </form>
 
@@ -101,30 +68,30 @@
 
             </div>
         </div>
-
-        <div class="row justify-content-center mt-4">
-            <div class="col-md-6">
-                <h2 class="text-center mb-4">Forms:</h2>
+        
+        <div class="row justify-content-center mt-4 jumbotron text-center">
+            <div class="col-md-9">
+                <h2 class="text-center ">Forms:</h2>
                 <ul class="list-group">
-                    <li class="list-group-item">
+                    <li class="list-group-">
                         <a href="{{ url_for('get_new_supplier_details') }}" class="btn btn-outline-primary btn-lg">Enter New Supplier Details</a>
                     </li>
-                    <li class="list-group-item">
-                        <a href="{{ url_for('get_new_supplier_details') }}" class="btn btn-outline-primary btn-lg">Enter New Vehicle Details</a>
+                    <li class="list-group-">
+                        <a href="{{ url_for('get_new_vehicles_details') }}" class="btn btn-primary btn-lg">Enter New Vehicle Details</a>
                     </li>
-                    <li class="list-group-item">
+                    <li class="list-group-">
                         <a href="{{ url_for('get_new_sales_details') }}" class="btn btn-outline-primary btn-lg">Enter New Sales Details</a>
                     </li>
-                    <li class="list-group-item">
-                        <a href="{{ url_for('get_new_maintenance_details') }}" class="btn btn-outline-primary btn-lg">Enter New Maintenance Details</a>
+                    <li class="list-group-">
+                        <a href="{{ url_for('get_new_maintenance_details') }}" class="btn btn-primary btn-lg">Enter New Maintenance Details</a>
                     </li>
                 </ul>
             </div>
         </div>
-    </div>
+    
 
+        {% endblock %}
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-beta2/js/bootstrap.min.js"></script>
 </body>
 
 </html>
-{% endblock %}
