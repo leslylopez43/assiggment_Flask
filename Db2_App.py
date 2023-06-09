@@ -124,6 +124,7 @@ def insert_sales():
     
     
     
+    
     return redirect(url_for('index'))
 
 
