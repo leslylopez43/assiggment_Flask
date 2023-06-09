@@ -12,15 +12,6 @@ def db_conn():
 def index():
     return render_template("index.html")
 
-# @app.route("/supplier")
-# def supplier():
-#     conn=db_conn()
-#     cur=conn.cursor()
-#     sql_select_query="SELECT * FROM supplier;" 
-#     cur.execute(sql_select_query)
-#     supplier_details=cur.fetchall()
-#     return render_template("supplier.html",list_of_suppliers=supplier_details)
-
 @app.route("/supplier", methods=["GET", "POST"])
 def supplier():
     conn = db_conn()
@@ -57,7 +48,7 @@ def vehicles():
         if search_term:
             sql_select_query = f"SELECT * FROM vehicles WHERE Registration_Number = '{search_term}' OR Brand = '{search_term}' OR Model = '{search_term}'"
             cur.execute(sql_select_query)
-            supplier_details = cur.fetchall()
+            vehicles_details = cur.fetchall()
         else:
             sql_select_query="SELECT * FROM vehicles;"
         cur.execute(sql_select_query)
@@ -76,7 +67,7 @@ def sales():
     conn = db_conn()
     cur=conn.cursor()
     if    request.method == "POST":
-        search_term = request.form.get("sales")
+        search_term = request.form.get("search")
         if  search_term: 
             sql_select_query = f"SELECT * FROM sales WHERE New_Car_Brand = '{search_term}' OR Sale_Employee_Number = '{search_term}'"
             cur.execute(sql_select_query)
@@ -97,12 +88,12 @@ def sales():
 
 @app.route("/maintenance", methods=["GET", "POST"])
 def maintenance():
-    conn=db_conn()
+    conn = db_conn()
     cur=conn.cursor()
     if    request.method == "POST":
-        search_term = request.form.get("maintenance")
+        search_term = request.form.get("search")
         if  search_term: 
-            sql_select_query = f"SELECT * FROM sales WHERE Reg_Number = '{search_term}' OR Performed By='{search_term}' OR Vehicle_ID By='{search_term}'"
+            sql_select_query = f"SELECT * FROM maintenance WHERE Vehicle_ID = '{search_term}' OR Performed_By = '{search_term}' OR Performed_By = '{search_term}'"
             cur.execute(sql_select_query)
             maintenance_details = cur.fetchall()
         else:
