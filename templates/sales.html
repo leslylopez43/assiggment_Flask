@@ -1,3 +1,6 @@
+{% extends "base.html" %}
+
+{% block content %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -30,7 +33,7 @@
 </head>
 <body>
     <div class="container">
-        <table class="table">
+        <table >
             <thead>
               <h1 class="text-center mb-4 row justify-content-center">SALES DATA</h1>
               <form action="{{ url_for('sales') }}" method="POST">
@@ -82,3 +85,5 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
+
+{% endblock %}
