@@ -52,9 +52,23 @@ def supplier():
 def vehicles():
     conn=db_conn()
     cur=conn.cursor()
-    sql_select_query="SELECT * FROM vehicles;"
-    cur.execute(sql_select_query)
-    vehicles_details=cur.fetchall()
+    if request.method == "POST":
+        search_term = request.form.get("search")
+        if search_term:
+            sql_select_query = f"SELECT * FROM vehicles WHERE Registration_Number = '{search_term}' OR Brand = '{search_term}' OR Model = '{search_term}'"
+            cur.execute(sql_select_query)
+            supplier_details = cur.fetchall()
+        else:
+            sql_select_query="SELECT * FROM vehicles;"
+        cur.execute(sql_select_query)
+        vehicles_details=cur.fetchall()
+    else:
+        sql_select_query = "SELECT * FROM vehicles;"
+        cur.execute(sql_select_query)
+        vehicles_details = cur.fetchall()
+    cur.close()
+    conn.close()
+
     return render_template("vehicles.html",list_of_vehicles=vehicles_details)
 
 @app.route("/sales")
