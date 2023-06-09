@@ -71,26 +71,50 @@ def vehicles():
 
     return render_template("vehicles.html",list_of_vehicles=vehicles_details)
 
-@app.route("/sales")
+@app.route("/sales", methods=["GET", "POST"])
 def sales():
     conn = db_conn()
-    cur = conn.cursor()
-    sql_select_query = "SELECT * FROM sales;"
-    cur.execute(sql_select_query)
-    sales_details = cur.fetchall()
+    cur=conn.cursor()
+    if    request.method == "POST":
+        search_term = request.form.get("sales")
+        if  search_term: 
+            sql_select_query = f"SELECT * FROM sales WHERE New_Car_Brand = '{search_term}' OR Sale_Employee_Number = '{search_term}'"
+            cur.execute(sql_select_query)
+            sales_details = cur.fetchall()
+        else:
+            sql_select_query="SELECT * FROM sales;"
+            cur.execute(sql_select_query)
+            sales_details=cur.fetchall()
+    else:
+        sql_select_query = "SELECT * FROM sales;"
+        cur.execute(sql_select_query)
+        sales_details = cur.fetchall()
     cur.close()
     conn.close()
+
     return render_template("sales.html", list_of_sales=sales_details)
 
 
-@app.route("/maintenance")
+@app.route("/maintenance", methods=["GET", "POST"])
 def maintenance():
     conn=db_conn()
     cur=conn.cursor()
-    sql_select_query="SELECT * FROM maintenance;"
-    cur.execute(sql_select_query)
-    maintenance_details=cur.fetchall()
-    print (maintenance)
+    if    request.method == "POST":
+        search_term = request.form.get("maintenance")
+        if  search_term: 
+            sql_select_query = f"SELECT * FROM sales WHERE Reg_Number = '{search_term}' OR Performed By='{search_term}' OR Vehicle_ID By='{search_term}'"
+            cur.execute(sql_select_query)
+            maintenance_details = cur.fetchall()
+        else:
+            sql_select_query="SELECT * FROM maintenance;"
+            cur.execute(sql_select_query)
+            maintenance_details=cur.fetchall()
+    else:
+        sql_select_query = "SELECT * FROM maintenance;"
+        cur.execute(sql_select_query)
+        maintenance_details = cur.fetchall()
+    cur.close()
+    conn.close()
     return render_template("maintenance.html",list_of_maintenance=maintenance_details)
 
 @app.route('/search', methods=['POST'])
