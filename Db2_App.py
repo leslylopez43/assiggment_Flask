@@ -92,23 +92,38 @@ def get_new_supplier_details():
     return render_template("insert_supplier.html")
 
 @app.route('/insert_new_supplier',methods=['POST'])
-def create():
-    conn=db_conn()
-    cur=conn.cursor()
-    Companyname=request.form['Company Name']
-    Address=request.form['Address']
-    MobilePhone=request.form['Mobile Phone']
-    EmailAddress=request.form['Email Address']
-    contactName=request.form['contact Name']
-    vat=request.form['VAT']
-    print(vat)
+def insert_sales():
+    conn = psycopg2.connect(database="motoring", host="localhost", user="postgres", password="London1031", port="5432")
+    cur = conn.cursor()
 
+    cur.execute('''CREATE TABLE IF NOT EXISTS vehicles(
+        VehiclesID serial PRIMARY KEY,
+        registration_number varchar(100),
+        brand varchar(100),
+        model varchar(100),
+        color varchar(100),
+        Price money,
+        car_year varchar(100),
+        On_stock_from varchar(100),
+        available varchar(100)
+        number_of_new_cars_sold(100)
+    );''')
 
-    insert_sql="INSERT INTO supplier (supplier_name, address, mobile_phone, email, contact_name, vat) VALUES ('" + Companyname  + "','" + Address  + "','" + MobilePhone + "','" + EmailAddress+ "','" + contactName+ "','" + vat + "')"
-    cur.execute(insert_sql)
+    sql_string = "INSERT INTO vehicles(registration_number, brand, model, color, price, car_year, on_stock_from, available, number_of_new_cars_sold) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s);"
+    values = ('MC23URD', 'Mercedes', 'Benz', 'White', '2020', '2023', '23/02/2023', 'yes', '2')
+
+    cur.execute(sql_string, values)
     conn.commit()
+
     cur.close()
     conn.close()
+    if number_of_new_cars_sold is not None and number_of_new_cars_sold.isdigit():
+        number_of_new_cars_sold = int(number_of_new_cars_sold)
+    else:
+        number_of_new_cars_sold = 0
+    
+    
+    
     return redirect(url_for('index'))
 
 

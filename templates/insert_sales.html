@@ -1,44 +1,80 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body>
-    <h1>Sales Form</h1>
-    <form action="/insert_new_sales" method="POST">
-        <table>
-            <tr>
-                
-                <th>Sale Employee Number</th>
-                <th>New Car Brand</th>
-                <th>Used Car Brand</th>
-                <th>Number of Used Cars Sold</th>
-                <th>Profit From New Cars</th>
-                <th>Profit From Used Cars</th>
-                <th>Profit</th>
-                <th>Vehicle Category</th>
-                <th>number_of_new_cars_sold</th>
-            </tr>
-            <tr>
-                
-                <td><input type="text" name="sale_employee_number"></td>
-                <td><input type="text" name="new_car_brand"></td>
-                <td><input type="text" name="used_car_brand"></td>
-                <td><input type="text" name="number_of_used_cars_sold"></td>
-                <td><input type="text" name="profit_from_new_cars"></td>
-                <td><input type="text" name="profit_from_used_cars"></td>
-                <td><input type="text" name="Profit"></td>
-                <td><input type="text" name="vehicle_category"></td>
-                <td><input type="text" name="number_of_new_cars_sold"></td>
 
-            </tr>
-        </table>
-        <button type="submit">Submit</button>
+<body>
+<div class="container">    
+    <h1>Sales Form</h1>
+    
+    <form action="/insert_new_sales" method="POST">
+        <div class="form-group">
+            <label for="sale_employee_number">Sale Employee Number:</label>
+            <input type="text" id="sale_employee_number" name="sale_employee_number" class="form-">
+        </div>
+        
+        <div class="form-group">
+            <label for="new_car_brand">New Car Brand:</label>
+            <input type="text" id="new_car_brand" name="new_car_brand" class="form-control">
+        </div>
+        
+        <div class="form-group">
+            <label for="used_car_brand">Used Car Brand:</label>
+            <input type="text" id="used_car_brand" name="used_car_brand" class="form-control">
+        </div>
+        
+        <div class="form-group">
+            <label for="number_of_used_cars_sold">Number of Used Cars Sold:</label>
+            <input type="text" id="number_of_used_cars_sold" name="number_of_used_cars_sold" class="form-control">
+        </div>
+        
+        <div class="form-group">
+            <label for="profit_from_new_cars">Profit From New Cars:</label>
+            <input type="text" id="profit_from_new_cars" name="profit_from_new_cars" class="form-control">
+        </div>
+        
+        <div class="form-group">
+            <label for="profit_from_used_cars">Profit From Used Cars:</label>
+            <input type="text" id="profit_from_used_cars" name="profit_from_used_cars" class="form-control">
+        </div>
+        
+        <div class="form-group">
+            <label for="Profit">Profit:</label>
+            <input type="text" id="Profit" name="Profit" class="form-control">
+        </div>
+        
+        <div class="form-group">
+            <label for="vehicle_category">Vehicle Category:</label>
+            <input type="text" id="vehicle_category" name="vehicle_category" class="form-control">
+        </div>
+        
+        <div class="form-group">
+            <label for="number_of_new_cars_sold">Number of New Cars Sold:</label>
+            <input type="text" id="number_of_new_cars_sold" name="number_of_new_cars_sold" class="form-control">
+        </div>
+        
+        <input type="submit" value="Submit" class="btn btn-primary">
     </form>
+    
     <br>
     <a href="{{ url_for('index') }}" class="btn btn-secondary">Go to Menu</a>
+</div>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
 </body>
 </html>
+
+{% endblock %}
