@@ -14,7 +14,7 @@ This is a Flask web application for managing motoring data. It provides function
 
 cd flask-motoring-app
 
-Install the required dependencies:
+Install the required dependencies.
 pip install -r requirements.txt
 
 
