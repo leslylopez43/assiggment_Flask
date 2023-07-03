@@ -35,7 +35,7 @@ The application provides the following pages
 ## Features
 #### Displays the main page of the application.
 View and search for supplier details.
-Suppliers: http://localhost:5000/supplier
+Supplier: http://localhost:5000/supplier
 
 #### Displays a list of suppliers and their details.
 View and search for vehicle details.
