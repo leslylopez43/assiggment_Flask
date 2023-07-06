@@ -10,7 +10,10 @@
     <title>Document</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
-        /* Add your custom CSS styles here */
+        .btn-primary-custom {
+    background-color: #4a44be;
+    color: #fff;
+}
     </style>
 </head>
 <body>
@@ -42,7 +45,7 @@
             <div class="form-group">
                 <input type="text" name="available" class="form-control" placeholder="Available">
             </div>
-            <button type="submit" class="btn btn-primary">Create Vehicle</button>
+            <button type="submit" class="btn btn-primary btn-primary-custom">Create Vehicle</button>
         </form>
         <br>
         <a href="{{ url_for('index') }}" class="btn btn-secondary">Go to Menu</a>
