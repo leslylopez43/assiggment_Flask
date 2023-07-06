@@ -43,30 +43,11 @@
       margin-bottom: 10px;
       font-size: 14px;
     }
+    .btn-primary-custom {
+            background-color: #4a44be;
+            color: #fff;
+        }
 
-    .btn-primary {
-      background-color: #007bff;
-      border-color: #007bff;
-      padding: 10px 20px;
-      font-size: 14px;
-      border-radius: 4px;
-      transition: background-color 0.3s ease;
-    }
-
-    .btn-primary:hover {
-      background-color: #0069d9;
-      border-color: #0062cc;
-    }
-
-    .btn-link {
-      color: #007bff;
-      text-decoration: none;
-      font-size: 14px;
-    }
-
-    .btn-link:hover {
-      text-decoration: underline;
-    }
   </style>
 </head>
 
@@ -112,9 +93,9 @@
           <label for="total" class="form-label">Total</label>
           <input type="text" class="form-control" id="total" name="total" placeholder="Total">
         </div>
-        <button type="submit" class="btn btn-primary">Services/Create</button>
+        <button type="submit" class="btn btn-primary btn-primary-custom">Services/Create</button>
         <br>
-        <a href="{{url_for('index')}}" class="btn btn-link class="btn btn-primary"">Go to Menu</a>
+        <a href="{{url_for('index')}}" class="btn btn-primary btn-primary-custom">Go to Menu</a>
       </form>
     </div>
   </div>
