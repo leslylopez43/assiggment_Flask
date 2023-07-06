@@ -28,15 +28,35 @@ pip install -r requirements.txt
 Start the application:
 The application will be accessible at http://localhost:5000.
 
-## Usage
-The application provides the following pages
+
+
+### Chrome Lighthouse Test Results
+
+We use Chrome Lighthouse to evaluate the performance and accessibility of our web application. The following screenshots highlight some of the key metrics:
 
 ![Screenshot 1](/static/img/index%20lighthouse.webp)
-![Screenshot 2](/static/img/supplier%20lighthouse.webp)
-![Screenshot 3](/static/img/new_vehicles%20lighthouse.webp)
-![Screenshot 4](/static/img/sale-form%20light%20house.webp)
-![Screenshot 5](/static/img/maintenance%20lighthouse.webp)
+*Figure 1: Performance score as reported by Chrome Lighthouse.*
 
+![Accessibility Score](/static/img/supplier%20lighthouse.webp)
+*Figure 2: Accessibility score as reported by Chrome Lighthouse.*
+
+![Accessibility Score](/static/img/new_vehicles%20lighthouse.webp)
+*Figure 3: Accessibility score as reported by Chrome Lighthouse.*
+
+![Accessibility Score](/static/img/sale-form%20light%20house.webp)
+*Figure 4: Accessibility score as reported by Chrome Lighthouse.*
+
+![Accessibility Score](/static/img/maintenance%20lighthouse.webp)
+*Figure 5: Accessibility score as reported by Chrome Lighthouse.*
+
+
+![Screenshot 2]()
+![Screenshot 3]()
+![Screenshot 4]()
+![Screenshot 5]()
+
+## Usage
+The application provides the following pages
 
 # British Fleet
 ## Features
