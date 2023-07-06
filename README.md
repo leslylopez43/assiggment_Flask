@@ -31,6 +31,13 @@ The application will be accessible at http://localhost:5000.
 ## Usage
 The application provides the following pages
 
+![Screenshot 1](/static/img/index%20lighthouse.webp)
+![Screenshot 2](/static/img/supplier%20lighthouse.webp)
+![Screenshot 3](/static/img/new_vehicles%20lighthouse.webp)
+![Screenshot 4](/static/img/sale-form%20light%20house.webp)
+![Screenshot 5](/static/img/maintenance%20lighthouse.webp)
+
+
 # British Fleet
 ## Features
 #### Displays the main page of the application.
