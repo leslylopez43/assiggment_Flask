@@ -1,5 +1,6 @@
 import psycopg2
 
+
 conn=psycopg2.connect(database="motoring",host="localhost",user="postgres",password="London1031",port="5432")
 
 cur=conn.cursor()
