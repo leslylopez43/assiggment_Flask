@@ -29,6 +29,10 @@
         th {
             background-color: #f2f2f2;
         }
+        .btn-primary-custom {
+            background-color: #4a44be;
+            color: #fff;
+        }
     </style>
 </head>
 <body>
@@ -41,7 +45,7 @@
                     <label for="search">Search for Sales</label>
                     <input type="text" name="search" id="search" class="form-control">
                 </div>
-                <button type="submit" class="btn btn-primary">Search</button>
+                <button type="submit" class="btn btn-primary btn-primary-custom">Search</button>
             
                 <tr>
                     <th>Sale Employee Number</th>
@@ -68,18 +72,18 @@
                     <td>{{column[8]}}</td>
                     <td>{{column[9]}}</td>
 
-                    <td><a href="{{ url_for('update_supplier', supplier_id=column[0]) }}">Update</a></td>
-                  <td><a href="{{ url_for('delete_supplier', supplier_id=column[0]) }}">Delete</a></td>
-                  <td> <a href="{{ url_for('print_supplier', supplier_id=column[0]) }}">Print</a></td>
+                    <td><a href="{{ url_for('update_supplier', supplier_id=column[0]) }}"class="btn btn-primary btn-primary-custom">Update</a></td>
+                  <td><a href="{{ url_for('delete_supplier', supplier_id=column[0]) }}"class="btn btn-primary btn-primary-custom">Delete</a></td>
+                  <td> <a href="{{ url_for('print_supplier', supplier_id=column[0]) }}"class="btn btn-primary btn-primary-custom">Print</a></td>
                 </tr>
                 {% endfor %}
             </tbody>
         </table>
         
         {{ list_of_vehicles }}
-        <a href="{{ url_for('get_new_sales_details') }}">Add Sales</a>
+        <a href="{{ url_for('get_new_sales_details') }}"class="btn btn-primary btn-primary-custom">Add Sales</a>
 
-        <a href="{{url_for('index')}}" class="btn btn-primary mt-3">Go to Menu</a>
+        <a href="{{url_for('index')}}" class="btn btn-primary btn-primary-custom">Go to Menu</a>
     </div>
 
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
