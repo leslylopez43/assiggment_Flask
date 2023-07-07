@@ -162,9 +162,6 @@ def get_new_vehicles_details():
 
 @app.route('/insert_new_vehicles', methods=['POST'])
 def create_new_vehicles():
-    conn = db_conn()
-    cur = conn.cursor()
-    
     registration_number = request.form['registration_number']
     brand = request.form['brand']
     model = request.form['model']
@@ -174,7 +171,10 @@ def create_new_vehicles():
     on_stock_from = request.form['On_stock_from']
     availability = request.form['availability']
     
-    insert_sql = "INSERT INTO vehicles (registration_number, brand, model, color, Price, car_year, On_stock_from, `available`) VALUES (%s, %s, %s, %s, %s, %s, %s, %s)"
+    conn = db_conn()
+    cur = conn.cursor()
+    
+    insert_sql = "INSERT INTO vehicles (registration_number, brand, model, color, Price, car_year, On_stock_from, availability) VALUES (%s, %s, %s, %s, %s, %s, %s, %s)"
     values = (registration_number, brand, model, color, price_money, car_year, on_stock_from, availability)
     
     cur.execute(insert_sql, values)
@@ -202,16 +202,19 @@ def create_new_sales():
     number_of_used_cars_sold = request.form['number_of_used_cars_sold']
     profit_from_new_cars = request.form['profit_from_new_cars']
     profit_from_used_cars = request.form['profit_from_used_cars']
-    Profit = request.form['Profit']
+    profit = request.form['Profit']
     vehicle_category = request.form['vehicle_category']
-    number_of_new_cars_sold =request.form['number_of_new_cars_sold']
-    insert_sql = "INSERT INTO sales (sale_employee_number, new_car_brand, used_car_brand, number_of_used_cars_sold, profit_from_new_cars, profit_from_used_cars, profit, vehicle_category, number_of_new_cars_sold) VALUES ('" + sale_employee_number + "','" + new_car_brand + "','" + used_car_brand + "','" + number_of_used_cars_sold + "','" + profit_from_new_cars + "', '" + profit_from_used_cars + "','" + Profit + "','" + vehicle_category + "','" + number_of_new_cars_sold + "')"
+    number_of_new_cars_sold = request.form['number_of_new_cars_sold']
     
-
-    cur.execute(insert_sql,)
+    insert_sql = "INSERT INTO sales (sale_employee_number, new_car_brand, used_car_brand, number_of_used_cars_sold, profit_from_new_cars, profit_from_used_cars, profit, vehicle_category, number_of_new_cars_sold) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)"
+    values = (sale_employee_number, new_car_brand, used_car_brand, number_of_used_cars_sold, profit_from_new_cars, profit_from_used_cars, profit, vehicle_category, number_of_new_cars_sold)
+    
+    cur.execute(insert_sql, values)
     conn.commit()
+    
     cur.close()
     conn.close()
+    
     return redirect(url_for('index'))
 
 @app.route("/get_new_maintenance_details")
