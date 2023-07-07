@@ -200,7 +200,6 @@ def create_new_sales():
     sale_employee_number = request.form.get('sale_employee_number')
     new_car_brand = request.form.get('new_car_brand')
     used_car_brand = request.form.get('used_car_brand')
-    number_of_new_cars_sold = request.form.get('number_of_new_cars_sold')
     number_of_used_cars_sold = request.form.get('number_of_used_cars_sold')
     profit_from_new_cars = request.form.get('profit_from_new_cars')
     profit_from_used_cars = request.form.get('profit_from_used_cars')
