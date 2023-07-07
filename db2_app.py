@@ -52,8 +52,8 @@ def supplier():
 
 @app.route("/vehicles", methods=["GET", "POST"])
 def vehicles():
-    conn=db_conn()
-    cur=conn.cursor()
+    conn = db_conn()
+    cur = conn.cursor()
     if request.method == "POST":
         search_term = request.form.get("search")
         if search_term:
@@ -176,8 +176,8 @@ def get_new_vehicles_details():
 
 @app.route('/insert_new_vehicles',methods=['POST'])
 def create_new_vehicles():
-     conn=db_conn()
-     cur=conn.cursor()
+     conn = db_conn()
+     cur = conn.cursor()
      registration_number=request.form['registration_number']
      brand=request.form['brand']
      model=request.form['model']
