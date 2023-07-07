@@ -92,7 +92,7 @@ def sales():
         sql_select_query = "SELECT * FROM sales;"
         cur.execute(sql_select_query)
         sales_details = cur.fetchall()
-        
+
     cur.close()
     conn.close()
 
@@ -148,7 +148,7 @@ def insert_new_supplier():
     sql_string = "INSERT INTO supplier (supplier_name, address, mobile_phone, email, contact_name) VALUES (%s, %s, %s, %s, %s);"
     values = ('MCM', '103 unit 5 brodway Road D30 8UJ', '020333654389', 'zoo@ool.com', 'Blue')
 
-    cur.execute(sql_string, values)
+    cur.execute(sql_string, )
     conn.commit()
 
     cur.close()
