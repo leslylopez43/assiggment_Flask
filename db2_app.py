@@ -2,15 +2,15 @@
 from flask import Flask, render_template, redirect, request, url_for 
 import psycopg2
 app=Flask(__name__)
-def db_conn():
-    conn=psycopg.connect(database="motoring",
+def db_conn2():
+    conn=psycopg2.connect(database="motoring",
     host="dpg-cijtiih8g3nc2ge601gg-a", 
     user="motoring_user",
     password="an0qLg5cQMuA6gyATcsElx0L1srvkvGb",
     port="5432")
     return conn
 
-def db_conn2():
+def db_conn():
     conn=psycopg2.connect(database="motoring",
     host="localhost", 
     user="postgres",
