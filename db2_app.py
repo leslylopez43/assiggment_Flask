@@ -31,15 +31,15 @@ def supplier():
     if request.method == "POST":
         search_term = request.form.get("search")
         if search_term:
-            sql_select_query = f"SELECT * FROM supplier WHERE supplier_name = '{search_term}' OR mobile_phone = '{search_term}' OR email = '{search_term}'"
-            cur.execute(sql_select_query)
+            sql_select_query = "SELECT * FROM supplier WHERE supplier_name = %s OR mobile_phone = %s OR email = %s"
+            cur.execute(sql_select_query, (search_term, search_term, search_term))
             supplier_details = cur.fetchall()
         else:
-            sql_select_query = "SELECT * FROM supplier;"
+            sql_select_query = "SELECT * FROM supplier"
             cur.execute(sql_select_query)
             supplier_details = cur.fetchall()
     else:
-        sql_select_query = "SELECT * FROM supplier;"
+        sql_select_query = "SELECT * FROM supplier"
         cur.execute(sql_select_query)
         supplier_details = cur.fetchall()
 
@@ -260,19 +260,23 @@ def create_new_maintenance():
 
 
 
-@app.route("/get_single_supplier" ,methods=['POST'])
+@app.route("/get_single_supplier", methods=['POST'])
 def single_supplier():
-    conn=db_conn()
-    cur=conn.cursor()
-    supplier_id=request.form['supplier']
-    #print ("supplier " + str(supplier_id))
-    sql_select_query="SELECT * FROM supplier where supplier_list='"  + supplier_id + "';"
-    cur.execute(sql_select_query)
-    single_supplier=cur.fetchall()
-    cur.close()
-    conn.close()
-    #print(" found " + str(single_supplier))
-    return render_template("single_supplier.html",list_of_supplier=single_supplier)
+    conn = db_conn()
+    cur = conn.cursor()
+    supplier_id = request.form['supplier']
+    sql_select_query = "SELECT * FROM supplier WHERE supplierid = %s;"  # Update the column name
+    
+    try:
+        cur.execute(sql_select_query, (supplier_id,))
+        single_supplier = cur.fetchall()
+    except Exception as e:
+        return 'Error occurred while retrieving supplier data: ' + str(e)
+    finally:
+        cur.close()
+        conn.close()
+
+    return render_template("single_supplier.html", list_of_supplier=single_supplier)
 
 
 @app.route("/update_supplier", methods=['POST'])
@@ -288,11 +292,11 @@ def update_supplier():
     contactName = request.form['contactName']
     vat = request.form['vat']
 
-    sql_select_query = "SELECT * FROM supplier WHERE supplier_id = %s"
+    sql_select_query = "SELECT * FROM supplier WHERE supplier_id = %s;"
     cur.execute(sql_select_query, (supplier_id,))
-    single_supplier = cur.fetchone()  # Fetch a single row instead of fetching all rows
+    single_supplier = cur.fetchone()
 
-    update_sql = "UPDATE supplier SET supplier_name = %s, address = %s, mobile_phone = %s, email = %s, contact_name = %s, vat = %s WHERE supplier_id = %s"
+    update_sql = "UPDATE supplier SET supplier_name = %s, address = %s, mobile_phone = %s, email = %s, contact_name = %s, vat = %s WHERE supplier_id = %s;"
     values = (Companyname, Address, MobilePhone, EmailAddress, contactName, vat, supplier_id)
 
     try:
@@ -310,13 +314,14 @@ def update_supplier():
         cur.close()
         conn.close()
 
+
 @app.route('/delete_supplier/<int:supplier_id>', methods=['GET', 'POST'])
 def delete_supplier(supplier_id):
     conn = db_conn()
     cur = conn.cursor()
-    
-    delete_sql = "DELETE FROM supplier WHERE supplier_id = %s"
-    
+
+    delete_sql = "DELETE FROM supplier WHERE supplier_id = %s;"
+
     try:
         cur.execute(delete_sql, (supplier_id,))
         conn.commit()
@@ -327,13 +332,14 @@ def delete_supplier(supplier_id):
         cur.close()
         conn.close()
 
+
 @app.route('/print_supplier/<int:supplier_id>', methods=['GET'])
 def print_supplier(supplier_id):
     conn = db_conn()
     cur = conn.cursor()
-    
-    select_sql = "SELECT * FROM supplier WHERE supplier_id = %s"
-    
+
+    select_sql = "SELECT * FROM supplier WHERE supplier_id = %s;"
+
     try:
         cur.execute(select_sql, (supplier_id,))
         supplier_data = cur.fetchone()
@@ -343,9 +349,6 @@ def print_supplier(supplier_id):
     finally:
         cur.close()
         conn.close()
-
-
-
 
 
 @app.route('/submit_form', methods=['POST'])
@@ -368,8 +371,5 @@ def submit_form():
         return 'Invalid option'
 
 
-
-         
 if __name__ == '__main__':
     app.run(debug=True)
-
