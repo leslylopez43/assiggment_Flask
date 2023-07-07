@@ -131,35 +131,28 @@ def search():
 def get_new_supplier_details():
     return render_template("insert_supplier.html")
 
-@app.route('/insert_new_supplier',methods=['POST'])
+@app.route('/insert_new_supplier', methods=['POST'])
 def insert_new_supplier():
-    # conn = psycopg2.connect(database="motoring", host="localhost", user="postgres", password="London1031", port="5432")
-    conn=db_conn()
-    cur =conn.cursor()
-    cur.execute('''CREATE TABLE IF NOT EXISTS supplier(
-        supplierid serial PRIMARY KEY,
-        supplier_name varchar(100),
-        address varchar(100),
-        mobile_phone varchar(100),
-        email varchar(100),
-        contact_name varchar(100),
-        );''')
-    sql_string = "INSERT INTO supplier(supplier_name, address, mobile_phone, email, contact_name) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s);"
-    values = ('MCM','103 unit 5 brodway Road D30 8UJ', '020333654389', 'zoo@ool.com', 'BLue')
-    
+    conn = db_conn()
+    cur = conn.cursor()
+
+    cur.execute('''CREATE TABLE IF NOT EXISTS supplier (
+        supplierid SERIAL PRIMARY KEY,
+        supplier_name VARCHAR(100),
+        address VARCHAR(100),
+        mobile_phone VARCHAR(100),
+        email VARCHAR(100),
+        contact_name VARCHAR(100)
+    );''')
+
+    sql_string = "INSERT INTO supplier (supplier_name, address, mobile_phone, email, contact_name) VALUES (%s, %s, %s, %s, %s);"
+    values = ('MCM', '103 unit 5 brodway Road D30 8UJ', '020333654389', 'zoo@ool.com', 'Blue')
 
     cur.execute(sql_string, values)
     conn.commit()
 
     cur.close()
     conn.close()
-    if number_of_new_cars_sold is not None and number_of_new_cars_sold.isdigit():
-        number_of_new_cars_sold = int(number_of_new_cars_sold)
-    else:
-        number_of_new_cars_sold = 0
-    
-    
-    
     
     return redirect(url_for('index'))
 
@@ -230,20 +223,22 @@ def create_new_maintenance():
     conn = db_conn()
     cur = conn.cursor()
 
-    
-    vehicle_id = request.form.get['vehicle_id']
-    registration_number = request.form.get['registration_number']
-    date_performed = request.form.get['date_performed']
-    task_to_be_performed_Services = request.form.get['task_to_be_performed_Services']
-    performed_by = request.form.get['performed_by']
-    validate_by = request.form.get['validate_by']
-    material = request.form.get['material']
-    labor = request.form.get['labor']
-    total = request.form.get['total']
-    insert_sql = "INSERT INTO maintenance (vehicle_id, registration_number, date_performed, task_to_be_performed_Services, performed_by, validate_by, material, labor, total) VALUES ('" + vehicle_id + "' , '" + registration_number + "','" + date_performed + "','" + task_to_be_performed_Services + "','" + performed_by + "','" + validate_by + "','" + material + "','" + labor + "','" + total + "')"
-    
-    cur.execute(insert_sql,)
+    vehicle_id = request.form.get('vehicle_id')
+    registration_number = request.form.get('registration_number')
+    date_performed = request.form.get('date_performed')
+    task_to_be_performed_Services = request.form.get('task_to_be_performed_Services')
+    performed_by = request.form.get('performed_by')
+    validate_by = request.form.get('validate_by')
+    material = request.form.get('material')
+    labor = request.form.get('labor')
+    total = request.form.get('total')
+
+    insert_sql = "INSERT INTO maintenance (vehicle_id, registration_number, date_performed, task_to_be_performed_Services, performed_by, validate_by, material, labor, total) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)"
+    values = (vehicle_id, registration_number, date_performed, task_to_be_performed_Services, performed_by, validate_by, material, labor, total)
+
+    cur.execute(insert_sql, values)
     conn.commit()
+
     cur.close()
     conn.close()
     return redirect(url_for('index'))
