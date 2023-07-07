@@ -148,12 +148,12 @@ def insert_new_supplier():
     sql_string = "INSERT INTO supplier (supplier_name, address, mobile_phone, email, contact_name) VALUES (%s, %s, %s, %s, %s);"
     values = ('MCM', '103 unit 5 brodway Road D30 8UJ', '020333654389', 'zoo@ool.com', 'Blue')
 
-    cur.execute(sql_string, )
+    cur.execute(sql_string, values)  # Pass the values parameter to execute
     conn.commit()
 
     cur.close()
     conn.close()
-    
+
     return redirect(url_for('index'))
 
 
