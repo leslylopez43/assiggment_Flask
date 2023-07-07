@@ -5,10 +5,18 @@ app=Flask(__name__)
 def db_conn():
     conn=psycopg2.connect(database="motoring",
     host="dpg-cijtiih8g3nc2ge601gg-a", 
-    user="postgres",
+    user="motoring_user",
     password="an0qLg5cQMuA6gyATcsElx0L1srvkvGb",
     port="5432")
     return conn
+
+def db_conn2():
+    conn=psycopg2.connect(database="motoring",
+    host="localhost", 
+    user="postgres",
+    password="London1031",
+    port="5432")
+    return conn 
 
 
 @app.route("/")
@@ -125,7 +133,8 @@ def get_new_supplier_details():
 
 @app.route('/insert_new_supplier',methods=['POST'])
 def insert_sales():
-    conn = psycopg2.connect(database="motoring", host="localhost", user="postgres", password="London1031", port="5432")
+    # conn = psycopg2.connect(database="motoring", host="localhost", user="postgres", password="London1031", port="5432")
+    conn=db_conn()
     cur = conn.cursor()
 
     cur.execute('''CREATE TABLE IF NOT EXISTS vehicles(
