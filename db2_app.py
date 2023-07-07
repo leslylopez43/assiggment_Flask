@@ -132,26 +132,21 @@ def get_new_supplier_details():
     return render_template("insert_supplier.html")
 
 @app.route('/insert_new_supplier',methods=['POST'])
-def insert_sales():
+def insert_new_supplier():
     # conn = psycopg2.connect(database="motoring", host="localhost", user="postgres", password="London1031", port="5432")
     conn=db_conn()
-    cur = conn.cursor()
-
-    cur.execute('''CREATE TABLE IF NOT EXISTS vehicles(
-        VehiclesID serial PRIMARY KEY,
-        registration_number varchar(100),
-        brand varchar(100),
-        model varchar(100),
-        color varchar(100),
-        Price money,
-        car_year varchar(100),
-        On_stock_from varchar(100),
-        available varchar(100)
-        number_of_new_cars_sold(100)
-    );''')
-
-    sql_string = "INSERT INTO vehicles(registration_number, brand, model, color, price, car_year, on_stock_from, available, number_of_new_cars_sold) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s);"
-    values = ('MC23URD', 'Mercedes', 'Benz', 'White', '2020', '2023', '23/02/2023', 'yes', '2')
+    cur =conn.cursor()
+    cur.execute('''CREATE TABLE IF NOT EXISTS supplier(
+        supplierid serial PRIMARY KEY,
+        supplier_name varchar(100),
+        address varchar(100),
+        mobile_phone varchar(100),
+        email varchar(100),
+        contact_name varchar(100),
+        );''')
+    sql_string = "INSERT INTO supplier(supplier_name, address, mobile_phone, email, contact_name) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s);"
+    values = ('MCM','103 unit 5 brodway Road D30 8UJ', '020333654389', 'zoo@ool.com', 'BLue')
+    
 
     cur.execute(sql_string, values)
     conn.commit()
