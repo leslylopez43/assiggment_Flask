@@ -11,7 +11,7 @@ Users of the Motoring App can handle suppliers, vehicles, sales, and maintenance
 ## Installation
 1. The repository:
 
- https://github.com/your-username/flask-motoring-app.git
+https://motoring-web-services.onrender.com
 
 
 cd flask-motoring-app
