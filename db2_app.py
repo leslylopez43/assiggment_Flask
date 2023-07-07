@@ -92,6 +92,7 @@ def sales():
         sql_select_query = "SELECT * FROM sales;"
         cur.execute(sql_select_query)
         sales_details = cur.fetchall()
+        
     cur.close()
     conn.close()
 
