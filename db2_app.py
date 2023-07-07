@@ -77,7 +77,7 @@ def vehicles():
 @app.route("/sales", methods=["GET", "POST"])
 def sales():
     conn = db_conn()
-    cur=conn.cursor()
+    cur = conn.cursor()
     if    request.method == "POST":
         search_term = request.form.get("search")
         if  search_term: 
@@ -86,8 +86,8 @@ def sales():
             sales_details = cur.fetchall()
         else:
             sql_select_query="SELECT * FROM sales;"
-            cur.execute(sql_select_query)
-            sales_details=cur.fetchall()
+        cur.execute(sql_select_query)
+        sales_details=cur.fetchall()
     else:
         sql_select_query = "SELECT * FROM sales;"
         cur.execute(sql_select_query)
