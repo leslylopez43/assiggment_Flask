@@ -192,11 +192,6 @@ def get_new_sales_details():
     return render_template("insert_sales.html")
 
 
-@app.route("/get_new_sales_details")
-def get_new_sales_details():
-    return render_template("insert_sales.html")
-
-
 @app.route('/insert_new_sales', methods=['POST'])
 def create_new_sales():
     conn = db_conn()
@@ -232,7 +227,6 @@ def create_new_sales():
     conn.close()
 
     return redirect(url_for('index'))
-
 
 @app.route("/get_new_maintenance_details")
 def get_new_maintenance_details():
