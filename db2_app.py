@@ -68,6 +68,7 @@ def vehicles():
         sql_select_query = "SELECT * FROM vehicles;"
         cur.execute(sql_select_query)
         vehicles_details = cur.fetchall()
+
     cur.close()
     conn.close()
 
@@ -157,32 +158,34 @@ def insert_new_supplier():
     return redirect(url_for('index'))
 
 
-
 @app.route("/get_new_vehicles_details")
 def get_new_vehicles_details():
     return render_template("insert_vehicles.html")
 
-@app.route('/insert_new_vehicles',methods=['POST'])
+@app.route('/insert_new_vehicles', methods=['POST'])
 def create_new_vehicles():
-     conn = db_conn()
-     cur = conn.cursor()
-     registration_number=request.form['registration_number']
-     brand=request.form['brand']
-     model=request.form['model']
-     color=request.form['color']
-     Price_money=request.form['Price_money']
-     car_year=request.form['car_year']
-     On_stock_from=request.form['On_stock_from'] 
-     available=request.form['available'] 
-     print(available)
-
-     insert_sql="INSERT INTO vehicles (registration_number, brand, model, color, Price, car_year, On_stock_from, available) VALUES ('" + registration_number  + "','" + brand  + "','" + model + "','" + color+ "','" + Price_money+ "','" + car_year + "','" + On_stock_from + "','" + available + "')"
-     print(insert_sql)
-     cur.execute(insert_sql)
-     conn.commit()
-     cur.close()
-     conn.close()
-     return redirect(url_for('index'))
+    conn = db_conn()
+    cur = conn.cursor()
+    
+    registration_number = request.form['registration_number']
+    brand = request.form['brand']
+    model = request.form['model']
+    color = request.form['color']
+    price_money = request.form['Price_money']
+    car_year = request.form['car_year']
+    on_stock_from = request.form['On_stock_from']
+    availability = request.form['availability']
+    
+    insert_sql = "INSERT INTO vehicles (registration_number, brand, model, color, Price, car_year, On_stock_from, `available`) VALUES (%s, %s, %s, %s, %s, %s, %s, %s)"
+    values = (registration_number, brand, model, color, price_money, car_year, on_stock_from, availability)
+    
+    cur.execute(insert_sql, values)
+    conn.commit()
+    
+    cur.close()
+    conn.close()
+    
+    return redirect(url_for('index'))
 
 
 @app.route("/get_new_sales_details")
