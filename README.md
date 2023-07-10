@@ -54,11 +54,6 @@ We use Chrome Lighthouse to evaluate the performance and accessibility of our we
 *Figure 5: Accessibility score as reported by Chrome Lighthouse.*
 
 
-![Screenshot 2]()
-![Screenshot 3]()
-![Screenshot 4]()
-![Screenshot 5]()
-
 ## Usage
 The application provides the following pages
 
