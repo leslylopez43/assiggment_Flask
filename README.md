@@ -13,6 +13,10 @@ Users of the Motoring App can handle suppliers, vehicles, sales, and maintenance
 
 https://motoring-web-services.onrender.com
 
+![Screenshot 2]()
+![Screenshot 3]()
+![Screenshot 4]()
+![Screenshot 5]()
 
 cd flask-motoring-app
 
