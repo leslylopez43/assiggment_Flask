@@ -57,7 +57,22 @@ We use Chrome Lighthouse to evaluate the performance and accessibility of our we
 This project follows the PEP 8 style guidelines to maintain a consistent and readable codebase. To ensure adherence to these guidelines, we use the pycodestyle tool to check our Python code for style violations.
 
 ### Installation
-To check your Python code against the PEP 8 style guidelines, you need to have pycodestyle installed. If you haven't installed it yet, you can install it using pip:
+To check your Python code against the PEP 8 style guidelines, you need to have pycodestyle installed.  
+
+1. **Install `pycodestyle`**:
+   If you haven't installed `pycodestyle` yet, you can find it on PyPI (Python Package Index) at the following link:
+   [pycodestyle on PyPI](https://pypi.org/project/pycodestyle/)
+
+   You can install `pycodestyle` using `pip` by running the following command:
+
+2. **Run `pycodestyle` on your Python file**:
+Open a terminal or command prompt and execute the following command:
+Replace `nameofpythonfile.py` with the actual name of the Python file you want to test.
+
+3. **Review the output**:
+If there are no errors or warnings displayed in the output, it means your code meets the PEP 8 standards.
+
+
 
 ## Running PEP 8 Check
 Once you have pycodestyle installed, you can run the following command in your terminal or command prompt to check a specific Python file:
