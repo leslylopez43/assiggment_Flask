@@ -53,6 +53,25 @@ We use Chrome Lighthouse to evaluate the performance and accessibility of our we
 ![Accessibility Score](/static/img/maintenance%20lighthouse.webp)
 *Figure 5: Accessibility score as reported by Chrome Lighthouse.*
 
+## PEP 8 Code Style Check
+This project follows the PEP 8 style guidelines to maintain a consistent and readable codebase. To ensure adherence to these guidelines, we use the pycodestyle tool to check our Python code for style violations.
+
+### Installation
+To check your Python code against the PEP 8 style guidelines, you need to have pycodestyle installed. If you haven't installed it yet, you can install it using pip:
+
+## Running PEP 8 Check
+Once you have pycodestyle installed, you can run the following command in your terminal or command prompt to check a specific Python file:
+
+## About PEP 8
+PEP 8 is the official style guide for Python code, providing guidelines on how to format and structure your code to enhance readability and maintainability. Adhering to PEP 8 helps create a consistent coding style across the Python community.
+
+For more information on PEP 8, you can visit the official Python website: PEP 8 -- Style Guide for Python Code
+
+## Additional Resources
+|     pycodestyle on PyPI | | PEP 8 on Python.org|
+| --------  | -------- |-------- |
+
+
 
 ## Usage
 The application provides the following pages
