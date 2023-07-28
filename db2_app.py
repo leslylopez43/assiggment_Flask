@@ -2,7 +2,7 @@
 from flask import Flask, render_template, redirect, request, url_for 
 import psycopg2
 app=Flask(__name__)
-def db_conn2():
+def db_conn():
     conn=psycopg2.connect(database="motoring",
     host="dpg-cijtiih8g3nc2ge601gg-a", 
     user="motoring_user",
