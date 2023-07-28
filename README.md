@@ -89,7 +89,8 @@ Each row in the "VEHICLES" table represents a specific vehicle owned or availabl
 - Flask
 - psycopg2
 
-
+## wireframe
+![](/static/img/wirefrme%20Frontpage.png)
 
 ## Installation
 1. The repository:
