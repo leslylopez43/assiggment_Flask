@@ -29,64 +29,7 @@ pip install -r requirements.txt
 - Create a new database named "motoring" on your PostgreSQL server.
 - Update the database connection details in the `db_conn` function in `app.py` with your PostgreSQL credentials.
 
-Start the application:
-The application will be accessible at http://localhost:5000.
-
-
-
-### Chrome Lighthouse Test Results
-
-We use Chrome Lighthouse to evaluate the performance and accessibility of our web application. The following screenshots highlight some of the key metrics:
-
-![Screenshot 1](/static/img/index%20lighthouse.webp)
-*Figure 1: Performance score as reported by Chrome Lighthouse.*
-
-![Accessibility Score](/static/img/supplier%20lighthouse.webp)
-*Figure 2: Accessibility score as reported by Chrome Lighthouse.*
-
-![Accessibility Score](/static/img/new_vehicles%20lighthouse.webp)
-*Figure 3: Accessibility score as reported by Chrome Lighthouse.*
-
-![Accessibility Score](/static/img/sale-form%20light%20house.webp)
-*Figure 4: Accessibility score as reported by Chrome Lighthouse.*
-
-![Accessibility Score](/static/img/maintenance%20lighthouse.webp)
-*Figure 5: Accessibility score as reported by Chrome Lighthouse.*
-
-## PEP 8 Code Style Check
-This project follows the PEP 8 style guidelines to maintain a consistent and readable codebase. To ensure adherence to these guidelines, we use the pycodestyle tool to check our Python code for style violations.
-
-### Installation
-To check your Python code against the PEP 8 style guidelines, you need to have pycodestyle installed.  
-
-1. **Install `pycodestyle`**:
-   If you haven't installed `pycodestyle` yet, you can find it on PyPI (Python Package Index) at the following link:
-   [pycodestyle on PyPI](https://pypi.org/project/pycodestyle/)
-
-   You can install `pycodestyle` using `pip` by running the following command:
-
-2. **Run `pycodestyle` on your Python file**:
-Open a terminal or command prompt and execute the following command:
-Replace `nameofpythonfile.py` with the actual name of the Python file you want to test.
-
-3. **Review the output**:
-If there are no errors or warnings displayed in the output, it means your code meets the PEP 8 standards.
-
-
-
-## Running PEP 8 Check
-Once you have pycodestyle installed, you can run the following command in your terminal or command prompt to check a specific Python file:
-
-## About PEP 8
-PEP 8 is the official style guide for Python code, providing guidelines on how to format and structure your code to enhance readability and maintainability. Adhering to PEP 8 helps create a consistent coding style across the Python community.
-
-For more information on PEP 8, you can visit the official Python website: PEP 8 -- Style Guide for Python Code
-
-## Additional Resources
-|     pycodestyle on PyPI | | PEP 8 on Python.org|
-| --------  | -------- |-------- |
-
-## How to Save the Data in the Tables in SQL Data Base
+## Tables Design in SQL Data Base
    I create a 4 tables each table have at least 10 rows that save the data
 
 ## Table: MAINTENANCE
@@ -166,6 +109,65 @@ Each row in the "VEHICLES" table represents a specific vehicle owned or availabl
 | car_year                     | text     | The manufacturing year of the vehicle                            |
 | on_stock_from                | date        | The date when the vehicle became available in stock              |
 | available                    | text     | Indicates whether the vehicle is available for purchase          |
+
+
+Start the application:
+The application will be accessible at http://localhost:5000.
+
+
+
+### Chrome Lighthouse Test Results
+
+We use Chrome Lighthouse to evaluate the performance and accessibility of our web application. The following screenshots highlight some of the key metrics:
+
+![Screenshot 1](/static/img/index%20lighthouse.webp)
+*Figure 1: Performance score as reported by Chrome Lighthouse.*
+
+![Accessibility Score](/static/img/supplier%20lighthouse.webp)
+*Figure 2: Accessibility score as reported by Chrome Lighthouse.*
+
+![Accessibility Score](/static/img/new_vehicles%20lighthouse.webp)
+*Figure 3: Accessibility score as reported by Chrome Lighthouse.*
+
+![Accessibility Score](/static/img/sale-form%20light%20house.webp)
+*Figure 4: Accessibility score as reported by Chrome Lighthouse.*
+
+![Accessibility Score](/static/img/maintenance%20lighthouse.webp)
+*Figure 5: Accessibility score as reported by Chrome Lighthouse.*
+
+## PEP 8 Code Style Check
+This project follows the PEP 8 style guidelines to maintain a consistent and readable codebase. To ensure adherence to these guidelines, we use the pycodestyle tool to check our Python code for style violations.
+
+### Installation
+To check your Python code against the PEP 8 style guidelines, you need to have pycodestyle installed.  
+
+1. **Install `pycodestyle`**:
+   If you haven't installed `pycodestyle` yet, you can find it on PyPI (Python Package Index) at the following link:
+   [pycodestyle on PyPI](https://pypi.org/project/pycodestyle/)
+
+   You can install `pycodestyle` using `pip` by running the following command:
+
+2. **Run `pycodestyle` on your Python file**:
+Open a terminal or command prompt and execute the following command:
+Replace `nameofpythonfile.py` with the actual name of the Python file you want to test.
+
+3. **Review the output**:
+If there are no errors or warnings displayed in the output, it means your code meets the PEP 8 standards.
+
+
+
+## Running PEP 8 Check
+Once you have pycodestyle installed, you can run the following command in your terminal or command prompt to check a specific Python file:
+
+## About PEP 8
+PEP 8 is the official style guide for Python code, providing guidelines on how to format and structure your code to enhance readability and maintainability. Adhering to PEP 8 helps create a consistent coding style across the Python community.
+
+For more information on PEP 8, you can visit the official Python website: PEP 8 -- Style Guide for Python Code
+
+## Additional Resources
+|     pycodestyle on PyPI | | PEP 8 on Python.org|
+| --------  | -------- |-------- |
+
 
 ## Usage
 The application provides the following pages
