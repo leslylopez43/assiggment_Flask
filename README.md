@@ -90,6 +90,7 @@ Each row in the "VEHICLES" table represents a specific vehicle owned or availabl
 - psycopg2
 
 ## wireframe Frontpage
+This wireframe likely represents the front page or introduction section of the README file. It can include the project title, a brief description of the project's purpose, and possibly some key visual elements or badges.
 ![](/static/img/wirefrme%20Frontpage.webp)
 ## wireframe Maintenance
 ![](/static/img/wireframe%20Maintenance.webp)
@@ -99,6 +100,37 @@ Each row in the "VEHICLES" table represents a specific vehicle owned or availabl
 ![](/static/img/wireframesupplier%20data.webp)
 ## wireframe Vehicles
 ![](/static/img/wireframeVehicles.webp)
+
+## Table of Contents
+
+| Section            | Description                                  |
+|--------------------|----------------------------------------------|
+| [Frontpage](#wireframe-frontpage)             | Introduction and project overview           |
+| [Maintenance](#wireframe-maintenance)         | Project maintenance and contribution guide  |
+| [Sale](#wireframe-sale)                      | Sales-related information                   |
+| [Data](#wireframe-data)                      | Data-related details and sources            |
+| [Vehicles](#wireframe-vehicles)              | Information about vehicles in the project   |
+
+## Wireframe Frontpage
+
+![Frontpage Wireframe](/static/img/wirefrme%20Frontpage.webp)
+
+## Wireframe Maintenance
+
+![Maintenance Wireframe](/static/img/wireframe%20Maintenance.webp)
+
+## Wireframe Sale
+
+![Sale Wireframe](/static/img/wireframesale.webp)
+
+## Wireframe Data
+
+![Data Wireframe](/static/img/wireframesupplier%20data.webp)
+
+## Wireframe Vehicles
+
+![Vehicles Wireframe](/static/img/wireframeVehicles.webp)
+
 
 ## Installation
 1. The repository:
