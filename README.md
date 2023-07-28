@@ -93,14 +93,7 @@ Each row in the "VEHICLES" table represents a specific vehicle owned or availabl
 This wireframe likely represents the front page or introduction section of the README file. It can include the project title, a brief description of the project's purpose, and possibly some key visual elements or badges.
 ![](/static/img/wirefrme%20Frontpage.webp)
 
-
-| ## wireframe Frontpage           |                                  |
 |--------------------|----------------------------------------------|
-| [Frontpage](#wireframe-frontpage)             | Introduction and project overview           |
-| [Maintenance](#wireframe-maintenance)         | Project maintenance and contribution guide  |
-| [Sale](#wireframe-sale)                      | Sales-related information                   |
-| [Data](#wireframe-data)                      | Data-related details and sources            |
-| [Vehicles](#wireframe-vehicles)              | Information about vehicles in the project   |
 
 ## Wireframe Frontpage
 
@@ -108,18 +101,21 @@ This wireframe likely represents the front page or introduction section of the R
 
 ## Wireframe Maintenance
 
+| [Maintenance](#wireframe-maintenance)         | Project maintenance and contribution guide  |
 ![Maintenance Wireframe](/static/img/wireframe%20Maintenance.webp)
 
 ## Wireframe Sale
-
+| [Sale](#wireframe-sale)                      | Sales-related information                   |
 ![Sale Wireframe](/static/img/wireframesale.webp)
 
 ## Wireframe Data
 
+| [Data](#wireframe-data)                      | Data-related details and sources            |
 ![Data Wireframe](/static/img/wireframesupplier%20data.webp)
 
 ## Wireframe Vehicles
 
+| [Vehicles](#wireframe-vehicles)              | Information about vehicles in the project   |
 ![Vehicles Wireframe](/static/img/wireframeVehicles.webp)
 
 
