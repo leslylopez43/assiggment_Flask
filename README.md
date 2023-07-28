@@ -105,17 +105,17 @@ This wireframe likely represents the front page or introduction section of the R
 ![Maintenance Wireframe](/static/img/wireframe%20Maintenance.webp)
 
 ## Wireframe Sale
-| [Sale](#wireframe-sale)                      | Sales-related information                   |
+[Sale](#wireframe-sale)                      | Sales-related information                   
 ![Sale Wireframe](/static/img/wireframesale.webp)
 
 ## Wireframe Data
 
-| [Data](#wireframe-data)                      | Data-related details and sources            |
+[Data](#wireframe-data)                      | Data-related details and sources            
 ![Data Wireframe](/static/img/wireframesupplier%20data.webp)
 
 ## Wireframe Vehicles
 
-| [Vehicles](#wireframe-vehicles)              | Information about vehicles in the project   |
+ [Vehicles](#wireframe-vehicles)              | Information about vehicles in the project   
 ![Vehicles Wireframe](/static/img/wireframeVehicles.webp)
 
 
