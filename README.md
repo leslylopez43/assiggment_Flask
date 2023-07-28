@@ -88,22 +88,13 @@ Each row in the "VEHICLES" table represents a specific vehicle owned or availabl
 - Python 3.6 or higher
 - Flask
 - psycopg2
-
 ## wireframe Frontpage
+
 This wireframe likely represents the front page or introduction section of the README file. It can include the project title, a brief description of the project's purpose, and possibly some key visual elements or badges.
 ![](/static/img/wirefrme%20Frontpage.webp)
-## wireframe Maintenance
-![](/static/img/wireframe%20Maintenance.webp)
-## wireframe Sale
-![](/static/img/wireframesale.webp)
-## wireframe Data
-![](/static/img/wireframesupplier%20data.webp)
-## wireframe Vehicles
-![](/static/img/wireframeVehicles.webp)
 
-## Table of Contents
 
-| Section            | Description                                  |
+| ## wireframe Frontpage           |                                  |
 |--------------------|----------------------------------------------|
 | [Frontpage](#wireframe-frontpage)             | Introduction and project overview           |
 | [Maintenance](#wireframe-maintenance)         | Project maintenance and contribution guide  |
