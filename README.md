@@ -86,7 +86,86 @@ For more information on PEP 8, you can visit the official Python website: PEP 8 
 |     pycodestyle on PyPI | | PEP 8 on Python.org|
 | --------  | -------- |-------- |
 
+## How to Save the Data in the Tables in SQL Data Base
+   I create a 4 tables each table have at least 10 rows that save the data
 
+## Table: MAINTENANCE
+
+### Description:
+The "MAINTENANCE" table stores records related to the maintenance of vehicles. It includes information about maintenance tasks performed on vehicles, the date of maintenance, costs, and personnel involved.
+
+#### Data Storage:
+Each row in the "MAINTENANCE" table represents a specific maintenance event performed on a vehicle. The table includes various fields to store relevant information about each maintenance event:
+
+| Field Name                   | Data Type   | Description                                                      |
+|------------------------------|-------------|------------------------------------------------------------------|
+| maintenanceid (Primary Key)  | number     | A unique identifier for each maintenance record (auto-incremented)|
+| vehicle_id (Foreign Key)     | number     | References the vehicle for which the maintenance was performed   |
+| registration_number          | number      | The registration number of the vehicle that underwent maintenance|
+| date_performed               | Date        | The date when the maintenance was performed                      |
+| task_to_be_performed_services| text      | Description of the maintenance task or service                    |
+| performed_by                 | text      | Name or ID of the person or team who performed the maintenance   |
+| validate_by                  | text      | Name or ID of the person who validated or approved the maintenance work |
+| material                     | price     | The cost of materials used during the maintenance                |
+| labor                        | price     | The cost of labor involved in performing the maintenance         |
+| total                        | price     | The total cost of the maintenance, including materials and labor  |
+
+## Table: SALES
+### Description:
+The "SALES" table stores records related to vehicle sales. It includes information about new and used car sales, the number of cars sold, profits, and employee details.
+
+#### Data Storage:
+Each row in the "SALES" table represents a specific sales transaction or event. The table includes various fields to store relevant information about each sale:
+
+| Field Name                   | Data Type   | Description                                                              |
+|------------------------------|-------------|--------------------------------------------------------------------------|
+| salesid (Primary Key)        | number     | A unique identifier for each sales record (auto-incremented)             |
+| sale_employee_number         | number     | The employee number of the salesperson responsible for the transaction   |
+| new_car_brand                | text      | The brand of the new car sold                                            |
+| used_car_brand               | text      | The brand of the used car sold                                           |
+| number_of_used_cars_sold     | number     | The number of used cars sold in the transaction                          |
+| profit_from_new_cars         | price     | The profit generated from selling new cars                               |
+| profit_from_used_cars        | price     | The profit generated from selling used cars                              |
+| profit                       | price     | The total profit from the sales transaction                              |
+| vehicle_category             | text      | The category of the vehicles sold                                        |
+| number_of_new_cars_sold      | number     | The number of new cars sold in the transaction                           |
+
+## Table: SUPPLIER
+#### Description:
+The "SUPPLIER" table stores records related to suppliers who provide goods or services to the organization. It includes contact and business details of the suppliers.
+
+#### Data Storage:
+Each row in the "SUPPLIER" table represents a specific supplier. The table includes various fields to store relevant information about each supplier:
+
+
+| Field Name                   | Data Type   | Description                                                      |
+|------------------------------|-------------|------------------------------------------------------------------|
+| supplierid (Primary Key)     | number     | A unique identifier for each supplier (auto-incremented)        |
+| supplier_name                | name      | The name of the supplier                                         |
+| address                      | text      | The address of the supplier                                      |
+| mobile_phone                 | number      | The mobile phone number of the supplier                          |
+| email                        | email      | The email address of the supplier                                |
+| contact_name                 | text      | The name of the contact person at the supplier's organization    |
+| vat                          | number      | The VAT (Value Added Tax) number of the supplier                 |
+
+## Table: VEHICLES
+#### Description:
+The "VEHICLES" table stores records related to the vehicles owned or operated by the organization. It includes information about each vehicle, such as its registration details, pricing, and availability.
+
+#### Data Storage:
+Each row in the "VEHICLES" table represents a specific vehicle owned or available for sale. The table includes various fields to store relevant information about each vehicle:
+
+| Field Name                   | Data Type   | Description                                                      |
+|------------------------------|-------------|------------------------------------------------------------------|
+| vehiclesid (Primary Key)     | number     | A unique identifier for each vehicle (auto-incremented)          |
+| registration_number          | number      | The registration number of the vehicle                           |
+| brand                        | text      | The brand or make of the vehicle                                 |
+| model                        | text      | The model name or number of the vehicle                          |
+| color                        | text      | The color of the vehicle                                         |
+| price                        | price     | The price of the vehicle                                         |
+| car_year                     | text     | The manufacturing year of the vehicle                            |
+| on_stock_from                | date        | The date when the vehicle became available in stock              |
+| available                    | text     | Indicates whether the vehicle is available for purchase          |
 
 ## Usage
 The application provides the following pages
