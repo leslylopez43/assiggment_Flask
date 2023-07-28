@@ -99,9 +99,9 @@ This wireframe likely represents the front page or introduction section of the R
 ![Frontpage Wireframe](/static/img/wirefrme%20Frontpage.webp)
 
 ## Wireframe Maintenance
-|--------------------|----------------------------------------------|
 
-| [Maintenance](#wireframe-maintenance)         | Project maintenance and contribution guide  |
+
+[Maintenance](#wireframe-maintenance)         | Project maintenance and contribution guide  
 ![Maintenance Wireframe](/static/img/wireframe%20Maintenance.webp)
 
 ## Wireframe Sale
