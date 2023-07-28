@@ -1,34 +1,6 @@
 ### App for Flask Motoring
 Users of the Motoring App can handle suppliers, vehicles, sales, and maintenance data in a motoring business. It was created using the Flask programming language.
 
-## Prerequisites
-
-- Python 3.6 or higher
-- Flask
-- psycopg2
-
-
-## Installation
-1. The repository:
-
-https://motoring-web-services.onrender.com
-
-![repositori 2](/static/img/repositor2.webp)
-![repositori3](/static/img/repositor3.webp)
-![repositori 4](/static/img/repositor4.webp)
-![repositori 5](/static/img/repositor5.webp)
-
-cd flask-motoring-app
-
-2. Configure the PostgreSQL database:
-
- ### Install the required dependencies or packages.
-pip install -r requirements.txt
-
-3. ### Set up the PostgreSQL database:
-- Create a new database named "motoring" on your PostgreSQL server.
-- Update the database connection details in the `db_conn` function in `app.py` with your PostgreSQL credentials.
-
 ## Tables Design in SQL Data Base
    I create a 4 tables each table have at least 10 rows that save the data
 
@@ -109,6 +81,36 @@ Each row in the "VEHICLES" table represents a specific vehicle owned or availabl
 | car_year                     | text     | The manufacturing year of the vehicle                            |
 | on_stock_from                | date        | The date when the vehicle became available in stock              |
 | available                    | text     | Indicates whether the vehicle is available for purchase          |
+
+
+## Prerequisites
+
+- Python 3.6 or higher
+- Flask
+- psycopg2
+
+
+
+## Installation
+1. The repository:
+
+https://motoring-web-services.onrender.com
+
+![repositori 2](/static/img/repositor2.webp)
+![repositori3](/static/img/repositor3.webp)
+![repositori 4](/static/img/repositor4.webp)
+![repositori 5](/static/img/repositor5.webp)
+
+cd flask-motoring-app
+
+2. Configure the PostgreSQL database:
+
+ ### Install the required dependencies or packages.
+pip install -r requirements.txt
+
+3. ### Set up the PostgreSQL database:
+- Create a new database named "motoring" on your PostgreSQL server.
+- Update the database connection details in the `db_conn` function in `app.py` with your PostgreSQL credentials.
 
 
 Start the application:
