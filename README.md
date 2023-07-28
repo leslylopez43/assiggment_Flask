@@ -90,7 +90,11 @@ Each row in the "VEHICLES" table represents a specific vehicle owned or availabl
 - psycopg2
 
 ## wireframe
-![](/static/img/wirefrme%20Frontpage.png)
+![](/static/img/wirefrme%20Frontpage.webp)
+![](/static/img/wireframe%20Maintenance.webp)
+![](/static/img/wireframesale.webp)
+![](/static/img/wireframesupplier%20data.webp)
+![](/static/img/wireframeVehicles.webp)
 
 ## Installation
 1. The repository:
