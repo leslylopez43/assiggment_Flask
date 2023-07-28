@@ -4,6 +4,8 @@ import psycopg2
 import os
 db_user=os.environ.get('DB_USER')
 db_password=os.environ.get("DB_PASS")
+db_port=os.environ.get("DB_Name")
+db_port=os.environ.get("PORT")
 
 app=Flask(__name__)
 def db_conn2():
@@ -17,8 +19,8 @@ def db_conn2():
 def db_conn():
     conn=psycopg2.connect(database="motoring",
     host="localhost", 
-    user="db_user",
-    password="db_password",
+    user=db_user,
+    password=db_password,
     port="5432")
     return conn 
 
