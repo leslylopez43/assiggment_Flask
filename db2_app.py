@@ -1,13 +1,15 @@
 
-from flask import Flask, render_template, redirect, request, url_for 
+from flask import Flask, flash, render_template, redirect, request, url_for 
 import psycopg2
 import os
 db_user=os.environ.get('DB_USER')
 db_password=os.environ.get("DB_PASS")
-db_port=os.environ.get("DB_Name")
+db_name=os.environ.get("DB_NAME")
 db_port=os.environ.get("PORT")
+print('pwd2 is' + str(db_user))
 
 app=Flask(__name__)
+app.secret_key="abcdefgh"
 def db_conn2():
     conn=psycopg2.connect(database="motoring",
     host="dpg-cijtiih8g3nc2ge601gg-a", 
@@ -16,13 +18,26 @@ def db_conn2():
     port="5432")
     return conn
 
+
 def db_conn():
+    
     conn=psycopg2.connect(database="motoring",
     host="localhost", 
-    user=db_user,
-    password=db_password,
+    user="postgres",
+    password="London1031",
     port="5432")
     return conn 
+
+
+
+# def db_conn():
+#     print('pwd is' + str(db_password))
+#     conn=psycopg2.connect(database=db_name,
+#     host="localhost", 
+#     user=db_user,
+#     password=db_password,
+#     port=db_port)
+#     return conn 
 
 
 @app.route("/")
@@ -159,8 +174,8 @@ def insert_new_supplier():
 
     cur.close()
     conn.close()
-
-    return redirect(url_for('index'))
+    flash('New supplier   added')
+    return redirect(url_for('supplier'))
 
 
 @app.route("/get_new_vehicles_details")
