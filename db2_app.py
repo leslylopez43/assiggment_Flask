@@ -19,7 +19,7 @@ def db_conn2():
     return conn
 
 
-def db_conn():
+def db_conn2():
     
     conn=psycopg2.connect(database="motoring",
     host="localhost", 
@@ -30,14 +30,14 @@ def db_conn():
 
 
 
-# def db_conn():
-#     print('pwd is' + str(db_password))
-#     conn=psycopg2.connect(database=db_name,
-#     host="localhost", 
-#     user=db_user,
-#     password=db_password,
-#     port=db_port)
-#     return conn 
+def db_conn():
+    print('pwd is' + str(db_password))
+    conn=psycopg2.connect(database=db_name,
+    host="localhost", 
+    user=db_user,
+    password=db_password,
+    port=db_port)
+    return conn 
 
 
 @app.route("/")
