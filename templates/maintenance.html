@@ -1,41 +1,54 @@
 <style>
+    /* Apply padding to the entire body of the webpage. */
     body {
         padding: 20px;
     }
-    table {
+        /* Set styles for tables. */
+    table {         
         width: 100%;
         border-collapse: collapse;
         margin-bottom: 20px;
     }
+    /* Apply styles to table header cells and regular cells. */
     th, td {
         padding: 8px;
         text-align: left;
         border-bottom: 1px solid #ddd;
     }
+     /* Style for table header cells. */
     th {
-        background-color: #f2f2f2;
+        background-color: #f2f2f2;  /* Set a light gray background color. */
     }
+     /* Apply margin to top of anchor elements with the "btn" class. */
     a.btn {
         margin-top: 10px;
     }
+     /* Custom style for buttons with the class "btn-primary-custom". */
     .btn-primary-custom {
-        background-color: #4a44be;
-        color: #fff;
+        background-color: #4a44be;  /* Set a custom background color for the button. */
+        color: #fff;    /* Set text color to white. */
     }
-</style>
-{% extends "base.html" %}
+</style>    <!-- Closing the previously defined style block -->
+{% extends "base.html" %}   <!-- Extending the "base.html" template -->
 
-{% block content %}
-    <div class="container">
+
+{% block content %} <!-- Defining a content block within the "base.html" template -->
+    <div class="container"> <!-- Creating a container div for the content -->
         <table>
+            <!-- Creating a centered heading for the services data -->
           <h1 class="text-center mb-4 row justify-content-center">Services DATA</h1>
+           <!-- Creating a form that submits to the 'maintenance' route -->
           <form action="{{ url_for('maintenance') }}" method="POST">
             <div class="form-group">
+                    <!-- Label for the search input field -->
                 <label for="search">Search for Car Maintenance</label>
+                 <!-- Input field for search with a form-control class -->
                 <input type="text" name="search" id="search" class="form-control">
             </div>
+                    <!-- Button to submit the search form -->
             <button type="submit" class="btn btn-primary btn-primary-custom">Search</button>
-        
+             
+            <!-- Table headers for different columns -->
             <tr>
                 <th>Vehicle ID</th>
                 <th>Reg Number</th>
@@ -47,8 +60,10 @@
                 <th>Labor</th>
                 <th>Total</th>
             </tr>
+            <!-- Looping through the list_of_maintenance and generating table rows -->
             {% for column in list_of_maintenance %}
             <tr>
+                <!-- Individual table cells with data from the list_of_maintenance -->
                 <td>{{ column[0] }}</td>
                 <td>{{ column[1] }}</td>
                 <td>{{ column[2] }}</td>
@@ -59,18 +74,19 @@
                 <td>{{ column[7] }}</td>
                 <td>{{ column[8] }}</td>
                 <td>{{ column[9] }}</td>
-
+                <!-- This table row generates action buttons for each supplier entry, allowing update, deletion, and printing of supplier details -->
                 <td><a  href="{{ url_for('update_supplier', supplier_id=column[0]) }}" class="btn btn-primary btn-primary-custom">Update</a></td>
                   <td><a href="{{ url_for('delete_supplier', supplier_id=column[0]) }}" class="btn btn-primary btn-primary-custom">Delete</a></td>
                   <td> <a href="{{ url_for('print_supplier', supplier_id=column[0]) }}" class="btn btn-primary btn-primary-custom">Print</a></td>
             </tr>
             {% endfor %}
         </table>
+        <!-- This button links to a page for adding new maintenance records -->
         <a href="{{ url_for('get_new_maintenance_details') }}" class="btn btn-primary btn-primary-custom">Add MAINTENANCE RECORD</a>
+<!-- Display the list of vehicles using the provided data -->
         {{ list_of_vehicles }}
 
-
+        <!-- Redirect users to the main menu using a stylish button -->
         <a href="{{ url_for('index') }}" class="btn btn-primary btn-primary-custom">Go to Menu</a>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 {% endblock %}

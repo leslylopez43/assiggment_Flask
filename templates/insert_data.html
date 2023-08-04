@@ -2,26 +2,15 @@
 
 {% block content %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <!-- Add Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
-    <style>
-        
-    </style>
-</head>
-<body>
-    <div class="container">
-        <form action="/create" method="post">
-            <div class="mb-3">
+<!-- This section extends the "base.html" template and defines the content block. -->
+
+    <div class="container">     <!-- This is a Bootstrap container to center-align the form content. -->
+        <form action="/create" method="post">   <!-- This form sends data to the "/create" URL using the HTTP POST method. -->
+
+            <div class="mb-3">   <!-- This is a form group for the "Supplier ID" input field. -->
                 <label for="supplierId" class="form-label">Supplier ID</label>
                 <input type="text" class="form-control" id="supplierId" name="supplierId" placeholder="Supplier ID">
-            </div>
+            </div>   <!-- This input field allows users to enter the supplier's ID. -->
             <div class="mb-3">
                 <label for="address" class="form-label">Address</label>
                 <input type="text" class="form-control" id="address" name="address" placeholder="Address">
@@ -37,13 +26,9 @@
             <div class="mb-3">
                 <label for="contactName" class="form-label">Contact Name</label>
                 <input type="text" class="form-control" id="contactName" name="contactName" placeholder="Contact Name">
-            </div>
+            </div>  <!-- This button submits the form data to create a new entry. It has a custom style defined by the "btn-primary-custom" class. -->
             <button type="submit" class="btn btn-primary btn-primary-custom">Create</button>
         </form>
     </div>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
 
 {% endblock %}

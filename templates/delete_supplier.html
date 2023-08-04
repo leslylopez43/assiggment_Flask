@@ -1,25 +1,28 @@
 {% extends "base.html" %}
 
 {% block content %}
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Delete Supplier</title>
-</head>
-<body>
-  <h1>Delete Supplier</h1>
-  <p>Are you sure you want to delete this supplier?</p>
-  <form action="{{ url_for('delete_supplier', supplier_id=supplier_data[0]) }}" method="POST">
-    <input type="submit" value="Delete">
-  </form>
-
+    <!-- This block is responsible for displaying a confirmation page to delete a supplier -->
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>Delete Supplier</title>
+    </head>
+    <body>
+        <!-- Heading and confirmation message -->
+        <h1>Delete Supplier</h1>
+        <p>Are you sure you want to delete this supplier?</p>
         
-  <a href="{{url_for('index')}}">go to menu</a>
-</body>
-</html>
-
-     {% endblock %}   
+        <!-- Form to confirm the deletion -->
+        <form action="{{ url_for('delete_supplier', supplier_id=supplier_data[0]) }}" method="POST">
+            <input type="submit" value="Delete">
+        </form>
         
+        <!-- Link to return to the main menu -->
+        <a href="{{url_for('index')}}">go to menu</a>
+    </body>
+    </html>
+{% endblock %}
+
         
         
         

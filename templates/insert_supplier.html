@@ -1,9 +1,10 @@
 {% extends "base.html" %}
 
-{% block content %}
+{% block content %} <!-- This block overrides the "content" block from the base template. -->
 
-    <div class="container">
+    <div class="container">  <!-- Bootstrap container to center-align the content. -->
         <div class="form-container">
+             <!-- Form for inserting supplier data. Posts to "/insert_new_supplier" URL. -->
             <form action="/insert_new_supplier" method="post">
                 <h1 class="text-center mb-6 row justify-content-center">Insert Supplier Data</h1>
                 <div class="form-group">
@@ -40,7 +41,7 @@
                 </div>
                 <button type="submit" class="btn btn-primary btn-primary-custom">Submit</button>
             </form>
-
+            <!-- Button to navigate back to the menu using the "url_for" function. -->
             <a href="{{url_for('index')}}" class="btn btn-secondary btn-block mt-3">Go to Menu</a>
         </div>
     </div>

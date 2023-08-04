@@ -1,10 +1,10 @@
 {% extends "base.html" %}
 
 {% block content %}
-
-<div class="container">    
+<!-- This block overrides the "content" block from the base template. -->
+<div class="container">      <!-- Bootstrap container to center-align the content. -->
     <h1>Sales Form</h1>
-    
+      <!-- Form for inserting sales data. Posts to "/insert_new_sales" URL. -->
     <form action="/insert_new_sales" method="post">
         <div class="form-group">
             <label for="sale_employee_number">Sale Employee Number:</label>
@@ -53,10 +53,8 @@
         <input type="submit" value="Submit" class="btn btn-primary">
     </form>
     
-    <br>
+    <br><!-- Button to navigate back to the menu using the "url_for" function. -->
     <a href="{{ url_for('index') }}" class="btn btn-secondary">Go to Menu</a>
 </div>
-
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 {% endblock %}

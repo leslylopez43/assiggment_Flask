@@ -1,12 +1,13 @@
 {% extends "base.html" %}
 
 {% block content %}
+ <!-- This block overrides the "content" block from the base template. -->
 
   <div class="container">
-    <div class="form-container">
-      <h1 class="mb-4">Insert Maintenance Data</h1>
+    <div class="form-container">    <!-- A container for the form. -->
+      <h1 class="mb-4">Insert Maintenance Data</h1>   <!-- Heading for the form. -->
 
-       <form action="/insert_new_maintenance" method="post">
+       <form action="/insert_new_maintenance" method="post">  <!-- Form for inserting maintenance data. Posts to "/insert_new_maintenance" URL. -->
           <div class="mb-3">
           <label for="vehicle_Id" class="form-label">Vehicle ID</label>
           <input type="text" class="form-control" id="vehicleId" name="vehicle_id" placeholder="ID">
@@ -42,9 +43,12 @@
         <div class="mb-3">
           <label for="total" class="form-label">Total</label>
           <input type="text" class="form-control" id="total" name="total" placeholder="Total">
+          <!-- More form fields for entering maintenance data... -->
         </div>
         <button type="submit" class="btn btn-primary btn-primary-custom">Services/Create</button>
+         <!-- Submit button for the form. -->
         <br>
+        <!-- Button to navigate back to the menu using the "url_for" function. -->
         <a href="{{url_for('index')}}" class="btn btn-primary btn-primary-custom">Go to Menu</a>
       </form>
     </div>

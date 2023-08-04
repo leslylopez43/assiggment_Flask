@@ -27,10 +27,11 @@
 
             </div>
         </div>
-        {% block content %}   
+        {% block content %} 
+         <!-- This block contains a centered jumbotron with links to enter various details -->  
         <div class="row justify-content-center mt-4 jumbotron text-center">
             <div class="col-md-9">
-                <ul class="list-group-">
+                <ul class="list-group-">       <!-- List of links to different data entry pages -->
                     <li class="group-"><br>
                         <a href="{{ url_for('get_new_supplier_details') }}" class="btn btn-primary btn-lg">Enter New Supplier Details</a>  
                     </li><br>

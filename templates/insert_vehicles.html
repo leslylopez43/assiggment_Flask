@@ -1,12 +1,14 @@
-{% extends "base.html" %}
+{% extends "base.html" %}   {# Extends the base template for a consistent layout #}
 
-{% block content %}
+
+{% block content %} {# Defines a block named 'content' to be filled in by child templates #}
 
     <br>
-    <div class="container">
+    <div class="container">   <!-- Form for entering details of new vehicles -->
         <h1 class="text-center mb-4">NEW VEHICLES DETAILS</h1>
         <form action="/insert_new_vehicles" method="post">
-            <div class="form-group">
+            <div class="form-group">    <!-- Input field for vehicle registration number -->
+                <!-- This is a text input field where users can enter their registration number. -->
                 <input type="text" name="registration_number" class="form-control" placeholder="Registration">
             </div>
             <div class="form-group">
@@ -31,10 +33,10 @@
                 <input type="text" name="available" class="form-control" placeholder="Available">
             </div>
             <button type="submit" class="btn btn-primary btn-primary-custom">Create Vehicle</button>
-        </form>
+        </form>  <!-- Close the form -->
         <br>
+        <!-- This is a link that navigates to the 'index' route using Flask's url_for function. -->
         <a href="{{ url_for('index') }}" class="btn btn-secondary">Go to Menu</a>
     </div>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 {% endblock %}
