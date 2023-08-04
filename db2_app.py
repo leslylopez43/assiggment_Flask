@@ -3,6 +3,9 @@ from flask import Flask, flash, render_template, redirect, request, url_for
 import psycopg2  # Import the psycopg2 module for PostgreSQL database interactions
 import os  # Import the os module for environment variable access
 
+# Now you can use these variables to establish a database connection
+app = Flask(__name__) # Create a Flask app instance
+app.secret_key="secret_key"   # Set the secret key for the app to enable session usage
 
 # Retrieving sensitive data from environment variables
 db_user = os.environ.get('MY_USERNAME')
@@ -21,18 +24,6 @@ def db_conn2():
     )
     return conn
 
-# Define a flag to indicate if debugging is enabled
-debug_mode = True  # Set this to False in production
-
-# Debugging: Print sensitive data for debugging purposes
-if debug_mode:
-    print(f"Username: {db_user}")
-    print(f"Host: {db_host}")
-    print(f"Port: {db_port}")
-
-# Now you can use these variables to establish a database connection
-app = Flask(__name__) # Create a Flask app instance
-app.secret_key="secret_key"   # Set the secret key for the app to enable session usage
 
 
 # Establish a connection to the PostgreSQL database online
@@ -54,12 +45,6 @@ def db_conn2():
     password="London1031",
     port="5432")
     return conn 
-
-
-
-
-
-
 
 
 @app.route("/")     # Define a route for the root URL ("/")
