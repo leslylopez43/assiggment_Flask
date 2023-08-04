@@ -10,7 +10,8 @@ print('pwd2 is' + str(db_user))
 
 app=Flask(__name__)
 app.secret_key="abcdefgh"
-def db_conn2():
+
+def db_conn():
     conn=psycopg2.connect(database="motoring",
     host="dpg-cijtiih8g3nc2ge601gg-a", 
     user="motoring_user",
@@ -19,7 +20,7 @@ def db_conn2():
     return conn
 
 
-def db_conn():
+def db_conn2():
     
     conn=psycopg2.connect(database="motoring",
     host="localhost", 
