@@ -11,7 +11,7 @@ db_host = os.environ.get('MY_HOST')
 db_port = os.environ.get('MY_PORT')
 
 
-def db_conn():
+def db_conn2():
     conn = psycopg2.connect(
         database="motoring",
         host=db_host,
