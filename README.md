@@ -1,5 +1,5 @@
 ### App for Flask Motoring
-## Stories for the user
+## Stories for the User
 
 
 ## Installation

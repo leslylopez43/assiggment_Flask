@@ -1,16 +1,20 @@
-
-from flask import Flask, flash, render_template, redirect, request, url_for 
-import psycopg2
-import os
-db_user=os.environ.get('DB_USER')
+# Import the necessary modules from Flask
+from flask import Flask, flash, render_template, redirect, request, url_for   
+import psycopg2  # Import the psycopg2 module for PostgreSQL database interactions
+import os       # Import the os module for environment variable access
+db_user=os.environ.get('DB_USER')       # Retrieve the database user, password, name, and port from environment variables
 db_password=os.environ.get("DB_PASS")
 db_name=os.environ.get("DB_NAME")
 db_port=os.environ.get("PORT")
-print('pwd2 is' + str(db_user))
+print('pwd2 is' + str(db_user))  # Print the retrieved database user for debugging purposes
 
-app=Flask(__name__)
-app.secret_key="abcdefgh"
 
+
+app=Flask(__name__) # Create a Flask app instance
+app.secret_key="abcdefgh"   # Set the secret key for the app to enable session usage
+
+
+# Establish a connection to the PostgreSQL database online
 def db_conn2():
     conn=psycopg2.connect(database="motoring",
     host="dpg-cijtiih8g3nc2ge601gg-a", 
@@ -20,8 +24,9 @@ def db_conn2():
     return conn
 
 
+
+    # Establish a connection to the PostgreSQL database local
 def db_conn():
-    
     conn=psycopg2.connect(database="motoring",
     host="localhost", 
     user="postgres",
@@ -30,7 +35,7 @@ def db_conn():
     return conn 
 
 
-
+# Establish a connection to the PostgreSQL database hiden password
 def db_conn2():
     print('pwd is' + str(db_password))
     conn=psycopg2.connect(database=db_name,
@@ -41,11 +46,13 @@ def db_conn2():
     return conn 
 
 
-@app.route("/")
+@app.route("/")     # Define a route for the root URL ("/")
 def index():
-    return render_template("index.html")
+    return render_template("index.html")        # Render the "index.html" template and return the rendered content
 
-@app.route("/supplier", methods=["GET", "POST"])
+
+# Define a route for the "/supplier" URL path, supporting GET and POST methods
+@app.route("/supplier", methods=["GET", "POST"])            
 def supplier():
     conn = db_conn()
     cur = conn.cursor()
@@ -71,6 +78,7 @@ def supplier():
     return render_template("supplier.html", list_of_suppliers=supplier_details)
 
 
+# Define a route for the "/vehicles" URL path, supporting GET and POST methods
 
 @app.route("/vehicles", methods=["GET", "POST"])
 def vehicles():
@@ -96,6 +104,7 @@ def vehicles():
 
     return render_template("vehicles.html",list_of_vehicles=vehicles_details)
 
+# Define a route for the "/sales" URL path, supporting GET and POST methods
 @app.route("/sales", methods=["GET", "POST"])
 def sales():
     conn = db_conn()
@@ -120,7 +129,7 @@ def sales():
 
     return render_template("sales.html", list_of_sales=sales_details)
 
-
+# Define a route for the "/maintenance" URL path, supporting GET and POST methods
 @app.route("/maintenance", methods=["GET", "POST"])
 def maintenance():
     conn = db_conn()
@@ -143,16 +152,19 @@ def maintenance():
     conn.close()
     return render_template("maintenance.html",list_of_maintenance=maintenance_details)
 
+# Define a route for the "/search" URL path, supporting POST methods
 @app.route('/search', methods=['POST'])
 def search():
     search_term = request.form.get('search')
 
     return render_template("search.html", results=search_term)
-      
+
+# Define a route for the "/get new supplier" URL path.
 @app.route("/get_new_supplier_details")
 def get_new_supplier_details():
     return render_template("insert_supplier.html")
 
+# Define a route for the "/insert new supplier" URL path.
 @app.route('/insert_new_supplier', methods=['POST'])
 def insert_new_supplier():
     conn = db_conn()
@@ -178,11 +190,12 @@ def insert_new_supplier():
     flash('New supplier   added')
     return redirect(url_for('supplier'))
 
-
+# Define a route for the "/get new vehicles" URL path.
 @app.route("/get_new_vehicles_details")
 def get_new_vehicles_details():
     return render_template("insert_vehicles.html")
 
+# Define a route for the "/insert new vehicles" URL path.
 @app.route('/insert_new_vehicles', methods=['POST'])
 def create_new_vehicles():
     registration_number = request.form['registration_number']
@@ -208,12 +221,12 @@ def create_new_vehicles():
     
     return redirect(url_for('index'))
 
-
+# Define a route for the "/get new sales" URL path.
 @app.route("/get_new_sales_details")
 def get_new_sales_details():
     return render_template("insert_sales.html")
 
-
+# Define a route for the "/insert new sales" URL path.
 @app.route('/insert_new_sales', methods=['POST'])
 def create_new_sales():
     conn = db_conn()
@@ -250,11 +263,12 @@ def create_new_sales():
 
     return redirect(url_for('index'))
 
+# Define a route for the "/nuw maintenance details" URL path.
 @app.route("/get_new_maintenance_details")
 def get_new_maintenance_details():
     return render_template("insert_maintenance.html")
 
-
+# Define a route for the "/insert new maintenance" URL path.
 @app.route('/insert_new_maintenance', methods=['POST'])
 def create_new_maintenance():
     conn = db_conn()
@@ -281,7 +295,7 @@ def create_new_maintenance():
     return redirect(url_for('index'))
 
 
-
+# Define a route for the "/get  supplier" URL path.
 @app.route("/get_single_supplier", methods=['POST'])
 def single_supplier():
     conn = db_conn()
@@ -300,7 +314,7 @@ def single_supplier():
 
     return render_template("single_supplier.html", list_of_supplier=single_supplier)
 
-
+# Define a route for the "/update supplier" URL path.
 @app.route("/update_supplier", methods=['POST'])
 def update_supplier():
     conn = db_conn()
@@ -336,7 +350,7 @@ def update_supplier():
         cur.close()
         conn.close()
 
-
+# Define a route for the "/delete supplier" URL path.
 @app.route('/delete_supplier/<int:supplier_id>', methods=['GET', 'POST'])
 def delete_supplier(supplier_id):
     conn = db_conn()
@@ -354,7 +368,7 @@ def delete_supplier(supplier_id):
         cur.close()
         conn.close()
 
-
+# Define a route for the "/print supplier" URL path.
 @app.route('/print_supplier/<int:supplier_id>', methods=['GET'])
 def print_supplier(supplier_id):
     conn = db_conn()
