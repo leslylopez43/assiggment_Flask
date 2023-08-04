@@ -2,12 +2,15 @@
 from flask import Flask, flash, render_template, redirect, request, url_for   
 import psycopg2  # Import the psycopg2 module for PostgreSQL database interactions
 import os       # Import the os module for environment variable access
-db_user=os.environ.get('DB_USER')       # Retrieve the database user, password, name, and port from environment variables
-db_password=os.environ.get("DB_PASS")
-db_name=os.environ.get("DB_NAME")
-db_port=os.environ.get("PORT")
-print('pwd2 is' + str(db_user))  # Print the retrieved database user for debugging purposes
 
+# Storing sensitive data as environment variables
+os.environ['MY_USERNAME'] = 'myuser'
+os.environ['MY_PASSWORD'] = 'mypassword'
+# Retrieving sensitive data from environment variables
+db_user = os.environ.get('MY_USERNAME')
+db_password = os.environ.get('MY_PASSWORD')
+print(f"Username: {db_user}")
+print(f"Password: {db_password}")
 
 
 app=Flask(__name__) # Create a Flask app instance
