@@ -1,59 +1,71 @@
+<style>
+    /* Styling for the container and table */
+    .container {
+        margin-top: 50px;
+    }
 
-    <style>
-        .container {
-            margin-top: 50px;
-        }
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
 
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
+    th, td {
+        padding: 8px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
 
-        th, td {
-            padding: 8px;
-            text-align: left;
-            border-bottom: 1px solid #ddd;
-        }
+    th {
+        background-color: #f2f2f2;
+    }
 
-        th {
-            background-color: #f2f2f2;
-        }
+    /* Margin top for search button */
+    a.btn {
+        margin-top: 20px;
+    }
 
-        a.btn {
-            margin-top: 20px;
-        }
+    /* Inline form style */
+    form {
+        display: inline-block;
+        margin-top: 20px;
+    }
 
-        form {
-            display: inline-block;
-            margin-top: 20px;
-        }
-        .btn-primary-custom {
-            background-color: #4a44be;
-            color: #fff;
-        }
-    </style>
-    {% extends "base.html" %}
+    /* Custom primary button styling */
+    .btn-primary-custom {
+        background-color: #4a44be;
+        color: #fff;
+    }
+</style>
 
-    {% block content %}
+{% extends "base.html" %}
 
+{% block content %}
+    <!-- Main content container -->
     <div class="container">
+        <!-- Table to display supplier data -->
         <table>
-          <h1 class="text-center mb-4 row justify-content-center">SUPPLIER DATA</h1>
-          <form action="{{ url_for('supplier') }}" method="POST">
-            <div class="form-group">
-                <label for="search">Search for supplier:</label>
-                <input type="text" name="search" id="search" class="form-control">
-            </div>
-            <button type="submit" class="btn btn-primary btn-primary-custom">Search</button>
-        
-            {% with messages= get_flashed_messages() %}
-            {% if messages%}
-                {% for message in messages %}
-                <h1>{{ message}}</h1>
-                {% endfor %} 
-                {%endif%} 
-                {% endwith %} 
-
+            <!-- Title for supplier data section -->
+            <h1 class="text-center mb-4 row justify-content-center">SUPPLIER DATA</h1>
+            
+            <!-- Form for searching suppliers -->
+            <form action="{{ url_for('supplier') }}" method="POST">
+                <div class="form-group">
+                    <label for="search">Search for supplier:</label>
+                    <input type="text" name="search" id="search" class="form-control">
+                </div>
+                <button type="submit" class="btn btn-primary btn-primary-custom">Search</button>
+            </form>
+            
+            <!-- Display flashed messages if any -->
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    {% for message in messages %}
+                        <h1>{{ message }}</h1>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+            
+            <!-- Table header columns -->
             <tr>
                 <th>Company ID</th>
                 <th>Company Name</th>
@@ -62,44 +74,34 @@
                 <th>Email Address</th>
                 <th>Contact Name</th>
                 <th>VAT</th>
-                
-                
-
             </tr>
 
+            <!-- Loop through supplier data and display each row -->
             {% for column in list_of_suppliers %}
-            
-            <tr>
-                <td>{{ column[0] }}</td>
-                <td>{{ column[1] }}</td>
-                <td>{{ column[2] }}</td>
-                <td>{{ column[3] }}</td>
-                <td>{{ column[4] }}</td>
-                <td>{{ column[5] }}</td>
-                <td>{{ column[6] }}</td>
-                
-                  
-                <td><a href="{{ url_for('update_supplier', supplier_id=column[0]) }}"class="btn btn-primary btn-primary-custom">Update</a></td>
-                  <td><a href="{{ url_for('delete_supplier', supplier_id=column[0]) }}"class="btn btn-primary btn-primary-custom">Delete</a></td>
-                  <td> <a href="{{ url_for('print_supplier', supplier_id=column[0]) }}"class="btn btn-primary btn-primary-custom">Print</a></td>
-                
-                
-            </tr>
+                <tr>
+                    <td>{{ column[0] }}</td>
+                    <td>{{ column[1] }}</td>
+                    <td>{{ column[2] }}</td>
+                    <td>{{ column[3] }}</td>
+                    <td>{{ column[4] }}</td>
+                    <td>{{ column[5] }}</td>
+                    <td>{{ column[6] }}</td>
 
-      
-      {% endfor %}
-    
-    </table>  
-    <a href="{{ url_for('get_new_supplier_details') }}" class="btn btn-primary btn-primary-custom">Add New Supplier</a>
-
-      <br>
-
+                    <!-- Action buttons for update, delete, and print -->
+                    <td><a href="{{ url_for('update_supplier', supplier_id=column[0]) }}" class="btn btn-primary btn-primary-custom">Update</a></td>
+                    <td><a href="{{ url_for('delete_supplier', supplier_id=column[0]) }}" class="btn btn-primary btn-primary-custom">Delete</a></td>
+                    <td><a href="{{ url_for('print_supplier', supplier_id=column[0]) }}" class="btn btn-primary btn-primary-custom">Print</a></td>
+                </tr>
+            {% endfor %}
+        </table>  
+        
+        <!-- Button to add a new supplier -->
+        <a href="{{ url_for('get_new_supplier_details') }}" class="btn btn-primary btn-primary-custom">Add New Supplier</a>
+        
+        <br>
+        
+        <!-- Button to navigate back to the menu -->
         <a href="{{ url_for('index') }}" class="btn btn-primary btn-primary-custom">Go to Menu</a>
-
-
     </div>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-beta2/js/bootstrap.min.js"></script>
 
-    {% endblock %}
-
-    
+{% endblock %}

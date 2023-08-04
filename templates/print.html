@@ -1,36 +1,49 @@
 {% extends "base.html" %}
 
 {% block content %}
-
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Supplier Details</title>
-</head>
-<body>
-  <h1>Supplier Details</h1>
-  <table>
-    <tr>
-      <th>Supplier ID</th>
-      <th>Supplier Name</th>
-      <th>Address</th>
-      <th>Mobile Phone</th>
-      <th>Email</th>
-      <th>Contact Name</th>
-      <th>VAT</th>
-    </tr>
-    <tr>
-      <td>{{ supplier_data[0] }}</td>
-      <td>{{ supplier_data[1] }}</td>
-      <td>{{ supplier_data[2] }}</td>
-      <td>{{ supplier_data[3] }}</td>
-      <td>{{ supplier_data[4] }}</td>
-      <td>{{ supplier_data[5] }}</td>
-      <td>{{ supplier_data[6] }}</td>
-    </tr>
-  </table>
-  <button onclick="window.print()">Print</button>
-</body>
-</html>
-
+    <!-- Container for supplier details -->
+    <div class="container-fluid">
+        <!-- Row for centering content -->
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <!-- Margin and title for supplier details section -->
+                <div class="mt-4">
+                    <h1 class="text-center mb-4">Supplier Details</h1>
+                    <!-- Table to display supplier information -->
+                    <table class="table table-bordered table-hover">
+                        <!-- Table header styling -->
+                        <thead class="thead-dark">
+                            <tr>
+                                <th>Supplier ID</th>
+                                <th>Supplier Name</th>
+                                <th>Address</th>
+                                <th>Mobile Phone</th>
+                                <th>Email</th>
+                                <th>Contact Name</th>
+                                <th>VAT</th>
+                            </tr>
+                        </thead>
+                        <!-- Table body with supplier data -->
+                        <tbody>
+                            <tr>
+                                <td>{{ supplier_data[0] }}</td>
+                                <td>{{ supplier_data[1] }}</td>
+                                <td>{{ supplier_data[2] }}</td>
+                                <td>{{ supplier_data[3] }}</td>
+                                <td>{{ supplier_data[4] }}</td>
+                                <td>{{ supplier_data[5] }}</td>
+                                <td>{{ supplier_data[6] }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+ 
+                    <!-- Buttons for printing and completing -->
+                    <div class="text-center mt-4">
+                        <button class="btn btn-danger print-button" onclick="window.print()">Print</button>
+                        <a href="{{url_for('index')}}" class="btn btn-primary btn-primary-custom">Done</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock %}

@@ -6,11 +6,17 @@ import os       # Import the os module for environment variable access
 # Storing sensitive data as environment variables
 os.environ['MY_USERNAME'] = 'myuser'
 os.environ['MY_PASSWORD'] = 'mypassword'
+os.environ['MY_HOST'] = 'host'
+os.environ['MY_PORT'] = 'port'
 # Retrieving sensitive data from environment variables
 db_user = os.environ.get('MY_USERNAME')
 db_password = os.environ.get('MY_PASSWORD')
+db_host = os.environ.get('MY_HOST')
+db_port = os.environ.get('MY_PORT') 
 print(f"Username: {db_user}")
 print(f"Password: {db_password}")
+print(f"host: {db_host}")
+print(f"port: {db_port}")
 
 
 app=Flask(__name__) # Create a Flask app instance
@@ -18,7 +24,7 @@ app.secret_key="secret_key"   # Set the secret key for the app to enable session
 
 
 # Establish a connection to the PostgreSQL database online
-def db_conn():
+def db_conn2():
     conn=psycopg2.connect(database="motoring",
     host="dpg-cijtiih8g3nc2ge601gg-a", 
     user="motoring_user",
@@ -318,48 +324,57 @@ def single_supplier():
     return render_template("single_supplier.html", list_of_supplier=single_supplier)
 
 # Define a route for the "/update supplier" URL path.
-@app.route("/update_supplier", methods=['POST'])
+
+
+# Placeholder function to simulate fetching supplier data from the database
+def fetch_supplier_data(supplier_id):
+    # Replace this with your actual code to fetch data from the database
+    # For demonstration purposes, I'm returning a dictionary with placeholder data
+    return {
+        "company_name": "ABC Corporation",
+        "address": "123 Main St",
+        "mobile_phone": "555-1234",
+        "email_address": "contact@abc.com",
+        "contact_name": "John Doe",
+        "vat": "123456789"
+    }
+
+@app.route("/update_supplier", methods=["GET", "POST"])
 def update_supplier():
-    conn = db_conn()
-    cur = conn.cursor()
-
-    supplier_id = request.form['supplier']
-    Companyname = request.form['Companyname']
-    Address = request.form['Address']
-    MobilePhone = request.form['MobilePhone']
-    EmailAddress = request.form['EmailAddress']
-    contactName = request.form['contactName']
-    vat = request.form['vat']
-
-    sql_select_query = "SELECT * FROM supplier WHERE supplier_id = %s;"
-    cur.execute(sql_select_query, (supplier_id,))
-    single_supplier = cur.fetchone()
-
-    update_sql = "UPDATE supplier SET supplier_name = %s, address = %s, mobile_phone = %s, email = %s, contact_name = %s, vat = %s WHERE supplier_id = %s;"
-    values = (Companyname, Address, MobilePhone, EmailAddress, contactName, vat, supplier_id)
-
     try:
-        cur.execute(update_sql, values)
-        conn.commit()
+        if request.method == "POST":
+            supplier_id = request.form.get("supplier")
+            Companyname = request.form.get("Companyname")
+            Address = request.form.get("Address")
+            MobilePhone = request.form.get("MobilePhone")
+            EmailAddress = request.form.get("EmailAddress")
+            contactName = request.form.get("contactName")
+            vat = request.form.get("vat")
 
-        # Fetch the updated supplier details
-        cur.execute(sql_select_query, (supplier_id,))
-        single_supplier = cur.fetchone()
+            # Update the data in the database or perform other actions
+            # You would typically use these values to update the corresponding supplier record in the database
 
-        return render_template("update_supplier.html", list_of_supplier=[single_supplier])
+            return "Supplier data updated successfully"
+
+        else:
+            supplier_id = request.args.get("supplier_id")  # Assuming you have a supplier_id in the URL
+            supplier_data = fetch_supplier_data(supplier_id)
+            
+            # Return the template for editing the supplier data
+            return render_template("update_supplier.html", supplier_data=supplier_data)
+
     except Exception as e:
-        return render_template("update_supplier.html", supplier_id=supplier_id, list_of_supplier=[single_supplier])
-    finally:
-        cur.close()
-        conn.close()
+        return f"An error occurred: {str(e)}"
+
+   
 
 # Define a route for the "/delete supplier" URL path.
 @app.route('/delete_supplier/<int:supplier_id>', methods=['GET', 'POST'])
 def delete_supplier(supplier_id):
-    conn = db_conn()
+    conn = db_conn()  # Assuming you have a function called db_conn() to establish a database connection
     cur = conn.cursor()
 
-    delete_sql = "DELETE FROM supplier WHERE supplier_id = %s;"
+    delete_sql = "DELETE FROM supplier WHERE supplierid = %s;"
 
     try:
         cur.execute(delete_sql, (supplier_id,))
@@ -371,23 +386,22 @@ def delete_supplier(supplier_id):
         cur.close()
         conn.close()
 
-# Define a route for the "/print supplier" URL path.
 @app.route('/print_supplier/<int:supplier_id>', methods=['GET'])
 def print_supplier(supplier_id):
     conn = db_conn()
     cur = conn.cursor()
 
-    select_sql = "SELECT * FROM supplier WHERE supplier_id = %s;"
+    select_sql = "SELECT * FROM supplier WHERE supplierid = %s;"
 
     try:
         cur.execute(select_sql, (supplier_id,))
         supplier_data = cur.fetchone()
-        return render_template("print_supplier.html", supplier_data=supplier_data)
-    except Exception as e:
-        return 'Error occurred while retrieving supplier data: ' + str(e)
+        return render_template("print.html", supplier_data=supplier_data, supplier_id=supplier_id)
     finally:
         cur.close()
         conn.close()
+
+
 
 
 @app.route('/submit_form', methods=['POST'])

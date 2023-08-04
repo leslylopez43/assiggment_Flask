@@ -1,42 +1,22 @@
-
-    <style>
-        /* Add custom styles here */
-        body {
-            padding: 20px;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 20px;
-        }
-        th, td {
-            padding: 8px;
-            text-align: left;
-            border-bottom: 1px solid #ddd;
-        }
-        th {
-            background-color: #f2f2f2;
-        }
-        a.btn {
-            margin-top: 10px;
-        }
-        .btn-primary-custom {
-            background-color: #4a44be;
-            color: #fff;
-        }
-    </style>
 {% extends "base.html" %}
 {% block content %}
+    <!-- Container for vehicle data -->
     <div class="container">
+        <!-- Table to display vehicle data -->
         <table>
-          <h1 class="text-center mb-4 row justify-content-center">Vehicle DATA</h1>
-          <form action="{{ url_for('vehicles') }}" method="POST">
-            <div class="form-group">
-                <label for="search">Search for Vehicle</label>
-                <input type="text" name="search" id="search" class="form-control">
-            </div>
-            <button type="submit" class="btn btn-primary btn-primary-custom">Search</button>
+            <!-- Table header row -->
+            <h1 class="text-center mb-4 row justify-content-center">Vehicle DATA</h1>
+            <!-- Form for searching vehicles -->
+            <form action="{{ url_for('vehicles') }}" method="POST">
+                <div class="form-group">
+                    <label for="search">Search for Vehicle</label>
+                    <input type="text" name="search" id="search" class="form-control">
+                </div>
+                <!-- Search button -->
+                <button type="submit" class="btn btn-primary btn-primary-custom">Search</button>
+            </form>
         
+            <!-- Table header columns -->
             <tr>
                 <th>Vehicle ID</th>
                 <th>Registration Number</th>
@@ -48,6 +28,8 @@
                 <th>On Stock From</th>
                 <th>Available</th>
             </tr>
+            
+            <!-- Loop through vehicle data and display each row -->
             {% for column in list_of_vehicles %}
             <tr>
                 <td>{{ column[0] }}</td>
@@ -59,20 +41,18 @@
                 <td>{{ column[6] }}</td>
                 <td>{{ column[7] }}</td>
                 <td>{{ column[8] }}</td>
-
+                <!-- Action buttons for updating, deleting, and printing -->
                 <td><a href="{{ url_for('update_supplier', supplier_id=column[0]) }}"class="btn btn-primary btn-primary-custom">Update</a></td>
-                  <td><a href="{{ url_for('delete_supplier', supplier_id=column[0]) }}"class="btn btn-primary btn-primary-custom">Delete</a></td>
-                  <td> <a href="{{ url_for('print_supplier', supplier_id=column[0]) }}"class="btn btn-primary btn-primary-custom">Print</a></td>
+                <td><a href="{{ url_for('delete_supplier', supplier_id=column[0]) }}"class="btn btn-primary btn-primary-custom">Delete</a></td>
+                <td><a href="{{ url_for('print_supplier', supplier_id=column[0]) }}"class="btn btn-primary btn-primary-custom">Print</a></td>
             </tr>
             {% endfor %}
         </table>
-        <a href="{{ url_for('get_new_vehicles_details') }}"class="btn btn-primary btn-primary-custom">Add New vehicle record</a> 
+        
+        <!-- Button to add a new vehicle record -->
+        <a href="{{ url_for('get_new_vehicles_details') }}" class="btn btn-primary btn-primary-custom">Add New vehicle record</a> 
+        
+        <!-- Button to navigate back to the menu -->
         <a href="{{ url_for('index') }}" class="btn btn-primary btn-primary-custom">Go to Menu</a>
     </div>
-
-    <!-- Add Bootstrap JS (optional if you need JavaScript features) -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
-
 {% endblock %}

@@ -1,48 +1,46 @@
+<style>
+    /* Styling for the container and table */
+    .container {
+        margin-top: 50px;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 30px;
+    }
+
+    th, td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+    }
+
+    th {
+        background-color: #f2f2f2;
+    }
+
+    /* Custom primary button styling */
+    .btn-primary-custom {
+        background-color: #4a44be;
+        color: #fff;
+    }
+
+    /* Margin bottom for block-level buttons */
+    .btn-block {
+        margin-bottom: 10px;
+    }
+</style>
+
 {% extends "base.html" %}
 
 {% block content %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <style>
-        .container {
-            margin-top: 50px;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 30px;
-        }
-
-        th, td {
-            border: 1px solid #ddd;
-            padding: 8px;
-            text-align: left;
-        }
-
-        th {
-            background-color: #f2f2f2;
-        }
-
-        .btn-block {
-            margin-bottom: 10px;
-        }
-        .btn-primary-custom {
-            background-color: #4a44be;
-            color: #fff;
-        }
-    </style>
-</head>
-<body>
+    <!-- Main content container -->
     <div class="container">
+        <!-- Table to display supplier data -->
         <table>
             <thead>
+                <!-- Table header columns -->
                 <tr>
                     <th>Company ID</th>
                     <th>Company Name</th>
@@ -53,10 +51,10 @@
                     <th>Contact Name</th>
                     <th>VAT</th>
                     <th>Action</th>
-                    
                 </tr>
             </thead>
             <tbody>
+                <!-- Loop through supplier data and display each row -->
                 {% for column in list_of_supplier %}
                 <tr>
                     <td>{{ column[0] }}</td>
@@ -70,17 +68,14 @@
                     <td>{{ column[8] }}</td>
                     <td>{{ column[9] }}</td>
                     <td>
-                       
+                        <!-- Add action buttons or links here if needed -->
+                    </td>
                 </tr>
                 {% endfor %}
             </tbody>
         </table>
-
+        
+        <!-- Button to navigate back to the menu -->
         <a class="btn btn-primary btn-block" href="{{ url_for('index') }}">Go to Menu</a>
-    
-
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</body>
-</html>
-
+    </div>
 {% endblock %}

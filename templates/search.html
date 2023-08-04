@@ -1,47 +1,44 @@
+<style>
+    /* Styling for the container and table */
+    .container {
+        margin-top: 50px;
+    }
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <style>
-        .container {
-            margin-top: 50px;
-        }
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
 
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
+    th, td {
+        padding: 8px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
 
-        th, td {
-            padding: 8px;
-            text-align: left;
-            border-bottom: 1px solid #ddd;
-        }
+    th {
+        background-color: #f2f2f2;
+    }
 
-        th {
-            background-color: #f2f2f2;
-        }
+    /* Adjusted margin for buttons and form */
+    a.btn {
+        margin-top: 20px;
+    }
 
-        a.btn {
-            margin-top: 20px;
-        }
+    form {
+        display: inline-block;
+        margin-top: 20px;
+    }
+</style>
 
-        form {
-            display: inline-block;
-            margin-top: 20px;
-        }
-    </style>
-</head>
-<body>
-    
+{% extends "base.html" %}
+
+{% block content %}
+    <!-- Main content container -->
     <div class="container">
+        <!-- Page title -->
         <h1 class="text-center mb-4 row justify-content-center">Search Data</h1>
         
+        <!-- Search form -->
         <form action="/supplier" method="GET">
             <div class="form-group">
                 <label for="search">Search:</label>
@@ -50,12 +47,20 @@
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
         
+        <!-- Table to display supplier data -->
         <table>
             <tr>
-               
-
-               
-                
+                <!-- Table header columns -->
+                <th>Supplier ID</th>
+                <th>Supplier Name</th>
+                <th>Address</th>
+                <th>Mobile Phone</th>
+                <th>Email</th>
+                <th>Contact Name</th>
+                <th>VAT</th>
+            </tr>
+            
+            <!-- Loop through supplier data and display each row -->
             {% for column in list_of_suppliers %}
             <tr>
                 <td>{{ column[0] }}</td>
@@ -71,16 +76,7 @@
 
         <br>
 
+        <!-- Button to navigate back to the menu -->
         <a href="{{ url_for('index') }}" class="btn btn-primary">Go to Menu</a>
-
     </div>
-
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</body>
-</html>
-
-        
-    </table>
-
-</body>
-</html> 
+{% endblock %}

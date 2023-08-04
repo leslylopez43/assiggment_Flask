@@ -1,42 +1,47 @@
+<style>
+    /* Custom styles for the page */
+    .container {
+        margin-top: 50px;
+    }
 
-    <style>
-        .container {
-            margin-top: 50px;
-        }
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
 
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
+    th, td {
+        padding: 8px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
 
-        th, td {
-            padding: 8px;
-            text-align: left;
-            border-bottom: 1px solid #ddd;
-        }
+    th {
+        background-color: #f2f2f2;
+    }
+    .btn-primary-custom {
+        background-color: #4a44be;
+        color: #fff;
+    }
+</style>
 
-        th {
-            background-color: #f2f2f2;
-        }
-        .btn-primary-custom {
-            background-color: #4a44be;
-            color: #fff;
-        }
-    </style>
 {% extends "base.html" %}
 
 {% block content %}
+    <!-- Container for the sales data table -->
     <div class="container">
-        <table >
+        <table>
             <thead>
-              <h1 class="text-center mb-4 row justify-content-center">SALES DATA</h1>
-              <form action="{{ url_for('sales') }}" method="POST">
-                <div class="form-group">
-                    <label for="search">Search for Sales</label>
-                    <input type="text" name="search" id="search" class="form-control">
-                </div>
-                <button type="submit" class="btn btn-primary btn-primary-custom">Search</button>
+                <!-- Page title and search form -->
+                <h1 class="text-center mb-4 row justify-content-center">SALES DATA</h1>
+                <form action="{{ url_for('sales') }}" method="POST">
+                    <div class="form-group">
+                        <label for="search">Search for Sales</label>
+                        <input type="text" name="search" id="search" class="form-control">
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-primary-custom">Search</button>
+                </form>
             
+                <!-- Table header row -->
                 <tr>
                     <th>Sale Employee Number</th>
                     <th>New Car Brand</th>
@@ -47,9 +52,11 @@
                     <th>Profit</th>
                     <th>Vehicle Category</th>
                     <th>Number of New Cars Sold</th>
+                    <th>Actions</th>
                 </tr>
             </thead>
             <tbody>
+                <!-- Loop through sales data and display each row -->
                 {% for column in list_of_sales %}
                 <tr>
                     <td>{{column[1]}}</td>
@@ -61,20 +68,18 @@
                     <td>{{column[7]}}</td>
                     <td>{{column[8]}}</td>
                     <td>{{column[9]}}</td>
-
+                    <!-- Buttons for updating, deleting, and printing -->
                     <td><a href="{{ url_for('update_supplier', supplier_id=column[0]) }}"class="btn btn-primary btn-primary-custom">Update</a></td>
-                  <td><a href="{{ url_for('delete_supplier', supplier_id=column[0]) }}"class="btn btn-primary btn-primary-custom">Delete</a></td>
-                  <td> <a href="{{ url_for('print_supplier', supplier_id=column[0]) }}"class="btn btn-primary btn-primary-custom">Print</a></td>
+                    <td><a href="{{ url_for('delete_supplier', supplier_id=column[0]) }}"class="btn btn-primary btn-primary-custom">Delete</a></td>
+                    <td><a href="{{ url_for('print_supplier', supplier_id=column[0]) }}"class="btn btn-primary btn-primary-custom">Print</a></td>
                 </tr>
                 {% endfor %}
             </tbody>
         </table>
         
+        <!-- Links for adding sales, going to menu -->
         {{ list_of_vehicles }}
         <a href="{{ url_for('get_new_sales_details') }}"class="btn btn-primary btn-primary-custom">Add Sales</a>
-
         <a href="{{url_for('index')}}" class="btn btn-primary btn-primary-custom">Go to Menu</a>
     </div>
-
-
 {% endblock %}
