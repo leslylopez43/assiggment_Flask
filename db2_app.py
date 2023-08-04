@@ -15,7 +15,7 @@ app.secret_key="abcdefgh"   # Set the secret key for the app to enable session u
 
 
 # Establish a connection to the PostgreSQL database online
-def db_conn2():
+def db_conn():
     conn=psycopg2.connect(database="motoring",
     host="dpg-cijtiih8g3nc2ge601gg-a", 
     user="motoring_user",
@@ -26,7 +26,7 @@ def db_conn2():
 
 
     # Establish a connection to the PostgreSQL database local
-def db_conn():
+def db_conn2():
     conn=psycopg2.connect(database="motoring",
     host="localhost", 
     user="postgres",
