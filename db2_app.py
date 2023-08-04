@@ -23,36 +23,7 @@ app=Flask(__name__) # Create a Flask app instance
 app.secret_key="secret_key"   # Set the secret key for the app to enable session usage
 
 
-# Establish a connection to the PostgreSQL database online
-def db_conn2():
-    conn=psycopg2.connect(database="motoring",
-    host="dpg-cijtiih8g3nc2ge601gg-a", 
-    user="motoring_user",
-    password="an0qLg5cQMuA6gyATcsElx0L1srvkvGb",
-    port="5432")
-    return conn
 
-
-
-    # Establish a connection to the PostgreSQL database local
-def db_conn():
-    conn=psycopg2.connect(database="motoring",
-    host="localhost", 
-    user="postgres",
-    password="London1031",
-    port="5432")
-    return conn 
-
-
-# Establish a connection to the PostgreSQL database hiden password
-def db_conn2():
-    # print('pwd is' + str(db_password))
-    conn=psycopg2.connect(database="motoring",
-    host="localhost", 
-    user="postgres",
-    password="db_password",
-    port="5432")
-    return conn 
 
 
 @app.route("/")     # Define a route for the root URL ("/")
