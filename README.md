@@ -1,5 +1,49 @@
 ### App for Flask Motoring
+## Stories for the user
+
+
+## Installation
+1. Link for the British Fleet Website Form
+
+https://motoring-web-services.onrender.com
+
+British Fleet is a web application for managing supplier information, displaying vehicles, managing sales, and managing maintenance/services. 
+It is built using ,  and 
+|     Flask | Python,| Bootstrap.|
+| --------  | -------- |-------- |
+
+# British Fleet
+### Usage 
+You will see a navigation bar with links to the application's many sections when you first view it.
+Click on the pertinent links (such as Display Supplier, Display Vehicles, Manage Sales, or Manage Maintenance/Services) to reach the necessary section.
+To get directly there, you may also choose a section from the drop-down menu and click "Submit" in the navigation bar.
 Users of the Motoring App can handle suppliers, vehicles, sales, and maintenance data in a motoring business. It was created using the Flask programming language.
+The user can Add the New supplier, the Vehicles and the Maintenace record.
+
+## Usage
+The application provides the following pages
+
+# British Fleet
+## Features
+#### Displays the main page of the application.
+View and search for supplier details.
+
+
+### Displays a list of suppliers together with their information.
+View and search for vehicle details.
+Vehicles
+
+#### Displays a list of vehicles and their details.
+View and search for sales details.
+Sales
+
+#### Displays a list of sales and their details.
+View and search for maintenance details.
+Maintenance.
+
+#### Displays the maintenance page.
+- To reach the corresponding pages, click on the links in the navigation menu.
+Visit localhost:5000 to perform a search.
 
 ## Tables Design in SQL Data Base
    I create a 4 tables each table have at least 10 rows that save the data
@@ -113,12 +157,6 @@ This wireframe likely represents the front page or introduction section of the R
  [Vehicles](#wireframe-vehicles)              | Information about vehicles in the project   
 ![Vehicles Wireframe](/static/img/wireframeVehicles.webp)
 
-
-## Installation
-1. The repository:
-
-https://motoring-web-services.onrender.com
-
 ![repositori 2](/static/img/repositor2.webp)
 ![repositori3](/static/img/repositor3.webp)
 ![repositori 4](/static/img/repositor4.webp)
@@ -134,12 +172,6 @@ pip install -r requirements.txt
 3. ### Set up the PostgreSQL database:
 - Create a new database named "motoring" on your PostgreSQL server.
 - Update the database connection details in the `db_conn` function in `app.py` with your PostgreSQL credentials.
-
-
-Start the application:
-The application will be accessible at http://localhost:5000.
-
-
 
 ### Chrome Lighthouse Test Results
 
@@ -193,42 +225,6 @@ For more information on PEP 8, you can visit the official Python website: PEP 8 
 |     pycodestyle on PyPI | | PEP 8 on Python.org|
 | --------  | -------- |-------- |
 
-
-## Usage
-The application provides the following pages
-
-# British Fleet
-## Features
-#### Displays the main page of the application.
-View and search for supplier details.
-Supplier's website is located at localhost:5000.
-
-### Displays a list of suppliers together with their information.
-View and search for vehicle details.
-Vehicles: http://localhost:5000/vehicles
-
-#### Displays a list of vehicles and their details.
-View and search for sales details.
-Sales: http://localhost:5000/sales
-
-#### Displays a list of sales and their details.
-View and search for maintenance details.
-Maintenance: http://localhost:5000/maintenance
-
-#### Displays the maintenance page.
-- To reach the corresponding pages, click on the links in the navigation menu.
-Visit localhost:5000 to perform a search.
-
-# British Fleet
-
-British Fleet is a web application for managing supplier information, displaying vehicles, managing sales, and managing maintenance/services. 
-It is built using ,  and 
-|     Flask | Python,| Bootstrap.|
-| --------  | -------- |-------- |
-### Usage 
-You will see a navigation bar with links to the application's many sections when you first view it.
-Click on the pertinent links (such as Display Supplier, Display Vehicles, Manage Sales, or Manage Maintenance/Services) to reach the necessary section.
-To get directly there, you may also choose a section from the drop-down menu and click "Submit" in the navigation bar.
 
 ## Technologies Used
 

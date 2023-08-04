@@ -1,54 +1,4 @@
-{% extends "base.html" %}
-
-{% block content %}
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-beta2/css/bootstrap.min.css">
-    <style>
-        .container {
-            margin-top: 50px;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-
-        th,
-        td {
-            padding: 8px;
-            text-align: left;
-            border-bottom: 1px solid #ddd;
-        }
-
-        th {
-            background-color: #f2f2f2;
-        }
-
-        a.btn {
-            margin-top: 20px;
-        }
-        form {
-            display: inline-block;
-            margin-top: 20px;
-        }
-
-        .btn:hover {
-        background-color: rgb(79, 42, 187); 
-    }
-</style>
-</head>
-
-<body>
-   
-                    
-                </form>
+i{% extends "base.html" %}
 
                 <table class="table table-striped table-hover">
                     <thead class="table-light">
@@ -71,20 +21,19 @@
 
             </div>
         </div>
-        
+        {% block content %}   
         <div class="row justify-content-center mt-4 jumbotron text-center">
             <div class="col-md-9">
-                <h2 class="text-center ">Forms:</h2>
                 <ul class="list-group">
-                    <li class="list-group-">
-                        <a href="{{ url_for('get_new_supplier_details') }}" class="btn btn-primary btn-lg">Enter New Supplier Details</a>
-                    </li>
+                    <li class="list-group-"><br>
+                        <a href="{{ url_for('get_new_supplier_details') }}" class="btn btn-primary btn-lg">Enter New Supplier Details</a>  
+                    </li><br>
                     <li class="list-group-">
                         <a href="{{ url_for('get_new_vehicles_details') }}" class="btn btn-primary btn-lg">Enter New Vehicle Details</a>
-                    </li>
+                    </li><br>
                     <li class="list-group-">
                         <a href="{{ url_for('get_new_sales_details') }}" class="btn btn-primary btn-lg">Enter New Sales Details</a>
-                    </li>
+                    </li><br>
                     <li class="list-group-">
                         <a href="{{ url_for('get_new_maintenance_details') }}" class="btn btn-primary btn-lg">Enter New Maintenance Details</a>
                     </li>
@@ -94,7 +43,4 @@
     
 
         {% endblock %}
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-beta2/js/bootstrap.min.js"></script>
-</body>
-
-</html>
+ 

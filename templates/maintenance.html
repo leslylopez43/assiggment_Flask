@@ -1,43 +1,6 @@
 {% extends "base.html" %}
 
 {% block content %}
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <!-- Add Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
-    <style>
-        body {
-            padding: 20px;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 20px;
-        }
-        th, td {
-            padding: 8px;
-            text-align: left;
-            border-bottom: 1px solid #ddd;
-        }
-        th {
-            background-color: #f2f2f2;
-        }
-        a.btn {
-            margin-top: 10px;
-        }
-        .btn-primary-custom {
-            background-color: #4a44be;
-            color: #fff;
-        }
-    </style>
-</head>
-<body>
     <div class="container">
         <table>
           <h1 class="text-center mb-4 row justify-content-center">Services DATA</h1>
@@ -85,6 +48,4 @@
         <a href="{{ url_for('index') }}" class="btn btn-primary btn-primary-custom">Go to Menu</a>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
 {% endblock %}
