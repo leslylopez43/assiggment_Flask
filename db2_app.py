@@ -29,7 +29,7 @@ def db_conn2():
 # Establish a connection to the PostgreSQL database online
 def db_conn():
     conn=psycopg2.connect(database="motoring",
-    host='MY_HOST', 
+    host="localhost", 
     user="motoring_user",
     password="an0qLg5cQMuA6gyATcsElx0L1srvkvGb",
     port="5432")
