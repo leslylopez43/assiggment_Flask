@@ -1,26 +1,62 @@
 # Import the necessary modules from Flask
-from flask import Flask, flash, render_template, redirect, request, url_for   
+from flask import Flask, flash, render_template, redirect, request, url_for
 import psycopg2  # Import the psycopg2 module for PostgreSQL database interactions
-import os       # Import the os module for environment variable access
+import os  # Import the os module for environment variable access
 
-# Storing sensitive data as environment variables
-os.environ['MY_USERNAME'] = 'myuser'
-os.environ['MY_PASSWORD'] = 'mypassword'
-os.environ['MY_HOST'] = 'host'
-os.environ['MY_PORT'] = 'port'
+
 # Retrieving sensitive data from environment variables
 db_user = os.environ.get('MY_USERNAME')
 db_password = os.environ.get('MY_PASSWORD')
 db_host = os.environ.get('MY_HOST')
-db_port = os.environ.get('MY_PORT') 
-print(f"Username: {db_user}")
-print(f"Password: {db_password}")
-print(f"host: {db_host}")
-print(f"port: {db_port}")
+db_port = os.environ.get('MY_PORT')
 
 
-app=Flask(__name__) # Create a Flask app instance
+def db_conn():
+    conn = psycopg2.connect(
+        database="motoring",
+        host=db_host,
+        user=db_user,
+        password=db_password,
+        port=db_port
+    )
+    return conn
+
+# Define a flag to indicate if debugging is enabled
+debug_mode = True  # Set this to False in production
+
+# Debugging: Print sensitive data for debugging purposes
+if debug_mode:
+    print(f"Username: {db_user}")
+    print(f"Host: {db_host}")
+    print(f"Port: {db_port}")
+
+# Now you can use these variables to establish a database connection
+app = Flask(__name__) # Create a Flask app instance
 app.secret_key="secret_key"   # Set the secret key for the app to enable session usage
+
+
+# Establish a connection to the PostgreSQL database online
+def db_conn():
+    conn=psycopg2.connect(database="motoring",
+    host='MY_HOST', 
+    user="motoring_user",
+    password="an0qLg5cQMuA6gyATcsElx0L1srvkvGb",
+    port="5432")
+    return conn
+
+
+
+    # Establish a connection to the PostgreSQL database local
+def db_conn2():
+    conn=psycopg2.connect(database="motoring",
+    host="localhost", 
+    user="postgres",
+    password="London1031",
+    port="5432")
+    return conn 
+
+
+
 
 
 
@@ -396,4 +432,4 @@ def submit_form():
 
 
 if __name__ == '__main__':
-    app.run(debug=False)
+    app.run(debug=True)
