@@ -1,6 +1,23 @@
 .index.body {
     background-color: #000;
   }
+ /* Custom styles for the navbar toggler */
+ .custom-toggler {
+  border-color: #f00; /* Change border color */
+  background-color: #f00; /* Change background color */
+}
+
+/* Media query for smaller devices like smartphones */
+@media (max-width: 768px) {
+  .custom-toggler {
+    border-color: #00f; /* Change border color for smaller screens */
+    background-color: #00f; /* Change background color for smaller screens */
+  }
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
 
   .container {
     max-width: 800px;

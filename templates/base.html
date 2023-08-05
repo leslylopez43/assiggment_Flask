@@ -62,14 +62,15 @@
     </style>
 </head>
 <body>
-        <!-- this is the body Rest of your HTML content goes here -->
+        <!-- this is the body Rest of  HTML content goes here -->
     <nav class="navbar navbar-expand-lg navbar-dark">   <!-- Navbar Brand -->
         <div class="container">
             <a class="navbar-brand" href="{{ url_for('index') }}">British Fleet</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">  <!-- Navbar Toggler for Mobile -->
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+            <nav class="navbar navbar-expand-lg">
+                <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
 
          <!-- Navbar Links and Dropdown -->
             <div class="collapse navbar-collapse" id="navbarNav">
