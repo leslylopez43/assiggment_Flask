@@ -9,8 +9,10 @@
     <title>British Fleet</title> 
     <style>
   /* Set background color for the entire page */
-        body {
+  body {
             background-color: #FFF;
+            margin: 0; /* Reset default margin to ensure full viewport coverage */
+            padding: 0; /* Reset default padding */
         }
         .btn-primary-custom {
             background-color: #4a44be;
@@ -35,7 +37,7 @@
         .jumbotron {
             background: url(/static/img/background.jpg) no-repeat center center;
             background-size: cover;
-            height: 500px;
+            min-height: 300px; /* Set a minimum height */
             margin-bottom: 30px;
         }
         
@@ -56,8 +58,11 @@
             color: #ffffff;
         }
         
-        footer.footer a {
+        footer.footer {
+            background-color: #343a40;
             color: #ffffff;
+            width: 100%;
+            padding: 20px 0; /* Add some padding for better appearance */
         }
     </style>
 </head>
