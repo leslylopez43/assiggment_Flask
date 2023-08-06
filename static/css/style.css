@@ -2,7 +2,6 @@
     background-color: #000;
   }
 
-
 /* Media query for smaller devices like smartphones */
 @media (max-width: 768px)  {
   .custom-toggler {
@@ -14,56 +13,5 @@ img {
   max-width: 100%;
   height: auto;
 }
-
-  .container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-
-  .form-container {
-    background-color: #fff;
-    border-radius: 5px;
-    padding: 20px;
-    margin-bottom: 20px;
-  }
-
-  .form-container h1 {
-    margin-top: 0;
-  }
-
-  .form-container form {
-    margin-bottom: 20px;
-  }
-
-  .form-container button {
-    margin-top: 10px;
-  }
-
-  .menu-container {
-    background-color: #fff;
-    border-radius: 5px;
-    padding: 20px;
-  }
-
-  .menu-container h1 {
-    margin-top: 0;
-    margin-bottom: 20px;
-  }
-
-  .menu-container ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-
-  .menu-container ul li {
-    margin-bottom: 10px;
-  }
-
-  .menu-container ul li a {
-    color: rgb(54, 164, 160);
-    text-decoration: none;
-  }
 
  
