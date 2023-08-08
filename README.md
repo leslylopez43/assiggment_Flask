@@ -141,7 +141,7 @@ This wireframe likely represents the front page or introduction section of the R
 
 | Wireframe                | Wireframe                |
 | --------------------------  | --------------------------  |
-| ![Wireframe](/static/img/wireframe2.webp) | ![Wireframe](/static/img/wireframe4.webp) |
+| ![Wireframe](/static/img/wireframe2.webp) | ![Wireframe](/static/img/wireframe4.webp) || ![Wireframe](/static/img/wireframe3.webp) |
 
 
 ## Wireframe Maintenance
