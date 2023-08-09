@@ -144,7 +144,7 @@ Each row in the "VEHICLES" table represents a specific vehicle owned or availabl
 | enter new Mintenance Detail          | Form to be filling              | [Form](https://motoring-web-services.onrender.com/get_new_maintenance_details)        |
 |Logo         | back to the main menue           | [Logo](https://motoring-web-services.onrender.com)       |
 | Social Media               | Contact information    | [Social Media](https://api.whatsapp.com/send?phone=447446605299)                  |
-
+|-------------------|-------------------------------|-------------------------------------------------|
 |                    |                                |                                              |
 | update Info         | From any Page to update Data             | [Update](https://motoring-web-services.onrender.com/update_supplier?supplier_id=1)                    |
 | Delete          | Delete Information about  | [Delete](https://motoring-web-services.onrender.com)           |
