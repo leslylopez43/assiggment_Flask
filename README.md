@@ -132,7 +132,7 @@ Each row in the "VEHICLES" table represents a specific vehicle owned or availabl
 
 | Page Name         | Description                   | Link                                             |
 |-------------------|-------------------------------|--------------------------------------------------|
-| Home Page         | Main landing page             | [Home](https://example.com/)                    |
+| Home Page         | Main landing page             | [Home](https://motoring-web-services.onrender.com)                    |
 | About Us          | Information about the company | [About Us](https://example.com/about)           |
 | Products          | List of products              | [Products](https://example.com/products)        |
 | Contact Us        | Contact information           | [Contact Us](https://example.com/contact)       |
