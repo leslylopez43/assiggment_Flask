@@ -14,7 +14,7 @@ db_host = os.environ.get('MY_HOST')
 db_port = os.environ.get('MY_PORT')
 
 
-def db_conn():
+def db_conn2():
     conn = psycopg2.connect(
         database="motoring",
         host=db_host,
@@ -23,6 +23,14 @@ def db_conn():
         port=db_port
     )
     return conn
+    # Establish a connection to the PostgreSQL database local
+def db_conn():
+    conn=psycopg2.connect(database="motoring",
+    host="localhost", 
+    user="postgres",
+    password="London1031",
+    port="5432")
+    return conn 
 
 @app.route("/")     # Define a route for the root URL ("/")
 def index():
