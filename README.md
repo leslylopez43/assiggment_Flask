@@ -133,10 +133,17 @@ Each row in the "VEHICLES" table represents a specific vehicle owned or availabl
 | Page Name         | Description                   | Link                                             |
 |-------------------|-------------------------------|--------------------------------------------------|
 | Home Page         | Main landing page             | [Home](https://motoring-web-services.onrender.com)                    |
-| Supplier          | Information about the company | [Supplier](https://motoring-web-services.onrender.com/supplier)           |
-| Display Vehiles          | List of products              | [Display Vehivles](https://motoring-web-services.onrender.com/vehicles)        |
-| Manage sales        | Contact information           | [Manage sales](https://motoring-web-services.onrender.com/sales)       |
-| Form New Supplier Details              | Frequently asked questions    | [Form ](https://motoring-web-services.onrender.comget_new_supplier_details)                  |
+| Supplier          | Information about the Supplier | [Supplier](https://motoring-web-services.onrender.com/supplier)           |
+| Display Vehiles          | List of Vehicles              | [Display Vehivles](https://motoring-web-services.onrender.com/vehicles)        |
+| Manage sales        | Service information           | [Manage sales](https://motoring-web-services.onrender.com/sales)       |
+|                   |                               |                                                 |
+|-------------------|-------------------------------|-------------------------------------------------|
+| Form New Supplier Details              | Form to be filling    | [Form ](https://motoring-web-services.onrender.com/get_new_supplier_details)                  |
+| Enter new Vehicles detail         | Form to be filling             | [Form](https://motoring-web-services.onrender.com/get_new_vehicles_details)                    |
+| Enter new Sales Detais         | IForm to be filling | [Form](https://motoring-web-services.onrender.com/get_new_sales_details)           |
+| enter new Mintenance Detail          | Form to be filling              | [Form](https://motoring-web-services.onrender.com/get_new_maintenance_details)        |
+|Logo         | back to the main menue           | [Logo](https://motoring-web-services.onrender.com)       |
+| Social Media               | Contact information    | [Social Media](https://api.whatsapp.com/send?phone=447446605299)                  |
 
 
 
