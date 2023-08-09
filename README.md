@@ -133,10 +133,10 @@ Each row in the "VEHICLES" table represents a specific vehicle owned or availabl
 | Page Name         | Description                   | Link                                             |
 |-------------------|-------------------------------|--------------------------------------------------|
 | Home Page         | Main landing page             | [Home](https://motoring-web-services.onrender.com)                    |
-| About Us          | Information about the company | [About Us](https://example.com/about)           |
-| Products          | List of products              | [Products](https://example.com/products)        |
-| Contact Us        | Contact information           | [Contact Us](https://example.com/contact)       |
-| FAQ               | Frequently asked questions    | [FAQ](https://example.com/faq)                  |
+| Supplier          | Information about the company | [Supplier](https://motoring-web-services.onrender.com/supplier)           |
+| Display Vehiles          | List of products              | [Display Vehivles](https://motoring-web-services.onrender.com/vehicles)        |
+| Manage sales        | Contact information           | [Manage sales](https://motoring-web-services.onrender.com/sales)       |
+| Form New Supplier Details              | Frequently asked questions    | [Form ](https://motoring-web-services.onrender.comget_new_supplier_details)                  |
 
 
 
