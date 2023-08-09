@@ -127,81 +127,16 @@ Each row in the "VEHICLES" table represents a specific vehicle owned or availabl
 | available                    | text     | Indicates whether the vehicle is available for purchase          |
 
 
-# British Fleet
-## Features
-#### Displays the main page of the application.
-View and search for supplier details.
+#
+## Web Page Links Testing
 
-### Displays a list of suppliers together with their information.
-View and search for vehicle details.
-Vehicles
-
-#### Displays a list of vehicles and their details.
-View and search for sales details.
-Sales
-
-#### Displays a list of sales and their details.
-View and search for maintenance details.
-Maintenance.
-
-#### Displays the maintenance page.
-- To reach the corresponding pages, click on the links in the navigation menu.
-Visit localhost:5000 to perform a search.
-
-## Tables Design in SQL Data Base
-I created 4 tables, each with at least 10 rows to store the data.
-
-## Table: MAINTENANCE
-### Description:
-The "MAINTENANCE" table stores records related to the maintenance of vehicles. It includes information about maintenance tasks performed on vehicles, the date of maintenance, costs, and personnel involved.
-
-#### Data Storage:
-Each row in the "MAINTENANCE" table represents a specific maintenance event performed on a vehicle. The table includes various fields to store relevant information about each maintenance event:
-
-| Field Name                   | Data Type | Description                                                      |
-| ---------------------------- | --------- | ---------------------------------------------------------------- |
-| maintenanceid (Primary Key)  | number    | A unique identifier for each maintenance record (auto-incremented)|
-| vehicle_id (Foreign Key)     | number    | References the vehicle for which the maintenance was performed   |
-| ...                          | ...       | Other fields related to maintenance                             |
-
-## Table: SALES
-### Description:
-The "SALES" table stores records related to vehicle sales. It includes information about new and used car sales, the number of cars sold, profits, and employee details.
-
-#### Data Storage:
-Each row in the "SALES" table represents a specific sales transaction or event. The table includes various fields to store relevant information about each sale:
-
-| Field Name                   | Data Type | Description                                                              |
-| ---------------------------- | --------- | ------------------------------------------------------------------------ |
-| salesid (Primary Key)        | number    | A unique identifier for each sales record (auto-incremented)             |
-| sale_employee_number         | number    | The employee number of the salesperson responsible for the transaction   |
-| ...                          | ...       | Other fields related to sales                                          |
-
-## Table: SUPPLIER
-### Description:
-The "SUPPLIER" table stores records related to suppliers who provide goods or services to the organization. It includes contact and business details of the suppliers.
-
-#### Data Storage:
-Each row in the "SUPPLIER" table represents a specific supplier. The table includes various fields to store relevant information about each supplier:
-
-| Field Name                   | Data Type | Description                                                      |
-| ---------------------------- | --------- | ---------------------------------------------------------------- |
-| supplierid (Primary Key)     | number    | A unique identifier for each supplier (auto-incremented)        |
-| supplier_name                | name      | The name of the supplier                                       |
-| ...                          | ...       | Other fields related to suppliers                              |
-
-## Table: VEHICLES
-### Description:
-The "VEHICLES" table stores records related to the vehicles owned or operated by the organization. It includes information about each vehicle, such as its registration details, pricing, and availability.
-
-#### Data Storage:
-Each row in the "VEHICLES" table represents a specific vehicle owned or available for sale. The table includes various fields to store relevant information about each vehicle:
-
-| Field Name                   | Data Type | Description                                                      |
-| ---------------------------- | --------- | ---------------------------------------------------------------- |
-| vehiclesid (Primary Key)     | number    | A unique identifier for each vehicle (auto-incremented)        |
-| registration_number          | number    | The registration number of the vehicle                         |
-| ...                          | ...       | Other fields related to vehicles                              |
+| Page Name         | Description                   | Link                                             |
+|-------------------|-------------------------------|--------------------------------------------------|
+| Home Page         | Main landing page             | [Home](https://example.com/)                    |
+| About Us          | Information about the company | [About Us](https://example.com/about)           |
+| Products          | List of products              | [Products](https://example.com/products)        |
+| Contact Us        | Contact information           | [Contact Us](https://example.com/contact)       |
+| FAQ               | Frequently asked questions    | [FAQ](https://example.com/faq)                  |
 
 
 
