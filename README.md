@@ -138,9 +138,9 @@ This wireframe likely represents the front page or introduction section of the R
 
  # Frontpage Wireframe  web                         
 | <img src="static/img/wireframe2.webp" width="800"> |
- |![Wireframe](/) |
  
- |![Wireframe](/static/img/Wireframe1.webp) |
+
+ | <img src="static/img/Wireframe1.webp" width="800"> |
 
  # Wireframe                
  
