@@ -544,7 +544,8 @@ cd flask-motoring-app
 2. Open the terminal within VS Code.
 3. Use the `git clone` command to clone your GitHub repository:
 
-| <img src="static/img/repositor4.webp" width="400"> | <img src="static/img/repositor5.webp" width="400"> |
+| <img src="static/img/repositor4.webp" width="800"> 
+| <img src="static/img/repositor5.webp" width="800"> |
 
 ## Step 3: Configure Settings
  Create and activate a virtual environment:
@@ -574,7 +575,7 @@ View the deployment logs to ensure success.
 Open your Render deployment URL to test the live site.
 Verify that all functionalities work as expected.
 
-| <img src="static/img/Screenshot 2023-08-11 at 11.41.57.png" width="400"> |
+| <img src="static/img/Screenshot 2023-08-11 at 11.41.57.png" width="800"> |
 
 Conclusion
 !Django project is now deployed on Render. This guide provided a simple path to get your application online.
