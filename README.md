@@ -572,7 +572,7 @@ Update ALLOWED_HOSTS to include your Render deployment URL:
 ## Step 4: Deploy to Render
 Log in to Render.
 
-Click "Add a New Web Service" and choose "Static Site" for a Django project.
+Click "Add a New Web Service" and choose "Static Site" for a Flask project.
 
 Add New Web Service
 
