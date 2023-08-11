@@ -1,7 +1,5 @@
 ### App for Flask Motoring
-## Stories for the User
 
-ss
 ## Installation
 1. Link for the British Fleet Website Form
 
@@ -11,7 +9,7 @@ British Fleet is a web application for managing supplier information, displaying
 It is built using ,  and 
 |     Flask | Python,| Bootstrap.|
 | --------  | -------- |-------- |
-
+## User Stories
 # British Fleet
 ### Usage 
 You will see a navigation bar with links to the application's many sections when you first view it.
