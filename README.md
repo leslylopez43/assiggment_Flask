@@ -139,12 +139,14 @@ This wireframe likely represents the front page or introduction section of the R
  # Frontpage Wireframe  web                         
 
  [Wireframe](/static/img/wireframe2.webp)
+ 
  [Wireframe](/static/img/Wireframe1.webp) 
 
  # Wireframe                
  
  
  [Wireframe](/static/img/wireframe4.webp) 
+ 
  [Wireframe](/static/img/wireframe3.webp) 
 
 
