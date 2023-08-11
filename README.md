@@ -148,8 +148,10 @@ This wireframe likely represents the front page or introduction section of the R
 |-------------------------------------|-------------------------------------|
 | ![Wireframe 4](/static/img/wireframe4.webp) | ![Wireframe 3](/static/img/wireframe3.webp) |
 
-## Wireframe Maintenance
+## Wireframe insert Data
+| <img src="static/img/Wireframe1.webp" width="500"> |
 
+## Wireframe Maintenance
 ![Maintenance](#wireframe-maintenance)         | Project maintenance and contribution guide  
 ![Maintenance Wireframe](/static/img/wireframe%20Maintenance.webp)
 
