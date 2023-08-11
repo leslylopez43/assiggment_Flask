@@ -148,7 +148,7 @@ This wireframe likely represents the front page or introduction section of the R
 
  | <img src="static/img/Wireframe1.webp" width="500"> |
 
- # Wireframe                
+ # Wireframe  Front Page Mobile Device.               
  
 | Wireframe 1                         | Wireframe 2                         |
 |-------------------------------------|-------------------------------------|
