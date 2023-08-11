@@ -568,7 +568,7 @@ View the deployment logs to ensure success.
 Open your Render deployment URL to test the live site.
 Verify that all functionalities work as expected.
 
-| <img src="static/img/Screenshot 2023-08-11 at 11.41.5" width="400"> |
+| <img src="static/img/Screenshot 2023-08-11 at 11.41.57.png" width="400"> |
 
 Conclusion
 !Django project is now deployed on Render. This guide provided a simple path to get your application online.
