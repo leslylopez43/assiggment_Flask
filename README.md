@@ -523,6 +523,54 @@ This project is licensed under the [MIT License](LICENSE).
 based on the length of the courses, does a database search.
 
 
+# Deploying Django Project to Render
+
+This guide outlines the steps to deploy my Django project from Visual Studio Code and GitHub to Render. By following these steps, I'll have my Django application running on the web in no time.
+
+## Prerequisites
+
+- A Render account (Sign up at [https://render.com](https://render.com))
+- Basic familiarity with Git and command-line tools
+
+## Step 1: Clone the Repository
+
+1. Open Visual Studio Code.
+2. Open the terminal within VS Code.
+3. Use the `git clone` command to clone your GitHub repository:
+
+
+## Step 3: Configure Settings
+ Create and activate a virtual environment:
+Modify settings.py for production.
+
+Update ALLOWED_HOSTS to include your Render deployment URL:
+
+## Step 4: Deploy to Render
+Log in to Render.
+
+Click "Add a New Web Service" and choose "Static Site" for a Django project.
+
+Add New Web Service
+
+Connect your GitHub repository and choose the deployment branch.
+
+Connect GitHub
+
+Configure deployment settings, including the build command and environment variables.
+
+## Step 5: Monitor Deployment
+Monitor the deployment process on Render's dashboard.
+
+View the deployment logs to ensure success.
+
+## Step 6: Test the Deployment
+Open your Render deployment URL to test the live site.
+Verify that all functionalities work as expected.
+
+Conclusion
+!Django project is now deployed on Render. This guide provided a simple path to get your application online.
+
+
 ## Contributing We encourage contributions! Feel free to raise an issue or send a pull request if you discover any problems or have ideas for improvement.
 
 ## Permit
