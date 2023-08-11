@@ -523,7 +523,7 @@ This project is licensed under the [MIT License](LICENSE).
 based on the length of the courses, does a database search.
 
 
-# Deploying Django Project to Render
+# Deploying a Flask Project to Render
 
 This guide outlines the steps to deploy my Django project from Visual Studio Code and GitHub to Render. By following these steps, I'll have my Django application running on the web in no time.
 
