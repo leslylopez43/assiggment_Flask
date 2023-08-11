@@ -40,8 +40,16 @@ View and search for maintenance details.
 Maintenance.
 
 #### Displays the maintenance page.
-- To reach the corresponding pages, click on the links in the navigation menu.
-Visit localhost:5000 to perform a search.
+- To reach the corresponding pages, 
+
+#### Displays the Update page.
+- To reach the corresponding pages, View and update the Item, or user.
+
+#### Displays the Print page.
+- To reach the corresponding pages, View and Print the Item, or user.
+
+#### Displays the Delete page.
+- To reach the corresponding pages, View and Delete the Item, or user.
 
 ## Tables Design in SQL Data Base
    I create a 4 tables each table have at least 10 rows that save the data
