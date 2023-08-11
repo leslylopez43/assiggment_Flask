@@ -561,7 +561,7 @@ cd flask-motoring-app
 
    
 | <img src="static/img/repositor4.webp" width="800"> 
-| <img src="static/img/repositor5.webp" width="800"> |
+
 
 ## Step 3: Configure Settings
  Create and activate a virtual environment:
@@ -577,7 +577,7 @@ Click "Add a New Web Service" and choose "Static Site" for a Flask project.
 Add New Web Service
 
 Connect your GitHub repository and choose the deployment branch.
-
+| <img src="static/img/repositor5.webp" width="800"> |
 Connect GitHub
 
 Configure deployment settings, including the build command and environment variables.
