@@ -566,6 +566,8 @@ Modify settings.py for production.
 
 Update ALLOWED_HOSTS to include your Render deployment URL:
 
+### and paste gunicorn and name of you main Python file db2_app:app
+
 | <img src="static/img/repositor4.webp" width="800"> 
 
 ## Step 4: Deploy to Render
@@ -576,6 +578,7 @@ Click "Add a New Web Service" and choose "Static Site" for a Flask project.
 Add New Web Service
 
 Connect your GitHub repository and choose the deployment branch.
+
 | <img src="static/img/repositor5.webp" width="800"> |
 Connect GitHub
 
