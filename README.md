@@ -140,9 +140,9 @@ This wireframe likely represents the front page or introduction section of the R
 
 
 
- ![Wireframe](/static/img/wireframe2.webp)
+ ![Wireframe](/static/img/wireframe2.webp) |
  
- ![Wireframe](/static/img/Wireframe1.webp) 
+ ![Wireframe](/static/img/Wireframe1.webp) |
 
  # Wireframe                
  
