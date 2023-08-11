@@ -138,17 +138,17 @@ This wireframe likely represents the front page or introduction section of the R
 
  # Frontpage Wireframe  web                         
 
+
+
  ![Wireframe](/static/img/wireframe2.webp)
  
  ![Wireframe](/static/img/Wireframe1.webp) 
 
  # Wireframe                
  
- 
- ![Wireframe](/static/img/wireframe4.webp) 
- 
- ![Wireframe](/static/img/wireframe3.webp) 
-
+| Wireframe 1                         | Wireframe 2                         |
+|-------------------------------------|-------------------------------------|
+| ![Wireframe 4](/static/img/wireframe4.webp) | ![Wireframe 3](/static/img/wireframe3.webp) |
 
 ## Wireframe Maintenance
 
