@@ -542,7 +542,7 @@ This guide outlines the steps to deploy my Django project from Visual Studio Cod
 
 | Clone Repository                                   |    
    |----------------------------------------------------|-------------------------------------------------------|
-  ### This Is a requiered TXT  Navigate to the cloned directory using the terminal:
+  ### This Is a requirements.txt  using the terminal  pip freee 
    | <img src="static/img/repositor2.webp" width="800"> 
    | <img src="static/img/repositor3.webp" width="800"> |
 
