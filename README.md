@@ -149,7 +149,7 @@ This wireframe likely represents the front page or introduction section of the R
 | ![Wireframe 4](/static/img/wireframe4.webp) | ![Wireframe 3](/static/img/wireframe3.webp) |
 
 ## Wireframe insert Data
-| <img src="static/img/Wireframe1.webp" width="500"> |
+| <img src="insert_supplier_data_webp.png" width="500"> |
 
 ## Wireframe Maintenance
 ![Maintenance](#wireframe-maintenance)         | Project maintenance and contribution guide  
