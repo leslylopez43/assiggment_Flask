@@ -523,10 +523,8 @@ This guide outlines the steps to deploy my Django project from Visual Studio Cod
 
 | Clone Repository                                   | Navigate to the cloned directory using the terminal:   |
    |----------------------------------------------------|-------------------------------------------------------|
-   | <img src="/satitc/img/repositor2.web" width="400"> | <img src="static/img/repositor3.webp" width="400"> |
-![repositori 2](/static/img/repositor2.webp) | ![repositori3](/)
-![repositori 4](/static/img/repositor4.webp)
-![repositori 5](/static/img/repositor5.webp)
+   | <img src="satitc/img/repositor2.web" width="400"> | <img src="static/img/repositor3.webp" width="400"> |
+   | <img src="static/img/repositor4.webp" width="400"> | <img src="static/img/repositor5.webp" width="400"> |
 
 cd flask-motoring-app
 
