@@ -163,12 +163,6 @@ This wireframe likely represents the front page or introduction section of the R
  [Vehicles](#wireframe-vehicles)              | Information about vehicles in the project   
 ![Vehicles Wireframe](/static/img/wireframeVehicles.webp)
 
-![repositori 2](/static/img/repositor2.webp)
-![repositori3](/static/img/repositor3.webp)
-![repositori 4](/static/img/repositor4.webp)
-![repositori 5](/static/img/repositor5.webp)
-
-cd flask-motoring-app
 
 2. Configure the PostgreSQL database:
 
@@ -526,6 +520,12 @@ based on the length of the courses, does a database search.
 # Deploying a Flask Project to Render
 
 This guide outlines the steps to deploy my Django project from Visual Studio Code and GitHub to Render. By following these steps, I'll have my Django application running on the web in no time.
+
+![repositori 2](/static/img/repositor2.webp) | ![repositori3](/static/img/repositor3.webp)
+![repositori 4](/static/img/repositor4.webp)
+![repositori 5](/static/img/repositor5.webp)
+
+cd flask-motoring-app
 
 ## Prerequisites
 
