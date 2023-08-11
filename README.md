@@ -594,7 +594,7 @@ Verify that all functionalities work as expected.
 | <img src="static/img/Screenshot 2023-08-11 at 11.41.57.png" width="800"> |
 
 Conclusion
-!Flask project is now deployed on Render. This guide provided a simple path to get your application online.
+Flask project is now deployed on Render. This guide provided a simple path to get your application online.
 
 
 ## Contributing We encourage contributions! Feel free to raise an issue or send a pull request if you discover any problems or have ideas for improvement.
