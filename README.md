@@ -545,6 +545,7 @@ cd flask-motoring-app
 2. Open the terminal within VS Code.
 3. Use the `git clone` command to clone your GitHub repository:
 
+This is a requerd TXT.
 | <img src="static/img/repositor4.webp" width="800"> 
 | <img src="static/img/repositor5.webp" width="800"> |
 
