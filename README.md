@@ -137,8 +137,8 @@ Each row in the "VEHICLES" table represents a specific vehicle owned or availabl
 This wireframe likely represents the front page or introduction section of the README file. It can include the project title, a brief description of the project's purpose, and possibly some key visual elements or badges.
 
  # Frontpage Wireframe  web                         
-
- |![Wireframe](/static/img/wireframe2.webp) |
+| <img src="static/img/wireframe2.webp" width="800"> |
+ |![Wireframe](/) |
  
  |![Wireframe](/static/img/Wireframe1.webp) |
 
