@@ -157,6 +157,10 @@ This wireframe likely represents the front page or introduction section of the R
 ## Wireframe insert Supplier Data
 | <img src="static/img/insert_supplier_data.webp" width="500"> |
 
+## Wireframe insert Supplier Data
+| <img src="static/img/new_vehicles_details.webp" width="500"> |
+
+
 ## Wireframe Maintenance
 ![Maintenance](#wireframe-maintenance)         | Project maintenance and contribution guide  
 ![Maintenance Wireframe](/static/img/wireframe%20Maintenance.webp)
