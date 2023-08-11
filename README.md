@@ -527,8 +527,9 @@ based on the length of the courses, does a database search.
 
 This guide outlines the steps to deploy my Django project from Visual Studio Code and GitHub to Render. By following these steps, I'll have my Django application running on the web in no time.
 
-| Clone Repository                                   | Navigate to the cloned directory using the terminal:   |
+| Clone Repository                                   |    
    |----------------------------------------------------|-------------------------------------------------------|
+  ### This Is a requiered TXT  Navigate to the cloned directory using the terminal:
    | <img src="static/img/repositor2.webp" width="800"> 
    | <img src="static/img/repositor3.webp" width="800"> |
 
