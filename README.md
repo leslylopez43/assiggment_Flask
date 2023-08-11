@@ -523,8 +523,7 @@ This guide outlines the steps to deploy my Django project from Visual Studio Cod
 
 | Clone Repository                                   | Navigate to the cloned directory using the terminal:   |
    |----------------------------------------------------|-------------------------------------------------------|
-   | <img src="satitc/img/repositor2.web" width="400"> | <img src="static/img/repositor3.webp" width="400"> |
-   | <img src="static/img/repositor4.webp" width="400"> | <img src="static/img/repositor5.webp" width="400"> |
+   | <img src="satitc/img/repositor2.webp" width="400"> | <img src="static/img/repositor3.webp" width="400"> |
 
 cd flask-motoring-app
 
@@ -539,6 +538,7 @@ cd flask-motoring-app
 2. Open the terminal within VS Code.
 3. Use the `git clone` command to clone your GitHub repository:
 
+| <img src="static/img/repositor4.webp" width="400"> | <img src="static/img/repositor5.webp" width="400"> |
 
 ## Step 3: Configure Settings
  Create and activate a virtual environment:
