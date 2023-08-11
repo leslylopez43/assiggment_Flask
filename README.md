@@ -507,18 +507,18 @@ This project is licensed under the [MIT License](LICENSE).
 | Test No | Purpose | Test and Or data | Expected Outcome | Actual Outcome | Comments |
 |---------|---------|------------------|------------------|----------------|----------|
 | 1       | Test the Home Page link | Click on the Home Page link and navigate to the main landing page | The Home Page should load successfully | The Home Page loaded as expected | I atached the link[Home](https://motoring-web-services.onrender.com) - |
-| 2       | Test the Supplier link | Click on the Supplier link and navigate to the Supplier information page | The Supplier information page should load successfully | The Supplier information page loaded as expected | - |
-| 3       | Test the Display Vehicles link | Click on the Display Vehicles link and navigate to the List of Vehicles page | The List of Vehicles page should load successfully | The List of Vehicles page loaded as expected | - |
-| 4       | Test the Manage Sales link | Click on the Manage Sales link and navigate to the Service information page | The Service information page should load successfully | The Service information page loaded as expected | - |
-| 5       | Test the Form New Supplier Details link | Click on the Form New Supplier Details link and navigate to the supplier details form | The supplier details form should load successfully | The form loaded as expected | - |
-| 6       | Test the Enter New Vehicles Detail link | Click on the Enter New Vehicles Detail link and navigate to the vehicles details form | The vehicles details form should load successfully | The form loaded as expected | - |
-| 7       | Test the Enter New Sales Details link | Click on the Enter New Sales Details link and navigate to the sales details form | The sales details form should load successfully | The form loaded as expected | - |
-| 8       | Test the Enter New Maintenance Detail link | Click on the Enter New Maintenance Detail link and navigate to the maintenance details form | The maintenance details form should load successfully | The form loaded as expected | - |
-| 9       | Test the Logo link | Click on the Logo link and navigate back to the main menu | The main menu should load successfully | The main menu loaded as expected | - |
-| 10      | Test the Social Media link | Click on the Social Media link and open the contact information page | The contact information page should open successfully | The page opened as expected | - |
-| 11      | Test the Update Info link | Click on the Update Info link and navigate to the update data page | The update data page should load successfully | The page loaded as expected | - |
-| 12      | Test the Delete link | Click on the Delete link and perform a delete action | The delete action should be performed successfully | The action completed as expected | - |
-| 13      | Test the Print link | Click on the Print link and select a list of products/data to print | The selected products/data should be printed successfully | The printing completed as expected | - |
+| 2       | Test the Supplier link | Click on the Supplier link and navigate to the Supplier information page | The Supplier information page should load successfully | The Supplier information page loaded as expected | [Supplier](https://motoring-web-services.onrender.com/supplier) - |
+| 3       | Test the Display Vehicles link | Click on the Display Vehicles link and navigate to the List of Vehicles page | The List of Vehicles page should load successfully | The List of Vehicles page loaded as expected | [Display Vehivles](https://motoring-web-services.onrender.com/vehicles) - |
+| 4       | Test the Manage Sales link | Click on the Manage Sales link and navigate to the Service information page | The Service information page should load successfully | The Service information page loaded as expected | [Manage sales](https://motoring-web-services.onrender.com/sales) - |
+| 5       | Test the Form New Supplier Details link | Click on the Form New Supplier Details link and navigate to the supplier details form | The supplier details form should load successfully | The form loaded as expected | [Form ](https://motoring-web-services.onrender.com/get_new_supplier_details) - |
+| 6       | Test the Enter New Vehicles Detail link | Click on the Enter New Vehicles Detail link and navigate to the vehicles details form | The vehicles details form should load successfully | The form loaded as expected | [Form](https://motoring-web-services.onrender.com/get_new_vehicles_details) - |
+| 7       | Test the Enter New Sales Details link | Click on the Enter New Sales Details link and navigate to the sales details form | The sales details form should load successfully | The form loaded as expected | [Form](https://motoring-web-services.onrender.com/get_new_sales_details) - |
+| 8       | Test the Enter New Maintenance Detail link | Click on the Enter New Maintenance Detail link and navigate to the maintenance details form | The maintenance details form should load successfully | The form loaded as expected | [Form](https://motoring-web-services.onrender.com/get_new_maintenance_details) - |
+| 9       | Test the Logo link | Click on the Logo link and navigate back to the main menu | The main menu should load successfully | The main menu loaded as expected | [Logo](https://motoring-web-services.onrender.com) - |
+| 10      | Test the Social Media link | Click on the Social Media link and open the contact information page | The contact information page should open successfully | The page opened as expected | [Social Media](https://api.whatsapp.com/send?phone=447446605299) - |
+| 11      | Test the Update Info link | Click on the Update Info link and navigate to the update data page | The update data page should load successfully | The page loaded as expected | [Update](https://motoring-web-services.onrender.com/update_supplier?supplier_id=1) - |
+| 12      | Test the Delete link | Click on the Delete link and perform a delete action | The delete action should be performed successfully | The action completed as expected |  [Delete](https://motoring-web-services.onrender.com) - |
+| 13      | Test the Print link | Click on the Print link and select a list of products/data to print | The selected products/data should be printed successfully | The printing completed as expected | [Print](https://motoring-web-services.onrender.com/print_supplier/1) - |
 
 based on the length of the courses, does a database search.
 
@@ -527,22 +527,22 @@ based on the length of the courses, does a database search.
 | Page Name         | Description                   | Link                                             |
 |-------------------|-------------------------------|--------------------------------------------------|
 | Home Page         | Main landing page             | [Home](https://motoring-web-services.onrender.com)                    |
-| Supplier          | Information about the Supplier | [Supplier](https://motoring-web-services.onrender.com/supplier)           |
-| Display Vehiles          | List of Vehicles              | [Display Vehivles](https://motoring-web-services.onrender.com/vehicles)        |
-| Manage sales        | Service information           | [Manage sales](https://motoring-web-services.onrender.com/sales)       |
+| Supplier          | Information about the Supplier |            |
+| Display Vehiles          | List of Vehicles              |         |
+| Manage sales        | Service information           |        |
 |                   |                               |                                                 |
 |-------------------|-------------------------------|-------------------------------------------------|
-| Form New Supplier Details              | Form to be filling    | [Form ](https://motoring-web-services.onrender.com/get_new_supplier_details)                  |
-| Enter new Vehicles detail         | Form to be filling             | [Form](https://motoring-web-services.onrender.com/get_new_vehicles_details)                    |
-| Enter new Sales Detais         | IForm to be filling | [Form](https://motoring-web-services.onrender.com/get_new_sales_details)           |
-| enter new Mintenance Detail          | Form to be filling              | [Form](https://motoring-web-services.onrender.com/get_new_maintenance_details)        |
-|Logo         | back to the main menue           | [Logo](https://motoring-web-services.onrender.com)       |
-| Social Media               | Contact information    | [Social Media](https://api.whatsapp.com/send?phone=447446605299)                  |
+| Form New Supplier Details              | Form to be filling    |                   |
+| Enter new Vehicles detail         | Form to be filling             |                     |
+| Enter new Sales Detais         | IForm to be filling |            |
+| enter new Mintenance Detail          | Form to be filling              |         |
+|Logo         | back to the main menue           |       |
+| Social Media               | Contact information    |                   |
 |-------------------|-------------------------------|-------------------------------------------------|
 |                    |                                |                                              |
-| update Info         | From any Page to update Data             | [Update](https://motoring-web-services.onrender.com/update_supplier?supplier_id=1)                    |
-| Delete          | Delete Information about  | [Delete](https://motoring-web-services.onrender.com)           |
-| Print          | Select List of products or Data            | [Print](https://motoring-web-services.onrender.com/print_supplier/1)        |
+| update Info         | From any Page to update Data             |                     |
+| Delete          | Delete Information about  |            |
+| Print          | Select List of products or Data            |         |
 
 
 
