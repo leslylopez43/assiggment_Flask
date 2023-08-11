@@ -522,30 +522,6 @@ This project is licensed under the [MIT License](LICENSE).
 
 based on the length of the courses, does a database search.
 
-## Web Page Links Testing
-
-| Page Name         | Description                   | Link                                             |
-|-------------------|-------------------------------|--------------------------------------------------|
-| Home Page         | Main landing page             | [Home](https://motoring-web-services.onrender.com)                    |
-| Supplier          | Information about the Supplier |            |
-| Display Vehiles          | List of Vehicles              |         |
-| Manage sales        | Service information           |        |
-|                   |                               |                                                 |
-|-------------------|-------------------------------|-------------------------------------------------|
-| Form New Supplier Details              | Form to be filling    |                   |
-| Enter new Vehicles detail         | Form to be filling             |                     |
-| Enter new Sales Detais         | IForm to be filling |            |
-| enter new Mintenance Detail          | Form to be filling              |         |
-|Logo         | back to the main menue           |       |
-| Social Media               | Contact information    |                   |
-|-------------------|-------------------------------|-------------------------------------------------|
-|                    |                                |                                              |
-| update Info         | From any Page to update Data             |                     |
-| Delete          | Delete Information about  |            |
-| Print          | Select List of products or Data            |         |
-
-
-
 
 ## Contributing We encourage contributions! Feel free to raise an issue or send a pull request if you discover any problems or have ideas for improvement.
 
