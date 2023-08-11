@@ -179,7 +179,7 @@ This wireframe likely represents the front page or introduction section of the R
 2. Configure the PostgreSQL database:
 
  ### Install the required dependencies or packages.
-pip install -r requirements.txt
+pip install -requirements.py txt  using PIP frezee
 
 3. ### Set up the PostgreSQL database:
 - Create a new database named "motoring" on your PostgreSQL server.
