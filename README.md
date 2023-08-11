@@ -145,10 +145,10 @@ This wireframe likely represents the front page or introduction section of the R
  # Frontpage Wireframe  web                         
 | <img src="static/img/wireframe2.webp" width="500"> |
  
-
+ # Wireframe  Front Page Mobile Device. 
  | <img src="static/img/Wireframe1.webp" width="500"> |
 
- # Wireframe  Front Page Mobile Device.               
+              
  
 | Wireframe 1                         | Wireframe 2                         |
 |-------------------------------------|-------------------------------------|
