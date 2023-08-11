@@ -559,15 +559,14 @@ cd flask-motoring-app
 2. Open the terminal within VS Code.
 3. Use the `git clone` command to clone your GitHub repository:
 
-   
-| <img src="static/img/repositor4.webp" width="800"> 
-
 
 ## Step 3: Configure Settings
  Create and activate a virtual environment:
 Modify settings.py for production.
 
 Update ALLOWED_HOSTS to include your Render deployment URL:
+
+| <img src="static/img/repositor4.webp" width="800"> 
 
 ## Step 4: Deploy to Render
 Log in to Render.
