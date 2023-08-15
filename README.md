@@ -9,7 +9,41 @@ British Fleet is a web application for managing supplier information, displaying
 It is built using ,  and 
 |     Flask | Python,| Bootstrap.|
 | --------  | -------- |-------- |
+
 ## User Stories
+## Stories for the User
+The British Fleet app boasts a variety of features tailored to address the unique requirements of motoring businesses:
+
+### Navigation and Accessibility: 
+The app presents a well-structured navigation bar that provides direct access to various sections, such as displaying suppliers, vehicles, managing sales, and handling maintenance/services. Users can easily switch between sections using the navigation menu or dropdown.
+
+### Supplier Management: 
+The Supplier Management section allows users to view, search, update, and delete supplier information. It offers an intuitive interface to create and manage supplier details efficiently.
+
+### Vehicle Management: 
+The Vehicle Management section provides a comprehensive overview of vehicles, including details like registration number, brand, model, color, price, and availability. Users can search, update, and delete vehicle records.
+
+### Sales Management: 
+Users can manage sales records, including information on new and used cars, sales employee details, profits, and vehicle categories. The Sales Management section enables efficient tracking of sales transactions.
+
+### Maintenance Records: 
+The Maintenance section facilitates the tracking of vehicle maintenance, including tasks performed, costs, dates, and personnel involved. Users can search, add, update, and delete maintenance records.
+
+### Database Design
+The British Fleet app employs a well-structured SQL database design, featuring four core tables:
+
+### MAINTENANCE Table: 
+Stores maintenance records, capturing details such as maintenance ID, vehicle ID, registration number, date performed, tasks, personnel, and costs.
+
+### SALES Table: 
+Manages sales data, including sale employee numbers, new and used car brands, profits, and quantities.
+
+### SUPPLIER Table: 
+Contains supplier information, including names, addresses, contact details, and VAT numbers.
+
+### VEHICLES Table: 
+Stores comprehensive vehicle information, including registration numbers, brands, models, prices, and availability.
+
 # British Fleet
 ### Usage 
 You will see a navigation bar with links to the application's many sections when you first view it.
