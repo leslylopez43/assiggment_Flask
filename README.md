@@ -10,8 +10,8 @@ It is built using ,  and
 |     Flask | Python,| Bootstrap.|
 | --------  | -------- |-------- |
 
-## User Stories
-## Stories for the User
+# User Stories
+##£ Stories for the User
 The British Fleet app boasts a variety of features tailored to address the unique requirements of motoring businesses:
 
 ### Navigation and Accessibility: 
