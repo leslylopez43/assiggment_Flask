@@ -11,7 +11,7 @@ It is built using ,  and
 | --------  | -------- |-------- |
 
 # User Stories
-##£ Stories for the User
+## Stories for the User
 The British Fleet app boasts a variety of features tailored to address the unique requirements of motoring businesses:
 
 ### Navigation and Accessibility: 
