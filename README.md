@@ -181,6 +181,8 @@ This wireframe likely represents the front page or introduction section of the R
  
  # Wireframe  Front Page Mobile Device. 
  | <img src="static/img/Wireframe1.webp" width="500"> |
+  # Wireframe  Manage add data form. 
+ | ![Wireframe](/static/img/wireframe-maintenance.webp) 
 
               
  
